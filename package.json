@@ -1,0 +1,15 @@
+{
+  "name": "dm-customer-programs",
+  "version": "1.0.0",
+  "description": "Dynamic Media Customer Program Landing Pages & Showcase Portal",
+  "private": true,
+  "scripts": {
+    "start": "npx serve public -l 3000",
+    "deploy": "firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions"
+  },
+  "keywords": ["dynamic-media", "landing-pages", "soundtrack-your-brand", "firebase"],
+  "author": "Dynamic Media",
+  "license": "UNLICENSED"
+}

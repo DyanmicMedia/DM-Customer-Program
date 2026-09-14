@@ -1,0 +1,12 @@
+node_modules/
+.firebase/
+.firebaserc
+.env
+.env.local
+functions/node_modules/
+*.log
+.DS_Store
+functions/.env
+.env.*
+.gitconfig
+_tmp_*
