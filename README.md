@@ -33,11 +33,13 @@ When your BDR or sales team lands a new account (e.g., **Plato Coffee**):
    Open Cursor and paste this prompt:
    > *"Here is the brief and information for Plato Coffee. Update `public/platocoffee/index.html` with their brand colors, headlines, Spotify playlist embed URL, and assign sales rep Jane Doe (jdoe@dm-us.com)."*
 
-4. **Deploy to Firebase:**
+4. **Deploy to Firebase (production only, from `main`):**
    ```bash
    npm run deploy:hosting
    ```
    The page is instantly live at `yourdomain.com/platocoffee/`!
+
+   Experimental work should be done on the `staging` branch and deployed with `npm run deploy:staging`. See **Staging vs Production** below.
 
 ---
 
@@ -50,14 +52,39 @@ Every page features an AJAX lead registration form connected to the shared Fireb
 - **Direct Reply:** The email's `Reply-To` header is set to the restaurant manager's email so sales reps can reply directly in one click.
 
 ### Deploying the Cloud Function
+From the repo root (always specify the target environment):
 ```bash
-cd functions
-npm install
-npm run deploy
+npm run deploy:prod:functions      # production: dm-customer-programs
+npm run deploy:staging:functions   # staging: dm-customer-programs-staging
 ```
 To enable live Gmail delivery, set Google App Password credentials in Firebase environment secrets or `functions/.env`:
 ```
 GMAIL_USER=your-account@gmail.com
 GMAIL_PASS=your-16-char-app-password
+LEAD_TO_EMAIL=sales@dm-us.com
 ```
 *(In local development without credentials, leads are safely logged to the console so you can test forms immediately).*
+
+Staging never emails `sales@dm-us.com`. If SMTP is configured on the staging project, set `LEAD_TO_EMAIL` to an internal inbox. Otherwise leads are logged only.
+
+---
+
+## Staging vs Production
+
+Production stays on `main` and Firebase project **`dm-customer-programs`**. New or risky work goes on the **`staging`** git branch and Firebase project **`dm-customer-programs-staging`**.
+
+| | Production | Staging |
+|---|---|---|
+| Git branch | `main` | `staging` |
+| Firebase project | `dm-customer-programs` | `dm-customer-programs-staging` |
+| Hosting URL | https://dm-customer-programs.web.app | https://dm-customer-programs-staging.web.app |
+| Deploy | `npm run deploy` or `npm run deploy:prod` | `npm run deploy:staging` |
+| Hosting only | `npm run deploy:hosting` | `npm run deploy:staging:hosting` |
+| Lead emails | `sales@dm-us.com` + assigned rep | Internal `LEAD_TO_EMAIL` only, or console log |
+
+Workflow:
+1. Build on `staging` (`git checkout staging`).
+2. Preview locally with `npm start`, then publish with `npm run deploy:staging`.
+3. When the work is ready, merge `staging` into `main` and deploy production with `npm run deploy`.
+
+Do not run `npm run deploy` / `npm run deploy:hosting` while experimenting. Those scripts always target production.

@@ -5,9 +5,15 @@
   "private": true,
   "scripts": {
     "start": "npx serve public -l 3000",
-    "deploy": "firebase deploy",
-    "deploy:hosting": "firebase deploy --only hosting",
-    "deploy:functions": "firebase deploy --only functions"
+    "deploy": "firebase deploy --project prod",
+    "deploy:hosting": "firebase deploy --project prod --only hosting",
+    "deploy:functions": "firebase deploy --project prod --only functions",
+    "deploy:prod": "firebase deploy --project prod",
+    "deploy:prod:hosting": "firebase deploy --project prod --only hosting",
+    "deploy:prod:functions": "firebase deploy --project prod --only functions",
+    "deploy:staging": "firebase deploy --project staging",
+    "deploy:staging:hosting": "firebase deploy --project staging --only hosting",
+    "deploy:staging:functions": "firebase deploy --project staging --only functions"
   },
   "keywords": ["dynamic-media", "landing-pages", "soundtrack-your-brand", "firebase"],
   "author": "Dynamic Media",

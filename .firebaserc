@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "dm-customer-programs",
+    "prod": "dm-customer-programs",
+    "staging": "dm-customer-programs-staging"
+  }
+}

@@ -32,6 +32,26 @@ function getMailFromAddress() {
   return process.env.SMTP_FROM || process.env.GMAIL_USER || process.env.SMTP_USER;
 }
 
+const PROD_PROJECT_ID = "dm-customer-programs";
+
+function getProjectId() {
+  return process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT || "";
+}
+
+function isProductionProject() {
+  return getProjectId() === PROD_PROJECT_ID;
+}
+
+function getLeadRecipients(salesmanEmail) {
+  if (!isProductionProject()) {
+    return { to: process.env.LEAD_TO_EMAIL || null, cc: [], subjectPrefix: "[STAGING] " };
+  }
+
+  const to = process.env.LEAD_TO_EMAIL || "sales@dm-us.com";
+  const cc = (salesmanEmail && salesmanEmail !== to) ? [salesmanEmail] : [];
+  return { to, cc, subjectPrefix: "" };
+}
+
 /**
  * Cloud Function: submitLead
  * Receives form submission from customer program landing pages,
@@ -144,21 +164,20 @@ Submitted At: ${new Date().toISOString()}
 `.trim();
 
     const transporter = getMailTransporter();
-    const primaryRecipient = "sales@dm-us.com";
-    const ccList = (salesmanEmail && salesmanEmail !== primaryRecipient) ? [salesmanEmail] : [];
+    const recipients = getLeadRecipients(salesmanEmail);
 
-    if (transporter) {
+    if (transporter && recipients.to) {
       await transporter.sendMail({
         from: `"Dynamic Media Programs" <${getMailFromAddress()}>`,
-        to: primaryRecipient,
-        cc: ccList,
+        to: recipients.to,
+        cc: recipients.cc,
         replyTo: contactEmail,
-        subject: `[Lead] ${programName} - ${locationName}`,
+        subject: `${recipients.subjectPrefix}[Lead] ${programName} - ${locationName}`,
         text: plainTextBody,
         html: htmlBody
       });
     } else {
-      console.log("--- LOCAL / STAGING LEAD RECEIVED (SMTP credentials not set) ---");
+      console.log("--- LOCAL / STAGING LEAD RECEIVED (SMTP credentials not set or non-prod inbox missing) ---");
       console.log(plainTextBody);
     }
 
