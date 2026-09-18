@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.ok && data.success) {
           if (formStatus) {
             formStatus.className = 'block rounded-xl p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium';
-            formStatus.innerHTML = '&check; ' + (data.message || 'Thank you! Your store registration has been received. Megan Foti will follow up within one business day.');
+            formStatus.innerHTML = '&check; ' + (data.message || 'Thank you! Your store registration has been received. Jason Spangler will follow up shortly.');
           }
           form.reset();
           if (isModal) {

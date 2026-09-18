@@ -19,6 +19,36 @@ Then visit:
 
 ---
 
+## Editing live content (Broken Yolk)
+
+Use the **`main`** branch. That is the source of truth for the live site. Do not use `staging` for copy or wording changes that should go to production.
+
+Content you will usually edit:
+- **Page copy:** `public/brokenyolk/index.html`
+- **Form success/error wording:** `public/assets/lead-modal.js`
+- **Images:** `public/brokenyolk/assets/`
+
+```bash
+git checkout main
+git pull
+npm start
+```
+
+Preview at [http://localhost:3000/brokenyolk/](http://localhost:3000/brokenyolk/). When the wording looks right:
+
+```bash
+git add public/brokenyolk/index.html public/assets/lead-modal.js
+git commit -m "Update Broken Yolk live copy"
+git push
+npm run deploy:hosting
+```
+
+`npm run deploy:hosting` publishes to production (`dm-customer-programs`). You need the [Firebase CLI](https://firebase.google.com/docs/cli) (`npm install -g firebase-tools`), `firebase login`, and access to that Firebase project. You do **not** need `functions/.env` for content-only edits.
+
+Do not run `npm run deploy:staging` for this work.
+
+---
+
 ## ⚡ How to Create a New Landing Page in 2 Minutes (Using Cursor)
 
 When your BDR or sales team lands a new account (e.g., **Plato Coffee**):
