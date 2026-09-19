@@ -113,8 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         if (formStatus) {
+          const supportEmail = form.dataset.supportEmail;
+          const supportMessage = supportEmail
+            ? ` Or email <a href="mailto:${supportEmail}" class="font-bold underline">${supportEmail}</a>.`
+            : ' - Or call 1-844-229-1217 directly.';
           formStatus.className = 'block rounded-xl p-4 bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm font-medium';
-          formStatus.innerHTML = '&#9888; ' + err.message + ' - Or call 1-844-229-1217 directly.';
+          formStatus.innerHTML = '&#9888; ' + err.message + supportMessage;
         }
       } finally {
         if (submitBtn) {
