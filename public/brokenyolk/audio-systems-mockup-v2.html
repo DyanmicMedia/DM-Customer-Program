@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Systems Panel Mockup v2 | Broken Yolk</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.ico?v=2" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            by: {
+              orange: '#F58220',
+              blue: '#0072CE',
+              navy: '#0C2340',
+              yellow: '#FFC20E',
+              sand: '#FFFDF9'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-by-sand text-slate-800 font-sans antialiased">
+
+  <div class="bg-by-yellow text-by-navy text-xs sm:text-sm font-semibold py-2.5 px-4 text-center">
+    Mockup v2 — see v3 for the recommended direction.
+    <a href="./audio-systems-mockup-v3.html" class="underline ml-2 font-bold">Open v3</a>
+    <span class="mx-2 text-by-navy/40">·</span>
+    <a href="./" class="underline">Live page</a>
+  </div>
+
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/dm-logo.png" alt="Dynamic Media" class="h-9 w-auto object-contain">
+        <span class="text-slate-300 text-xl font-light">|</span>
+        <img src="assets/logo.png" alt="Broken Yolk Cafe" class="h-8 w-auto object-contain">
+      </div>
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Art direction v2</p>
+    </div>
+  </header>
+
+  <!-- Fake page context so the panel is judged in rhythm -->
+  <section class="bg-white border-b border-slate-200 py-12 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <p class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Context</p>
+      <h1 class="text-2xl sm:text-3xl font-black text-by-navy tracking-tight mt-2 mb-3">Shown after “The Sound,” before “Find Your Setup”</h1>
+      <p class="text-slate-600 max-w-2xl text-sm sm:text-base leading-relaxed">
+        Goal: signal that this program includes real cafe audio systems, then offer a quiet fork—
+        without becoming a second hero or a dual-card brochure block.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROPOSED LIGHT PANEL -->
+  <section class="scroll-mt-20 py-14 sm:py-16 bg-by-navy text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-slate-900 aspect-[4/3]">
+            <img
+              src="assets/Broken%20Yolk%20Cafe%20players%20panel.jpg"
+              alt="PlayerOne and commercial amplifier for cafe audio"
+              class="w-full h-full object-cover object-right"
+            >
+          </div>
+          <p class="mt-3 text-[11px] text-slate-400 leading-relaxed">
+            Speakers, amplification, controls, and a dedicated music player—sized for the cafe.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <p class="text-xs uppercase font-extrabold tracking-wider text-by-yellow">Audio systems</p>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 mb-3 leading-[1.1]">
+            Music needs a system in the room
+          </h2>
+          <p class="text-slate-300 leading-relaxed mb-8 max-w-xl">
+            Broken Yolk Radio plays through the speakers, amp, and player at each cafe.
+            Start with the setup you have—or plan a complete system for a new room.
+          </p>
+
+          <div class="space-y-3">
+            <a
+              href="./#recommender"
+              class="block text-left bg-white/5 hover:bg-white/10 border border-white/15 hover:border-by-orange/60 rounded-xl p-5 transition"
+            >
+              <span class="block font-bold text-white mb-1">Existing speakers or sound system</span>
+              <span class="block text-sm text-slate-300 leading-relaxed mb-3">
+                Connect Broken Yolk Radio to the audio you already have.
+              </span>
+              <span class="inline-flex items-center text-sm font-bold text-by-yellow">
+                Find My Setup <span class="ml-1" aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+
+            <a
+              href="./#contact"
+              class="block text-left bg-white/5 hover:bg-white/10 border border-white/15 hover:border-by-orange/60 rounded-xl p-5 transition"
+            >
+              <span class="block font-bold text-white mb-1">New or remodeled cafe</span>
+              <span class="block text-sm text-slate-300 leading-relaxed mb-3">
+                Design speakers, amplification, controls, and player as one system.
+              </span>
+              <span class="inline-flex items-center text-sm font-bold text-by-orange">
+                Plan My Audio System <span class="ml-1" aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Fake next section to show breathing room -->
+  <section class="py-14 sm:py-16 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <p class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Find Your Setup</p>
+      <h2 class="text-2xl sm:text-3xl font-black text-by-navy tracking-tight mt-2 mb-2">Next section stays light</h2>
+      <p class="text-slate-600 text-sm max-w-xl leading-relaxed mb-6">
+        Placeholder for the existing recommender—so you can feel whether the audio panel
+        leaves enough air before the setup choices.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 opacity-60 pointer-events-none" aria-hidden="true">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5">
+          <p class="font-bold text-by-navy">Sonos</p>
+          <p class="text-sm text-slate-500 mt-1">Music plays through Sonos speakers or zones.</p>
+        </div>
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5">
+          <p class="font-bold text-by-navy">Phone or tablet</p>
+          <p class="text-sm text-slate-500 mt-1">A mobile device connects to Bluetooth speakers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 text-sm text-slate-600 leading-relaxed space-y-3">
+    <p class="font-bold text-by-navy">v2 art direction notes</p>
+    <ul class="list-disc pl-5 space-y-2">
+      <li><strong>One image</strong> — audio systems get a single visual anchor, not a dual catalog spread.</li>
+      <li><strong>Text-led fork</strong> — paths match Find Your Setup’s quiet bordered rows, tuned for navy.</li>
+      <li><strong>Shorter copy</strong> — one intro, one line per path, inline CTA language.</li>
+      <li><strong>Same section weight</strong> as Partner / Sound — mid-page, not a campaign module.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
+

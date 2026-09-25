@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Systems Panel Mockup v3 | Broken Yolk</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.ico?v=2" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            by: {
+              orange: '#F58220',
+              blue: '#0072CE',
+              navy: '#0C2340',
+              yellow: '#FFC20E',
+              sand: '#FFFDF9'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-by-sand text-slate-800 font-sans antialiased">
+
+  <div class="bg-by-yellow text-by-navy text-xs sm:text-sm font-semibold py-2.5 px-4 text-center">
+    Mockup v3 — see v4 for the recommended direction.
+    <a href="./audio-systems-mockup-v4.html" class="underline ml-2 font-bold">Open v4</a>
+    <span class="mx-2 text-by-navy/40">·</span>
+    <a href="./" class="underline">Live page</a>
+    <span class="mx-2 text-by-navy/40">·</span>
+    <a href="./audio-systems-mockup-v2.html" class="underline">v2</a>
+  </div>
+
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/dm-logo.png" alt="Dynamic Media" class="h-9 w-auto object-contain">
+        <span class="text-slate-300 text-xl font-light">|</span>
+        <img src="assets/logo.png" alt="Broken Yolk Cafe" class="h-8 w-auto object-contain">
+      </div>
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Art direction v3</p>
+    </div>
+  </header>
+
+  <section class="bg-white border-b border-slate-200 py-10 sm:py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <p class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Context</p>
+      <h1 class="text-2xl sm:text-3xl font-black text-by-navy tracking-tight mt-2 mb-3">v3: cafe background, text on the right</h1>
+      <p class="text-slate-600 max-w-2xl text-sm sm:text-base leading-relaxed">
+        Product inset removed. Dining room photo is the section background;
+        paths and CTAs stay right-aligned over the navy side of the image.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROPOSED v3 PANEL -->
+  <section class="scroll-mt-20 relative overflow-hidden text-white">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('../brokenyolk-v2/dinning-room.jpg');"
+      role="img"
+      aria-label="Broken Yolk Cafe dining room"
+    ></div>
+    <!-- Extra readability on small screens; photo already carries navy on the right -->
+    <div class="absolute inset-0 bg-by-navy/75 sm:bg-by-navy/45 lg:bg-gradient-to-l lg:from-by-navy/80 lg:via-by-navy/35 lg:to-transparent"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-16 lg:py-20">
+      <div class="lg:ml-auto lg:w-[min(100%,34rem)]">
+        <p class="text-xs uppercase font-extrabold tracking-wider text-by-yellow">Audio systems</p>
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 mb-3 leading-[1.1]">
+          Speakers, amplification, and the player for each cafe
+        </h2>
+        <p class="text-slate-200 leading-relaxed mb-7">
+          Broken Yolk Radio plays through the audio system in the room.
+          Keep what you already have, or plan a complete system for a new or remodeled location.
+        </p>
+
+        <div class="space-y-3">
+          <div class="rounded-xl border border-white/20 bg-by-navy/55 backdrop-blur-sm p-5">
+            <h3 class="font-bold text-white text-base sm:text-lg mb-1">Existing speakers or sound system</h3>
+            <p class="text-sm text-slate-200 leading-relaxed mb-2">
+              Connect Broken Yolk Radio to Sonos, Bluetooth, a store computer, or a wired amp.
+            </p>
+            <p class="text-sm font-semibold text-by-yellow mb-4">Often no new speakers required.</p>
+            <a
+              href="./#recommender"
+              class="inline-flex items-center justify-center font-bold text-white bg-by-blue hover:bg-blue-700 px-5 py-2.5 rounded-md transition text-sm"
+            >
+              Find My Setup
+            </a>
+          </div>
+
+          <div class="rounded-xl border border-white/20 bg-by-navy/55 backdrop-blur-sm p-5">
+            <h3 class="font-bold text-white text-base sm:text-lg mb-1">New or remodeled cafe</h3>
+            <p class="text-sm text-slate-200 leading-relaxed mb-2">
+              Design speakers, amplification, controls, and the music player as one system.
+            </p>
+            <p class="text-sm font-semibold text-by-orange mb-4">No-charge audio system design.</p>
+            <a
+              href="./#contact"
+              class="inline-flex items-center justify-center font-bold text-white bg-by-orange hover:bg-orange-600 px-5 py-2.5 rounded-md transition text-sm"
+            >
+              Plan My Audio System
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-16 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <p class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Find Your Setup</p>
+      <h2 class="text-2xl sm:text-3xl font-black text-by-navy tracking-tight mt-2 mb-2">Next section stays light</h2>
+      <p class="text-slate-600 text-sm max-w-xl leading-relaxed mb-6">
+        Placeholder recommender — check that this panel still leaves breathing room.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 opacity-55 pointer-events-none" aria-hidden="true">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5">
+          <p class="font-bold text-by-navy">Sonos</p>
+          <p class="text-sm text-slate-500 mt-1">Music plays through Sonos speakers or zones.</p>
+        </div>
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5">
+          <p class="font-bold text-by-navy">Phone or tablet</p>
+          <p class="text-sm text-slate-500 mt-1">A mobile device connects to Bluetooth speakers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 text-sm text-slate-600 leading-relaxed space-y-3">
+    <p class="font-bold text-by-navy">What changed from v2</p>
+    <ul class="list-disc pl-5 space-y-2">
+      <li>Dining room photo as full-bleed background; copy stays on the right.</li>
+      <li>No inset product image — cafe atmosphere carries the section.</li>
+      <li>One proof line per path and solid blue / orange CTAs.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
+

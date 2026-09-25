@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=/checkout/?program=brokenyolk">
+  <title>Redirecting to checkout</title>
+  <script>
+    var q = window.location.search || "?program=brokenyolk";
+    window.location.replace("/checkout/" + q);
+  </script>
+</head>
+<body>
+  <p>Setup continues in checkout. <a href="/checkout/?program=brokenyolk">Continue</a>.</p>
+</body>
+</html>

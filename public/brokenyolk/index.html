@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Broken Yolk Radio &bull; Official Corporate Music Program | Dynamic Media</title>
-  <meta name="description" content="Broken Yolk Radio — the official corporate music program for Broken Yolk Cafe. Custom-curated, fully licensed soundtrack that connects to your existing audio system. $27.95/mo per location.">
+  <title>Broken Yolk Radio | Official Music &amp; Audio Program</title>
+  <meta name="description" content="Broken Yolk Radio is the official, professionally managed music and audio program for Broken Yolk Cafe locations.">
+  <link rel="icon" href="assets/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,9 +17,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
-          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
           colors: {
             by: {
               orange: '#F58220',
@@ -27,22 +29,21 @@
           }
         }
       }
-    }
+    };
   </script>
 </head>
 <body class="bg-by-sand text-slate-800 font-sans antialiased selection:bg-by-orange selection:text-white">
 
-  <!-- TOP BAR -->
+  <!-- PROGRAM BAR -->
   <div class="bg-by-navy text-slate-200 text-xs sm:text-sm py-2.5 px-4">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-2">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-by-yellow animate-pulse"></span>
-        <span class="font-medium">Official Corporate Music Program &bull; Fully Licensed</span>
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-by-yellow"></span>
+        <span class="font-semibold">Official music standard for all Broken Yolk Cafe locations</span>
       </div>
-      <div class="flex items-center gap-5 text-xs">
-        <a href="tel:5866628476" class="hover:text-white transition">Jason Spangler: <strong>586-662-8476</strong></a>
-        <a href="#contact" class="text-by-yellow hover:underline font-semibold">Get Set Up &rarr;</a>
-      </div>
+      <a href="mailto:brokenyolk@dm-us.com" class="hover:text-white transition">
+        Program Support: <strong class="text-white">brokenyolk@dm-us.com</strong>
+      </a>
     </div>
   </div>
 
@@ -54,543 +55,584 @@
         <span class="text-slate-300 text-2xl sm:text-3xl font-light">|</span>
         <img src="assets/logo.png" alt="Broken Yolk Cafe" class="h-11 sm:h-13 w-auto object-contain">
       </div>
-      <div class="flex items-center gap-5">
+      <div class="flex items-center gap-3 sm:gap-5">
         <nav class="hidden lg:flex items-center gap-7 text-xs font-bold text-slate-600">
-          <a href="#what-you-get" class="hover:text-by-orange transition">What You Get</a>
-          <a href="#playlist" class="hover:text-by-orange transition">Broken Yolk Radio</a>
-          <a href="#playback" class="hover:text-by-orange transition">Playback</a>
-          <a href="#how-to-connect" class="hover:text-by-orange transition">Setup</a>
-          <a href="#contact" class="hover:text-by-orange transition">Contact</a>
+          <a href="#sound" class="hover:text-by-orange transition">The Sound</a>
+          <a href="#audio" class="hover:text-by-orange transition">Audio Systems</a>
+          <a href="#recommender" class="hover:text-by-orange transition">Find Your Setup</a>
+          <a href="#faq" class="hover:text-by-orange transition">FAQ</a>
         </nav>
-        <a href="https://onboarding.mybizsound.com/dynamicmedia" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-by-navy bg-white hover:bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-md transition duration-150">
-          Setup Help
-        </a>
-        <button type="button" onclick="goToRegister()" class="inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-by-orange hover:bg-orange-600 px-5 py-2.5 rounded-md shadow-sm transition duration-150 focus:outline-none focus:ring-2 focus:ring-by-orange/40">
-          Get Your Cafe Set Up
+        <button type="button" onclick="goToSetup()" class="hidden sm:inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-by-orange hover:bg-orange-600 px-5 py-2.5 rounded-md shadow-sm transition focus:outline-none focus:ring-2 focus:ring-by-orange/40">
+          Get Started
+        </button>
+        <button type="button" onclick="toggleMobileMenu()" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-slate-200 text-by-navy" aria-label="Open navigation" aria-expanded="false" id="mobileMenuButton">
+          <span class="text-xl leading-none">&#9776;</span>
         </button>
       </div>
     </div>
+    <nav id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4">
+      <div class="max-w-7xl mx-auto grid gap-1 text-sm font-semibold text-by-navy">
+        <a href="#sound" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">The Sound</a>
+        <a href="#audio" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">Audio Systems</a>
+        <a href="#recommender" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">Find Your Setup</a>
+        <a href="#faq" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">FAQ</a>
+        <button type="button" onclick="toggleMobileMenu(); goToSetup()" class="mt-2 text-left px-3 py-3 rounded-md bg-by-orange text-white">Get Started</button>
+      </div>
+    </nav>
   </header>
 
-  <!-- 1. HERO -->
-  <section class="relative min-h-[560px] sm:min-h-[620px] flex items-center overflow-hidden">
+  <!-- HERO -->
+  <section class="relative min-h-[620px] flex items-center overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center sm:bg-[center_top]" style="background-image: url('assets/Broken%20Yolk%20Cafe%20header%20panel.jpg');"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 w-full">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
       <div class="max-w-2xl text-left">
-        <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-5 backdrop-blur-xs">
-          <span class="w-2 h-2 rounded-full bg-by-yellow animate-pulse"></span>
-          <span>The official corporate music program for Broken Yolk Cafe</span>
+        <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-300/40 text-amber-200 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-by-yellow"></span>
+          Corporate-selected. Professionally managed.
         </div>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-5">
-          <span class="text-by-yellow">Broken Yolk Radio</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.05] mb-5">
+          The Broken Yolk sound, <span class="text-by-yellow">ready to play.</span>
         </h1>
-
-        <p class="text-base sm:text-lg text-slate-200 mb-8 leading-relaxed font-normal">
-          A Saturday morning in Pacific Beach — sunny, mid-tempo, warm-voiced, and upbeat enough to carry a full room without ever getting louder than the people in it. Coastal California energy, family-safe throughout.
+        <p class="text-base sm:text-lg text-slate-100 mb-8 leading-relaxed max-w-xl">
+          A professionally curated soundtrack, refreshed monthly and managed for every Broken Yolk Cafe—so your team never has to manage the music.
         </p>
-
-        <button type="button" onclick="goToRegister()" class="w-full sm:w-auto font-semibold text-white bg-by-orange hover:bg-orange-600 px-8 py-3.5 rounded-md shadow-sm transition duration-150 text-sm text-center focus:outline-none focus:ring-2 focus:ring-by-orange/40">
-          Get Your Cafe Set Up
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. WHAT YOU GET + PRICE -->
-  <section id="what-you-get" class="scroll-mt-20 py-16 sm:py-20 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">What You Get</span>
-        <h2 class="text-2xl sm:text-4xl font-black text-by-navy tracking-tight mt-1 mb-3">Everything your cafe needs to play the corporate soundtrack</h2>
-        <p class="text-slate-600 text-sm sm:text-base">This is the answer to the music question on your opening checklist.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto mb-8 sm:mb-10">
-        <div class="p-6 rounded-xl border border-slate-200 bg-by-sand/70 h-full">
-          <h3 class="font-bold text-by-navy text-base mb-1.5">Custom-curated music</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Broken Yolk Radio, updated automatically — no playlist building from the store.</p>
-        </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-by-sand/70 h-full">
-          <h3 class="font-bold text-by-navy text-base mb-1.5">Set it and forget it</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Music runs in the background so managers can focus on the floor.</p>
-        </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-by-sand/70 h-full">
-          <h3 class="font-bold text-by-navy text-base mb-1.5">Fully licensed &amp; legal</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Commercial rights covered for restaurant playback — not a consumer streaming app.</p>
-        </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-by-sand/70 h-full">
-          <h3 class="font-bold text-by-navy text-base mb-1.5">Connects to what you have</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Works with your existing audio system — wired, tablet, computer, or Sonos.</p>
-        </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-by-sand/70 h-full">
-          <h3 class="font-bold text-by-navy text-base mb-1.5">Corporate pays for the player</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Broken Yolk corporate covers the PlayerOne when your cafe needs a dedicated box.</p>
-        </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-by-sand/70 h-full">
-          <h3 class="font-bold text-by-navy text-base mb-1.5">Easy install — five minutes</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Pre-configured gear and simple sign-in. Most cafes are up quickly.</p>
-        </div>
-      </div>
-
-      <div class="max-w-5xl mx-auto bg-by-navy text-white rounded-xl px-6 py-6 sm:px-8 sm:py-7">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-8">
-          <div class="min-w-0">
-            <p class="text-xs uppercase font-extrabold tracking-wider text-by-yellow mb-1.5">Soundtrack music service</p>
-            <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-              <span class="text-3xl sm:text-4xl font-black tracking-tight">$27.95</span>
-              <span class="text-sm font-semibold text-slate-300">/ month per location</span>
-            </div>
-            <p class="text-sm text-slate-300 mt-1.5">Billed directly by Dynamic Media to the location.</p>
-          </div>
-          <button type="button" onclick="goToRegister()" class="shrink-0 w-full sm:w-auto inline-flex justify-center font-semibold text-white bg-by-orange hover:bg-orange-600 px-7 py-3.5 rounded-md transition duration-150 text-sm focus:outline-none focus:ring-2 focus:ring-by-orange/40">
-            Get Your Cafe Set Up
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+          <button type="button" onclick="goToSetup()" class="w-full sm:w-auto font-semibold text-white bg-by-orange hover:bg-orange-600 px-8 py-3.5 rounded-md shadow-sm transition text-sm focus:outline-none focus:ring-2 focus:ring-by-orange/40">
+            Connect an Existing Location
+          </button>
+          <button type="button" onclick="goToRegister('New location — audio system design')" class="text-sm font-bold text-white hover:text-by-yellow transition text-center sm:text-left">
+            Opening a new cafe? Plan your audio system &rarr;
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. SIGNATURE PLAYLIST -->
-  <section id="playlist" class="scroll-mt-20 py-14 sm:py-16 bg-slate-100 border-t border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+  <!-- QUICK VALUE -->
+  <section class="bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 text-center">
+        <div class="px-3 sm:px-6 py-3">
+          <p class="font-bold text-by-orange tracking-tight">
+            <span class="text-xl sm:text-2xl">$27.95</span><span class="text-sm ml-0.5">/month</span>
+          </p>
+          <p class="text-[10px] sm:text-xs text-slate-500 mt-1">Per location &middot; Billed by Dynamic Media</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-l border-slate-200">
+          <p class="font-bold text-by-navy text-sm sm:text-base">Curated song by song</p>
+          <p class="text-xs text-slate-500 mt-1">By professional music curators</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-t lg:border-t-0 lg:border-l border-slate-200">
+          <p class="font-bold text-by-navy text-sm sm:text-base">Updated monthly</p>
+          <p class="text-xs text-slate-500 mt-1">Always fresh, always on-brand</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-l border-t lg:border-t-0 border-slate-200">
+          <p class="font-bold text-by-navy text-sm sm:text-base">Licensed &amp; managed</p>
+          <p class="text-xs text-slate-500 mt-1">No playlist work at the cafe</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="mb-6 sm:mb-7">
-        <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">The Broken Yolk Signature Playlist</span>
-        <div class="mt-2 flex flex-wrap items-center gap-3">
-          <h2 class="text-3xl sm:text-4xl font-black text-by-navy tracking-tight leading-none">Broken Yolk Radio</h2>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-by-orange/10 text-by-orange border border-by-orange/20 text-[11px] font-bold uppercase tracking-wider">
-            <span class="w-1.5 h-1.5 rounded-full bg-by-orange animate-pulse"></span>
-            On air
+  <!-- THE SOUND -->
+  <section id="sound" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">The Broken Yolk Sound</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-by-navy tracking-tight mt-2 mb-5">The sound of a Broken Yolk morning</h2>
+          <blockquote class="border-l-4 border-by-orange pl-5 py-1 text-lg font-bold text-by-navy leading-relaxed mb-5">
+            Sunny, soulful, and welcoming—the sound of a room having a good day.
+          </blockquote>
+          <p class="text-slate-600 leading-relaxed mb-5">
+            Coastal acoustic warmth, polished indie, modern soul, and familiar favorites create natural forward movement throughout breakfast and brunch. Warm vocals and an easy rhythmic pocket keep the room energized while the table remains at the center of the experience.
+          </p>
+          <div class="border-y border-slate-200 divide-y divide-slate-200">
+            <div class="py-3.5 grid grid-cols-[2rem_1fr] gap-3">
+              <span class="text-xs font-extrabold text-by-orange pt-0.5">01</span>
+              <p class="text-sm text-slate-600 leading-relaxed"><strong class="block text-by-navy mb-0.5">Built from the brand</strong>Pacific Beach warmth, breakfast-and-brunch energy, family tables, and conversation define the music standard.</p>
+            </div>
+            <div class="py-3.5 grid grid-cols-[2rem_1fr] gap-3">
+              <span class="text-xs font-extrabold text-by-orange pt-0.5">02</span>
+              <p class="text-sm text-slate-600 leading-relaxed"><strong class="block text-by-navy mb-0.5">Selected song by song</strong>Professional curators consider lyrics, energy, familiarity, vocal character, production, and how every track feels in a working dining room.</p>
+            </div>
+            <div class="py-3.5 grid grid-cols-[2rem_1fr] gap-3">
+              <span class="text-xs font-extrabold text-by-orange pt-0.5">03</span>
+              <p class="text-sm text-slate-600 leading-relaxed"><strong class="block text-by-navy mb-0.5">Refined continuously</strong>The program is reviewed with Broken Yolk corporate, refreshed monthly, and adjusted as the brand and guest experience evolve.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Listen to a sample</span>
+              <h3 class="font-black text-by-navy mt-1">Weekend Brunch</h3>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-by-orange bg-by-orange/10 border border-by-orange/20 px-2.5 py-1 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-by-orange animate-pulse" aria-hidden="true"></span>
+              On air
+            </span>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-200">
+            <iframe title="Broken Yolk Cafe — Weekend Brunch on Spotify" src="https://open.spotify.com/embed/playlist/42ppFAdTBFP0p5Isw9f0TK?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="block w-full"></iframe>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-3">The live program evolves monthly and is managed independently from this sample.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIO SYSTEMS -->
+  <section id="audio" class="scroll-mt-20 py-16 sm:py-20 bg-by-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-by-yellow">Music service + complete audio solutions</span>
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 mb-4">The right path for every location</h2>
+        <p class="text-slate-300 leading-relaxed">Keep a system that already works, or let Dynamic Media design and deliver a complete system for a new or remodeled cafe.</p>
+      </div>
+      <div class="relative">
+        <div class="hidden lg:flex absolute left-1/2 top-16 -translate-x-1/2 z-10 w-11 h-11 rounded-full bg-by-navy border-4 border-white text-white text-[11px] font-extrabold items-center justify-center">OR</div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <article class="bg-white rounded-2xl text-slate-800 overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+            <div class="bg-by-blue text-white px-7 py-7">
+              <p class="text-[11px] uppercase tracking-widest font-extrabold text-blue-100">For existing cafes</p>
+              <h3 class="text-3xl font-bold mt-2">Existing Location</h3>
+              <p class="text-base text-blue-100 mt-2">You already have speakers or a sound system.</p>
+            </div>
+            <div class="p-7 sm:p-8 flex-1 flex flex-col">
+              <h4 class="text-xl font-bold text-by-navy mb-3">Keep what already works</h4>
+              <p class="text-slate-600 leading-relaxed mb-6">We identify your current setup and connect Broken Yolk Radio using the simplest playback option.</p>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                <li class="flex gap-2"><span class="text-by-orange font-bold">✓</span> Sonos, Bluetooth speakers, computers, or wired systems</li>
+                <li class="flex gap-2"><span class="text-by-orange font-bold">✓</span> Keep usable speakers and amplifiers in place</li>
+                <li class="flex gap-2"><span class="text-by-orange font-bold">✓</span> We help determine which player you need</li>
+              </ul>
+              <button type="button" onclick="goToSetup()" class="mt-auto self-start font-bold text-white bg-by-blue hover:bg-blue-700 px-5 py-3 rounded-md transition">Find My Setup</button>
+            </div>
+          </article>
+          <article class="bg-white rounded-2xl text-slate-800 overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+            <div class="bg-by-orange text-white px-7 py-7">
+              <p class="text-[11px] uppercase tracking-widest font-extrabold text-orange-100">For new and remodeled cafes</p>
+              <h3 class="text-3xl font-bold mt-2">New or Remodeled Location</h3>
+              <p class="text-base text-orange-100 mt-2">You need a complete audio system.</p>
+            </div>
+            <div class="p-7 sm:p-8 flex-1 flex flex-col">
+              <h4 class="text-xl font-bold text-by-navy mb-3">Start with a complete audio plan</h4>
+              <p class="text-slate-600 leading-relaxed mb-6">Dynamic Media designs the system, supplies the equipment, coordinates installation, and makes sure it sounds right before opening day.</p>
+              <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                <li class="flex gap-2"><span class="text-by-orange font-bold">✓</span> No-charge audio system design</li>
+                <li class="flex gap-2"><span class="text-by-orange font-bold">✓</span> Factory-direct speakers, amplifiers, controls, and player</li>
+                <li class="flex gap-2"><span class="text-by-orange font-bold">✓</span> Professional installation and nationwide field service</li>
+              </ul>
+              <button type="button" onclick="goToRegister('New location — audio system design')" class="mt-auto self-start font-bold bg-by-orange text-white hover:bg-orange-600 px-5 py-3 rounded-md transition">Plan My Audio System</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDER -->
+  <section id="recommender" class="scroll-mt-20 py-16 sm:py-20 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Find Your Setup</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-by-navy tracking-tight mt-2 mb-4">Which best describes how music plays in your cafe today?</h2>
+        <p class="text-slate-600">Choose the closest answer. This only helps us determine the easiest connection—it does not commit you to any equipment.</p>
+      </div>
+      <div id="setupChoices" class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <button type="button" data-setup="sonos" onclick="chooseSetup('sonos')" class="setup-choice text-left bg-white border-2 border-slate-200 hover:border-by-orange rounded-xl p-5 transition flex items-start gap-4">
+          <span class="setup-indicator mt-0.5 w-6 h-6 rounded-full border-2 border-slate-300 shrink-0 flex items-center justify-center text-xs font-bold text-white"></span>
+          <span>
+            <span class="block font-bold text-by-navy mb-1">Sonos</span>
+            <span class="block text-sm text-slate-500 leading-relaxed">Music plays through Sonos speakers or zones.</span>
           </span>
-        </div>
-        <p class="text-xs text-slate-500 mt-2">Custom-curated corporate soundtrack</p>
+        </button>
+        <button type="button" data-setup="bluetooth" onclick="chooseSetup('bluetooth')" class="setup-choice text-left bg-white border-2 border-slate-200 hover:border-by-orange rounded-xl p-5 transition flex items-start gap-4">
+          <span class="setup-indicator mt-0.5 w-6 h-6 rounded-full border-2 border-slate-300 shrink-0 flex items-center justify-center text-xs font-bold text-white"></span>
+          <span>
+            <span class="block font-bold text-by-navy mb-1">Phone or tablet</span>
+            <span class="block text-sm text-slate-500 leading-relaxed">A mobile device connects to Bluetooth speakers or the sound system.</span>
+          </span>
+        </button>
+        <button type="button" data-setup="computer" onclick="chooseSetup('computer')" class="setup-choice text-left bg-white border-2 border-slate-200 hover:border-by-orange rounded-xl p-5 transition flex items-start gap-4">
+          <span class="setup-indicator mt-0.5 w-6 h-6 rounded-full border-2 border-slate-300 shrink-0 flex items-center justify-center text-xs font-bold text-white"></span>
+          <span>
+            <span class="block font-bold text-by-navy mb-1">Store computer</span>
+            <span class="block text-sm text-slate-500 leading-relaxed">A PC or Mac connects to the cafe speakers.</span>
+          </span>
+        </button>
+        <button type="button" data-setup="wired" onclick="chooseSetup('wired')" class="setup-choice text-left bg-white border-2 border-slate-200 hover:border-by-orange rounded-xl p-5 transition flex items-start gap-4">
+          <span class="setup-indicator mt-0.5 w-6 h-6 rounded-full border-2 border-slate-300 shrink-0 flex items-center justify-center text-xs font-bold text-white"></span>
+          <span>
+            <span class="block font-bold text-by-navy mb-1">Ceiling speakers or a wired system</span>
+            <span class="block text-sm text-slate-500 leading-relaxed">There may be an amplifier or small music player in a cabinet or back office.</span>
+          </span>
+        </button>
+        <button type="button" data-setup="unknown" onclick="chooseSetup('unknown')" class="setup-choice lg:col-span-2 text-left bg-white border-2 border-slate-200 hover:border-by-orange rounded-xl p-5 transition flex items-start gap-4">
+          <span class="setup-indicator mt-0.5 w-6 h-6 rounded-full border-2 border-slate-300 shrink-0 flex items-center justify-center text-xs font-bold text-white"></span>
+          <span>
+            <span class="block font-bold text-by-navy mb-1">I’m not sure</span>
+            <span class="block text-sm text-slate-500 leading-relaxed">That is normal. Send us what you know—or a photo—and we will identify the setup for you.</span>
+          </span>
+        </button>
       </div>
-
-      <!-- One cohesive panel: story + vibes | player -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-5">
-        <div class="grid grid-cols-1 lg:grid-cols-2">
-          <div class="p-6 sm:p-7 flex flex-col gap-5 border-b lg:border-b-0 lg:border-r border-slate-200">
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Custom-curated for the brand — not an off-the-shelf channel. Broken Yolk Cafe is full-service breakfast and brunch with a coastal California identity: warm, lively, and built for families and friends gathering over the table. The music should feel like a Pacific Beach Saturday morning — sunny, upbeat, and accessible, a perfect backdrop that never overwhelms conversation.
-            </p>
-
-            <div class="space-y-4 pt-1 border-t border-slate-100">
-              <div>
-                <h3 class="font-bold text-by-navy text-sm mb-1">Sunny &amp; mid-tempo</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Warm-voiced, upbeat enough to carry a full dining room — never louder than the guests in it.</p>
-              </div>
-              <div>
-                <h3 class="font-bold text-by-navy text-sm mb-1">Coastal California</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Pacific Beach energy without surf-rock clichés. Bright brunch atmosphere with Tex-Mex-influenced warmth.</p>
-              </div>
-              <div>
-                <h3 class="font-bold text-by-navy text-sm mb-1">Family-safe throughout</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Clean, hospitality-ready music for every table — the corporate soundtrack guests should hear at every cafe.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 sm:p-7 bg-slate-50/80 flex flex-col">
-            <p class="text-xs uppercase font-extrabold tracking-wider text-by-orange mb-3">Listen to a sample</p>
-            <div class="rounded-xl overflow-hidden border border-slate-200 bg-white flex-1">
-              <iframe
-                title="Broken Yolk Cafe — Weekend Brunch on Spotify"
-                src="https://open.spotify.com/embed/playlist/42ppFAdTBFP0p5Isw9f0TK?utm_source=generator"
-                width="100%"
-                height="380"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                class="block w-full h-full min-h-[320px]"
-              ></iframe>
-            </div>
-            <p class="mt-3 text-[11px] text-slate-500">
-              Sample playlist:
-              <a href="https://open.spotify.com/playlist/42ppFAdTBFP0p5Isw9f0TK?si=1de69dfe765a455c" target="_blank" rel="noopener" class="font-semibold text-by-navy hover:text-by-orange underline-offset-2 hover:underline">Broken Yolk Cafe — Weekend Brunch</a>
-              on Spotify.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Artists — compact strip -->
-      <div class="rounded-2xl bg-by-navy p-5 sm:p-6">
-        <div class="mb-3">
-          <span class="text-xs uppercase font-extrabold tracking-wider text-by-yellow">In the vein of</span>
-          <p class="text-[11px] text-slate-400 mt-1">Artist inspiration for the vibe — not a guaranteed track list. Playlists refresh over time.</p>
-        </div>
-        <div class="flex flex-wrap gap-1.5 sm:gap-2">
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Jason Mraz</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Jack Johnson</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Colbie Caillat</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Michael Franti &amp; Spearhead</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Vampire Weekend</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Lake Street Dive</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Corinne Bailey Rae</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Leon Bridges</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Durand Jones &amp; The Indications</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Bill Withers</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Stevie Wonder</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Hall &amp; Oates</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">The Beach Boys</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Bruno Mars</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Norah Jones</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Sammy Rae &amp; The Friends</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Los Lobos</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Ozomatli</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Amos Lee</span>
-          <span class="bg-white/10 text-white px-2.5 py-1.5 rounded-md text-xs font-semibold border border-white/10">Van Morrison</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- 4. PLAYBACK OPTIONS -->
-  <section id="playback" class="scroll-mt-20 py-16 sm:py-20 bg-by-navy text-white">
+  <!-- PARTNER -->
+  <section id="partner" class="scroll-mt-20 py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-5xl mx-auto mb-10">
-        <span class="text-xs uppercase font-extrabold tracking-wider text-by-yellow">Playback Options</span>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mt-1 mb-3 sm:whitespace-nowrap">Whatever you're using today, we connect to it</h2>
-        <p class="text-slate-300 text-sm sm:text-base max-w-3xl mx-auto">Already running a tablet into Bluetooth speakers? You don't need new hardware — download the app and keep what you have.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-6xl mx-auto">
-        <div class="bg-white rounded-xl overflow-hidden flex flex-col shadow-sm">
-          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
-            <img src="assets/playerone_clean.png" alt="PlayerOne commercial player" class="h-full w-full object-contain">
-          </div>
-          <div class="p-5 flex-1">
-            <h3 class="font-bold text-by-navy text-lg mb-1.5">PlayerOne</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">For wired commercial systems. Plugs into your existing amp — corporate covers the player.</p>
-          </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto">
+        <div class="lg:col-span-5">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Powered by Dynamic Media</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-by-navy tracking-tight mt-2 mb-5">One accountable partner from playlist to installation</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">Dynamic Media is the team behind Broken Yolk Radio. We curate the music, manage the service, design audio systems, supply equipment, coordinate installation, and support every location after launch.</p>
+          <p class="text-slate-600 leading-relaxed">There is no handoff between a music provider, equipment vendor, and installer—one team owns the experience from playlist to speakers.</p>
         </div>
-
-        <div class="bg-white rounded-xl overflow-hidden flex flex-col shadow-sm">
-          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
-            <img src="assets/ipad_soundtrack_app.png" alt="Soundtrack app on tablet and phone" class="h-full w-full object-contain">
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-9">
+          <div class="border-l-2 border-by-orange pl-5 py-1">
+            <p class="text-3xl font-black text-by-orange">Professional</p>
+            <h3 class="font-black text-by-navy mt-1">Music curation</h3>
+            <p class="text-sm text-slate-600 mt-2">The team that develops, maintains, and refreshes the Broken Yolk sound.</p>
           </div>
-          <div class="p-5 flex-1">
-            <h3 class="font-bold text-by-navy text-lg mb-1.5">Mobile app</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">For cafes running an iPad or phone. No new gear if you're already on tablet audio.</p>
+          <div class="border-l-2 border-by-orange pl-5 py-1">
+            <p class="text-3xl font-black text-by-orange">8,500</p>
+            <h3 class="font-black text-by-navy mt-1">Nationwide field service</h3>
+            <p class="text-sm text-slate-600 mt-2">A national technician network supporting installation and on-site service across the U.S.</p>
           </div>
-        </div>
-
-        <div class="bg-white rounded-xl overflow-hidden flex flex-col shadow-sm">
-          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
-            <img src="assets/your-music.png" alt="Soundtrack on PC or Mac" class="h-full w-full object-contain">
+          <div class="border-l-2 border-by-orange pl-5 py-1">
+            <p class="text-3xl font-black text-by-orange">No charge</p>
+            <h3 class="font-black text-by-navy mt-1">Audio system design</h3>
+            <p class="text-sm text-slate-600 mt-2">A right-sized speaker and audio plan for every new or remodeled cafe.</p>
           </div>
-          <div class="p-5 flex-1">
-            <h3 class="font-bold text-by-navy text-lg mb-1.5">PC / Mac</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Play from a store computer when that fits your setup — same credentials, same soundtrack.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl overflow-hidden flex flex-col shadow-sm">
-          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
-            <img src="assets/sonos_soundtrack.png" alt="Sonos integration" class="h-full w-full object-contain">
-          </div>
-          <div class="p-5 flex-1">
-            <h3 class="font-bold text-by-navy text-lg mb-1.5">Sonos</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Already on Sonos? Add Soundtrack as a music service and keep your zones as they are.</p>
+          <div class="border-l-2 border-by-orange pl-5 py-1">
+            <p class="text-3xl font-black text-by-orange">Factory-direct</p>
+            <h3 class="font-black text-by-navy mt-1">Commercial audio equipment</h3>
+            <p class="text-sm text-slate-600 mt-2">Speakers, amplifiers, controls, and players without traditional retail markup.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. HOW TO CONNECT -->
-  <section id="how-to-connect" class="scroll-mt-20 py-16 sm:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start max-w-6xl mx-auto">
-        <div class="lg:col-span-5 lg:sticky lg:top-28">
-          <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">How to Connect</span>
-          <h2 class="text-2xl sm:text-4xl font-black text-by-navy mt-1 mb-4 tracking-tight">Your player ships pre-configured</h2>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-            When a PlayerOne is the right fit, it arrives ready for your cafe. Plug in, join the network, sign in with the credentials we send, and confirm sound in the room.
-          </p>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Using the app, PC/Mac, or Sonos instead? Same soundtrack — download or open the player, sign in with the credentials we send. No new box required when your tablet and speakers already work.
-          </p>
-          <a href="https://onboarding.mybizsound.com/dynamicmedia" target="_blank" rel="noopener" class="inline-flex items-center font-semibold text-by-orange hover:text-orange-600 text-sm underline-offset-2 hover:underline">
-            Open the setup wizard &rarr;
-          </a>
-        </div>
-
-        <div class="lg:col-span-7">
-          <ol class="relative space-y-3">
-            <div class="hidden sm:block absolute left-8 top-8 bottom-8 w-px bg-amber-200" aria-hidden="true"></div>
-
-            <li class="relative flex gap-4 p-5 rounded-xl border border-slate-200 bg-by-sand/60">
-              <span class="relative z-10 w-8 h-8 rounded-full bg-by-orange text-white font-bold text-sm flex items-center justify-center shrink-0">1</span>
-              <div>
-                <h3 class="font-bold text-by-navy mb-0.5">Unbox and plug in</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Connect power and line-out to your existing amplifier or speakers. Ships pre-configured for Broken Yolk Radio.</p>
-              </div>
-            </li>
-            <li class="relative flex gap-4 p-5 rounded-xl border border-slate-200 bg-by-sand/60">
-              <span class="relative z-10 w-8 h-8 rounded-full bg-by-orange text-white font-bold text-sm flex items-center justify-center shrink-0">2</span>
-              <div>
-                <h3 class="font-bold text-by-navy mb-0.5">Connect to your network</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Join store Wi-Fi or Ethernet so the player can sync the corporate soundtrack.</p>
-              </div>
-            </li>
-            <li class="relative flex gap-4 p-5 rounded-xl border border-slate-200 bg-by-sand/60">
-              <span class="relative z-10 w-8 h-8 rounded-full bg-by-orange text-white font-bold text-sm flex items-center justify-center shrink-0">3</span>
-              <div>
-                <h3 class="font-bold text-by-navy mb-0.5">Sign in with the credentials we send</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Jason provisions your location account — you sign in once and leave it running.</p>
-              </div>
-            </li>
-            <li class="relative flex gap-4 p-5 rounded-xl border border-slate-200 bg-by-sand/60">
-              <span class="relative z-10 w-8 h-8 rounded-full bg-by-orange text-white font-bold text-sm flex items-center justify-center shrink-0">4</span>
-              <div>
-                <h3 class="font-bold text-by-navy mb-0.5">Confirm sound in the room</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Walk the dining room, set volume for conversation, and you're live on Broken Yolk Radio.</p>
-              </div>
-            </li>
-            <li class="relative flex gap-4 p-5 rounded-xl border border-slate-200 bg-by-sand/60">
-              <span class="relative z-10 w-8 h-8 rounded-full bg-by-navy text-white font-bold text-sm flex items-center justify-center shrink-0">5</span>
-              <div>
-                <h3 class="font-bold text-by-navy mb-0.5">Need a hand?</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Call Jason at <a href="tel:5866628476" class="font-semibold text-by-orange hover:underline">586-662-8476</a> if anything needs a quick assist.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. CONTACT -->
-  <section id="contact" class="scroll-mt-20 py-16 sm:py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-        <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Contact Sales</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-by-navy tracking-tight mt-1 mb-4">
-          Get Your Cafe Set Up
-        </h2>
-        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-          Tell us about your location and how you play music today. Jason will get Broken Yolk Radio rolling for your cafe — <strong class="text-slate-900">$27.95/mo</strong> per location, billed by Dynamic Media.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start max-w-5xl mx-auto">
-        <div class="lg:col-span-4">
-          <div class="bg-white rounded-xl p-6 sm:p-7 border border-slate-200 h-full lg:sticky lg:top-28">
-            <div class="mb-5">
-              <span class="text-[10px] font-extrabold uppercase tracking-wider text-by-orange block">Your Dynamic Media Contact</span>
-              <h3 class="text-xl font-black text-by-navy mt-0.5">Jason Spangler</h3>
-              <p class="text-xs text-slate-500 mt-0.5">Broken Yolk Cafe Program</p>
-            </div>
-
-            <div class="space-y-3 text-xs text-slate-700 divide-y divide-slate-100">
-              <div class="flex items-center justify-between gap-3 pt-1">
-                <span class="font-semibold text-slate-500 shrink-0">Direct Phone:</span>
-                <a href="tel:5866628476" class="font-bold text-by-orange hover:underline text-sm text-right">586-662-8476</a>
-              </div>
-              <div class="flex items-center justify-between gap-3 pt-3">
-                <span class="font-semibold text-slate-500 shrink-0">Email:</span>
-                <a href="mailto:JSpangler@dm-us.com" class="font-bold text-slate-800 hover:text-by-orange text-right break-all">JSpangler@dm-us.com</a>
-              </div>
-              <div class="flex items-center justify-between gap-3 pt-3">
-                <span class="font-semibold text-slate-500 shrink-0">Office Hours:</span>
-                <span class="font-medium text-slate-700 text-right">Mon&ndash;Fri 9am&ndash;6pm EST</span>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-5 border-t border-slate-100 flex flex-col gap-2">
-              <a href="tel:5866628476" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-slate-100 hover:bg-slate-200 border border-slate-200 text-by-navy font-semibold text-xs transition duration-150">
-                Call Jason: 586-662-8476
-              </a>
-              <a href="mailto:JSpangler@dm-us.com" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-by-orange hover:bg-orange-600 text-white font-semibold text-xs transition duration-150">
-                Email Jason
-              </a>
-            </div>
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-20 py-16 sm:py-20 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <aside class="lg:col-span-4 lg:sticky lg:top-28 rounded-2xl bg-by-navy text-white p-7 sm:p-8">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-by-yellow">Frequently Asked Questions</span>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 mb-4">Practical answers</h2>
+          <p class="text-slate-300 leading-relaxed">Everything you need to know about cost, equipment, licensing, and getting connected.</p>
+          <div class="mt-7 pt-6 border-t border-white/10">
+            <p class="text-xs text-slate-400 mb-2">Still unsure?</p>
+            <a href="mailto:brokenyolk@dm-us.com" class="font-bold text-white hover:text-by-yellow break-all">brokenyolk@dm-us.com</a>
           </div>
-        </div>
+        </aside>
 
         <div class="lg:col-span-8">
-          <div class="bg-white rounded-xl p-6 sm:p-8 border border-slate-200">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-5 border-b border-slate-100">
-              <div>
-                <h3 class="font-black text-by-navy text-xl sm:text-2xl">Location Setup Request</h3>
-                <p class="text-xs text-slate-500 mt-0.5">Broken Yolk Radio &bull; official corporate program</p>
-              </div>
-              <div class="self-start sm:self-auto bg-amber-50 border border-amber-200 text-by-orange font-extrabold text-xs px-3 py-1.5 rounded-full">
-                $27.95/mo
-              </div>
+          <div class="mb-8">
+            <h3 class="text-xs uppercase font-extrabold tracking-wider text-by-orange mb-3">Program &amp; Pricing</h3>
+            <div class="space-y-3">
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>Is Broken Yolk Radio the official corporate music program?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Yes. Broken Yolk Radio is the corporate music standard for Broken Yolk Cafe locations. It gives every cafe the same professionally managed, fully licensed soundtrack.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>What is included in the $27.95 monthly music service?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">The monthly service includes access to Broken Yolk Radio, ongoing playlist management, monthly music updates, commercial music licensing, and program support. A PlayerOne that corporate does not cover is a one-time $129 fee per player. Professional installation is handled separately when needed.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>How does billing work?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                  <p>Each franchisee sets up its program account with Dynamic Media, and Dynamic Media bills the franchisee.</p>
+                  <ul class="mt-3 space-y-1.5 list-disc pl-5">
+                    <li>Monthly payments can be made by credit card or ACH.</li>
+                    <li>Annual payments can be made by credit card, check, or ACH.</li>
+                  </ul>
+                </div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>What is Soundtrack, and why can’t I use Spotify?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Soundtrack is the commercially licensed music service that delivers Broken Yolk Radio to your cafe. Personal Spotify accounts are not licensed for business playback; the Spotify playlist on this page is only a listening sample. <a href="#sound" class="font-bold text-by-orange hover:underline">Listen to the sample &rarr;</a></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>Can my location choose its own music?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Broken Yolk Radio is centrally curated and managed so guests hear a consistent brand experience at every cafe. Managers do not need to build or maintain playlists. Music feedback can be sent to <a href="mailto:brokenyolk@dm-us.com" class="font-bold text-by-orange hover:underline">the program team</a>.</div>
+              </details>
             </div>
+          </div>
 
-            <form id="pageLeadForm" class="space-y-4">
-              <input type="text" name="_hp_company" style="display:none" tabindex="-1" autocomplete="off">
-              <input type="hidden" name="programId" value="brokenyolk">
-              <input type="hidden" name="programName" value="Broken Yolk Cafe">
-              <input type="hidden" name="salesmanEmail" value="JSpangler@dm-us.com">
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Store / Location # <span class="text-amber-500">*</span></label>
-                  <input type="text" name="locationName" required placeholder="e.g. San Clemente (#14)" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-                </div>
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Store Address</label>
-                  <input type="text" name="locationAddress" placeholder="Street, City, State ZIP" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Contact Name <span class="text-amber-500">*</span></label>
-                  <input type="text" name="contactName" required placeholder="Full Name" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-                </div>
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Role / Title</label>
-                  <input type="text" name="contactTitle" value="General Manager / Franchisee" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Work Email <span class="text-amber-500">*</span></label>
-                  <input type="email" name="contactEmail" required placeholder="manager@brokenyolkcafe.com" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-                </div>
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Phone Number <span class="text-amber-500">*</span></label>
-                  <input type="tel" name="contactPhone" required placeholder="(555) 000-0000" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">How do you play music today?</label>
-                <select id="pageHardwareSelect" name="hardwarePreference" class="w-full px-3.5 py-2.5 rounded-md border border-slate-200 text-xs sm:text-sm bg-white focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none">
-                  <option value="Not sure — help me choose">Not sure — help me choose</option>
-                  <option value="PlayerOne (wired system)">PlayerOne — wired system</option>
-                  <option value="iPad / phone app">iPad or phone app</option>
-                  <option value="PC / Mac">PC / Mac</option>
-                  <option value="Sonos">Sonos</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Notes (optional)</label>
-                <textarea name="notes" rows="2" placeholder="Current setup, opening date, etc." class="w-full px-3.5 py-2 rounded-md border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white"></textarea>
-              </div>
-
-              <div id="pageFormStatus" class="hidden"></div>
-
-              <div class="pt-2">
-                <button type="submit" id="pageSubmitBtn" class="w-full py-3.5 px-6 font-semibold text-white bg-by-orange hover:bg-orange-600 rounded-md transition duration-150 text-sm shadow-sm flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-by-orange/40">
-                  <span>Submit Setup Request</span>
-                  <span>&rarr;</span>
-                </button>
-              </div>
-
-              <p class="text-[11px] text-slate-400 text-center leading-normal pt-1">
-                No credit card required. Submitting notifies Jason Spangler at Dynamic Media.
-              </p>
-            </form>
+          <div>
+            <h3 class="text-xs uppercase font-extrabold tracking-wider text-by-orange mb-3">Equipment &amp; Setup</h3>
+            <div class="space-y-3">
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>Can I use the speakers and equipment already in my cafe?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Usually, yes. Broken Yolk Radio can work with Sonos, Bluetooth speakers, a store computer, or an existing wired system. <button type="button" onclick="goToSetup()" class="font-bold text-by-orange hover:underline">Find My Setup &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>What if I do not know what equipment we have?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">That is completely fine. A photo of the speaker, amplifier, or current music player can help our team identify the setup. <button type="button" onclick="chooseSetup('unknown')" class="font-bold text-by-orange hover:underline">Help Me Identify It &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>What should I do for a new or remodeled location?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Dynamic Media will create an audio system design at no charge, recommend the speakers, amplifiers, controls, and music player, and coordinate equipment and installation. <button type="button" onclick="goToRegister('New location — audio system design')" class="font-bold text-by-orange hover:underline">Plan My Audio System &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-by-navy">
+                  <span>Who helps if something is not working?</span>
+                  <span class="text-by-orange text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Dynamic Media supports the music service, playback equipment, and audio system through one program team. Email <a href="mailto:brokenyolk@dm-us.com" class="font-bold text-by-orange hover:underline">brokenyolk@dm-us.com</a>, or use the <a href="https://help.dynamicmediamusic.com/assets/Soundtrack/PlayerOne_SetupDocument.pdf" target="_blank" rel="noopener" class="font-bold text-by-orange hover:underline">PlayerOne Quick Start Guide &rarr;</a></div>
+              </details>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-by-navy text-slate-400 py-10 text-xs text-center md:text-left">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>
-        <p class="font-bold text-white text-sm">Dynamic Media &bull; Broken Yolk Radio</p>
-        <p class="text-slate-400 mt-0.5">Official corporate music program for Broken Yolk Cafe.</p>
+  <!-- ACTIVATION -->
+  <section id="contact" class="scroll-mt-20 py-16 sm:py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-by-orange">Get Started</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-by-navy tracking-tight mt-2 mb-4">Tell us what you know. We’ll handle the rest.</h2>
+        <p class="text-slate-600">You do not need to identify your equipment or choose a technical solution. The Broken Yolk program team will review your request and guide you to the right next step.</p>
       </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://onboarding.mybizsound.com/dynamicmedia" target="_blank" rel="noopener" class="text-by-yellow hover:underline">Setup Wizard</a>
-        <a href="tel:5866628476" class="hover:text-white">586-662-8476</a>
-        <a href="mailto:JSpangler@dm-us.com" class="hover:text-white">JSpangler@dm-us.com</a>
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 sm:p-9 border border-slate-200 shadow-sm">
+          <div class="pb-6 mb-6 border-b border-slate-100">
+            <h3 class="font-black text-by-navy text-2xl">Get Your Location Connected</h3>
+          </div>
+          <form id="pageLeadForm" data-support-email="brokenyolk@dm-us.com" class="space-y-5">
+            <input type="text" name="_hp_company" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="programId" value="brokenyolk">
+            <input type="hidden" name="programName" value="Broken Yolk Cafe">
+            <input type="hidden" name="salesmanEmail" value="brokenyolk@dm-us.com">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="locationName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Store Name / Location # <span class="text-by-orange">*</span></label>
+                <input id="locationName" type="text" name="locationName" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none">
+              </div>
+              <div>
+                <label for="locationAddress" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Address <span class="text-by-orange">*</span></label>
+                <input id="locationAddress" type="text" name="locationAddress" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contactName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Contact Name <span class="text-by-orange">*</span></label>
+                <input id="contactName" type="text" name="contactName" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none">
+              </div>
+              <div>
+                <label for="contactPhone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Phone Number <span class="text-by-orange">*</span></label>
+                <input id="contactPhone" type="tel" name="contactPhone" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none">
+              </div>
+            </div>
+            <div>
+              <label for="contactEmail" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Email <span class="text-by-orange">*</span></label>
+              <input id="contactEmail" type="email" name="contactEmail" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none">
+            </div>
+            <div>
+              <label for="pageHardwareSelect" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">How are you playing music today? <span class="text-by-orange">*</span></label>
+              <select id="pageHardwareSelect" name="hardwarePreference" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none">
+                <option value="" selected disabled>Select the closest answer...</option>
+                <option value="Not sure — help me choose">I'm not sure — help me choose</option>
+                <option value="Sonos">Sonos</option>
+                <option value="iPad / phone app">Phone or tablet with Bluetooth speaker</option>
+                <option value="Wired speakers / amplifier">Wired speakers / amplifier</option>
+                <option value="PC / Mac">PC or Mac</option>
+                <option value="New location — audio system design">New location — I need an audio system plan</option>
+              </select>
+            </div>
+            <div>
+              <label for="locationNotes" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Anything else we should know?</label>
+              <textarea id="locationNotes" name="notes" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm bg-white transition resize-y focus:ring-4 focus:ring-by-orange/15 focus:border-by-orange focus:outline-none"></textarea>
+              <p class="text-xs text-slate-400 mt-2">Not sure what equipment you have? We may ask you to reply with a photo after reviewing your request.</p>
+            </div>
+            <div id="pageFormStatus" class="hidden"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 rounded-xl border border-slate-200 bg-slate-50 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+              <div class="p-4">
+                <span class="block text-[11px] font-extrabold uppercase tracking-wider text-by-orange mb-1">Program support hours</span>
+                <p class="text-sm font-semibold text-by-navy">Monday–Friday</p>
+                <p class="text-xs text-slate-500 mt-0.5">9:00 AM–6:00 PM ET</p>
+              </div>
+              <div class="p-4">
+                <span class="block text-[11px] font-extrabold uppercase tracking-wider text-by-orange mb-1">Response time</span>
+                <p class="text-sm font-semibold text-by-navy">Within one business day</p>
+                <p class="text-xs text-slate-500 mt-0.5">Often sooner during support hours</p>
+              </div>
+              <div class="p-4">
+                <span class="block text-[11px] font-extrabold uppercase tracking-wider text-by-orange mb-1">Program email</span>
+                <a href="mailto:brokenyolk@dm-us.com" class="text-sm font-semibold text-by-navy hover:text-by-orange transition break-all">brokenyolk@dm-us.com</a>
+              </div>
+            </div>
+            <div class="pt-2 flex justify-end">
+              <button type="submit" id="pageSubmitBtn" class="w-full sm:w-auto shrink-0 py-3.5 px-7 font-semibold text-white bg-by-orange hover:bg-orange-600 rounded-lg transition text-sm shadow-sm focus:outline-none focus:ring-4 focus:ring-by-orange/20">
+                Send Request &rarr;
+              </button>
+            </div>
+          </form>
       </div>
-      <p>&copy; 2026 Dynamic Media. All rights reserved.</p>
+    </div>
+  </section>
+
+  <footer class="bg-by-navy text-slate-300 pt-14 pb-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <img src="assets/DM-logo-White-Blue@3x.png" alt="Dynamic Media" class="h-10 w-auto object-contain mb-5">
+        <p class="max-w-md text-slate-300 leading-relaxed">The official Broken Yolk Cafe music and audio program, operated by Dynamic Media. One team for curated music, audio equipment, installation, and ongoing support.</p>
+        <a href="mailto:brokenyolk@dm-us.com" class="inline-flex items-center gap-2 mt-6 text-white font-semibold hover:text-by-yellow transition">
+          <span class="w-8 h-8 rounded-md border border-white/15 bg-white/5 flex items-center justify-center" aria-hidden="true">&#9993;</span>
+          brokenyolk@dm-us.com
+        </a>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-[11px] uppercase font-extrabold tracking-wider text-slate-500 mb-4">Program</h3>
+          <nav class="space-y-3">
+            <a href="#sound" class="block hover:text-white">The Broken Yolk sound</a>
+            <a href="#audio" class="block hover:text-white">Audio systems</a>
+            <a href="#recommender" class="block hover:text-white">Find your setup</a>
+            <a href="#contact" class="block hover:text-white">Get started</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[11px] uppercase font-extrabold tracking-wider text-slate-500 mb-4">Support</h3>
+          <nav class="space-y-3">
+            <a href="#faq" class="block hover:text-white">Frequently asked questions</a>
+            <a href="#recommender" class="block hover:text-white">Existing location help</a>
+            <a href="#audio" class="block hover:text-white">New location audio plan</a>
+            <a href="mailto:brokenyolk@dm-us.com" class="block hover:text-white">Email the program team</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[11px] uppercase font-extrabold tracking-wider text-slate-500 mb-4">Resources</h3>
+          <nav class="space-y-3">
+            <a href="https://open.spotify.com/playlist/42ppFAdTBFP0p5Isw9f0TK" target="_blank" rel="noopener" class="block hover:text-white">Listen to the sample &rarr;</a>
+            <a href="https://onboarding.mybizsound.com/dynamicmedia" target="_blank" rel="noopener" class="block hover:text-white">Setup wizard &rarr;</a>
+            <a href="https://help.dynamicmediamusic.com/assets/Soundtrack/PlayerOne_SetupDocument.pdf" target="_blank" rel="noopener" class="block hover:text-white">PlayerOne quick start (PDF) &rarr;</a>
+            <a href="https://dynamicmediamusic.com" target="_blank" rel="noopener" class="block hover:text-white">Dynamic Media &rarr;</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>&copy; 2026 Dynamic Media. Broken Yolk Cafe and the Broken Yolk Cafe logo are trademarks of BYC Franchising, LLC. All rights reserved.</p>
+      <a href="mailto:brokenyolk@dm-us.com" class="hover:text-slate-300">Program support</a>
     </div>
   </footer>
 
-  <!-- MODAL (backup path) -->
-  <div id="leadModal" class="fixed inset-0 z-50 hidden overflow-y-auto" role="dialog" aria-modal="true">
-    <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeLeadModal()"></div>
-    <div class="flex min-h-full items-center justify-center p-4">
-      <div class="relative w-full max-w-lg rounded-xl bg-white border border-slate-200 overflow-hidden text-left shadow-lg">
-        <div class="bg-gradient-to-r from-by-navy to-slate-900 px-6 py-4 text-white flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <img src="assets/logo.png" alt="Broken Yolk" class="h-7 w-auto brightness-0 invert">
-            <div>
-              <h3 class="text-sm font-bold">Broken Yolk Radio Setup</h3>
-              <p class="text-[11px] text-slate-300">Official corporate program &bull; $27.95/mo</p>
+  <script>
+    function highlightSetup(key) {
+      document.querySelectorAll('.setup-choice').forEach((button) => {
+        const active = button.dataset.setup === key;
+        button.classList.toggle('border-by-orange', active);
+        button.classList.toggle('bg-orange-50', active);
+        button.classList.toggle('border-slate-200', !active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        const indicator = button.querySelector('.setup-indicator');
+        if (indicator) {
+          indicator.textContent = active ? '✓' : '';
+          indicator.classList.toggle('bg-by-orange', active);
+          indicator.classList.toggle('border-by-orange', active);
+          indicator.classList.toggle('border-slate-300', !active);
+        }
+      });
+    }
+
+    function chooseSetup(key) {
+      highlightSetup(key);
+      if (typeof applySetupChoice === 'function') applySetupChoice(key);
+    }
+
+    function goToSetup() {
+      document.getElementById('recommender').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const button = document.getElementById('mobileMenuButton');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    }
+  </script>
+  <div id="selfServeModal" class="fixed inset-0 z-50 hidden overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="ssConfirmTitle">
+    <div class="fixed inset-0 bg-by-navy/50 backdrop-blur-sm" onclick="closeSelfServeModal()"></div>
+    <div class="flex min-h-full items-center justify-center p-4 sm:p-6">
+      <div class="relative w-full max-w-3xl rounded-2xl bg-white border border-slate-200 overflow-hidden text-left shadow-xl">
+        <button type="button" onclick="closeSelfServeModal()" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-md text-slate-400 hover:text-by-navy hover:bg-slate-100 text-xl font-bold leading-none" aria-label="Close">&times;</button>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div id="ssSetupImageWrap" class="hidden ss-image--light relative min-h-[13rem] md:min-h-full flex items-center justify-center bg-white">
+            <img id="ssSetupImage" src="" alt="" class="block w-full h-full max-h-56 md:max-h-none object-contain p-6 md:p-8">
+          </div>
+
+          <div class="p-6 sm:p-8 flex flex-col justify-center bg-by-sand">
+            <p class="text-xs uppercase font-extrabold tracking-wider text-by-orange mb-2">Confirm your setup</p>
+            <h3 id="ssConfirmTitle" class="text-2xl font-black text-by-navy tracking-tight mb-3">Confirm your setup</h3>
+            <p id="ssSetupBlurb" class="text-sm sm:text-base text-slate-600 leading-relaxed mb-3"></p>
+            <p id="ssSetupNote" class="hidden text-sm font-semibold text-by-navy mb-6"></p>
+            <div id="ssStatus" class="hidden mb-3"></div>
+            <div class="mt-auto space-y-3">
+              <div>
+                <button type="button" id="ssPlayerNext" class="w-full bg-by-orange hover:bg-orange-600 text-white font-semibold px-6 py-3.5 rounded-md shadow-sm transition focus:outline-none focus:ring-2 focus:ring-by-orange/40">Set up your account</button>
+                <p class="mt-1.5 text-center text-[11px] text-slate-500">Takes a few minutes online</p>
+              </div>
+              <button type="button" data-ss-contact class="w-full text-sm font-semibold text-by-navy hover:text-by-orange transition py-2">Prefer a call? Request a callback</button>
             </div>
           </div>
-          <button type="button" onclick="closeLeadModal()" class="text-slate-400 hover:text-white p-1 text-lg font-bold">&times;</button>
         </div>
-        <form id="modalLeadForm" class="p-6 space-y-3.5">
-          <input type="text" name="_hp_company" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="programId" value="brokenyolk">
-          <input type="hidden" name="programName" value="Broken Yolk Cafe">
-          <input type="hidden" name="salesmanEmail" value="JSpangler@dm-us.com">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Store / Location # *</label>
-              <input type="text" name="locationName" required placeholder="e.g. San Clemente (#14)" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-            </div>
-            <div>
-              <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Store Address</label>
-              <input type="text" name="locationAddress" placeholder="Street, City, State ZIP" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-            </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Contact Name *</label>
-              <input type="text" name="contactName" required placeholder="Full Name" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-            </div>
-            <div>
-              <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Role / Title</label>
-              <input type="text" name="contactTitle" value="General Manager / Franchisee" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-            </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Work Email *</label>
-              <input type="email" name="contactEmail" required placeholder="manager@brokenyolkcafe.com" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-            </div>
-            <div>
-              <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Phone Number *</label>
-              <input type="tel" name="contactPhone" required placeholder="(555) 000-0000" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white">
-            </div>
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">How do you play music today?</label>
-            <select id="modalHardwareSelect" name="hardwarePreference" class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs bg-white focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none">
-              <option value="Not sure — help me choose">Not sure — help me choose</option>
-              <option value="PlayerOne (wired system)">PlayerOne — wired system</option>
-              <option value="iPad / phone app">iPad or phone app</option>
-              <option value="PC / Mac">PC / Mac</option>
-              <option value="Sonos">Sonos</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold uppercase text-slate-700 mb-0.5">Notes</label>
-            <textarea name="notes" rows="2" placeholder="Current setup, opening date..." class="w-full px-3 py-2 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-by-orange/40 focus:border-by-orange focus:outline-none bg-white"></textarea>
-          </div>
-          <div id="modalFormStatus" class="hidden rounded-lg p-3 text-xs"></div>
-          <button type="submit" id="modalSubmitBtn" class="w-full py-3.5 px-4 font-semibold text-white bg-by-orange hover:bg-orange-600 rounded-md transition duration-150 text-xs shadow-sm focus:outline-none focus:ring-2 focus:ring-by-orange/40">
-            Submit Setup Request
-          </button>
-          <p class="text-center text-[11px] text-slate-500">Need help? Call <a href="tel:5866628476" class="text-by-blue font-bold hover:underline">586-662-8476</a></p>
-        </form>
       </div>
     </div>
   </div>
 
+  <style>
+    #ssSetupImageWrap,
+    #ssSetupImageWrap.ss-image--light,
+    #ssSetupImageWrap.ss-image--dark {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    @media (min-width: 768px) {
+      #ssSetupImageWrap,
+      #ssSetupImageWrap.ss-image--light,
+      #ssSetupImageWrap.ss-image--dark {
+        border-bottom: 0;
+        border-right: 1px solid #e2e8f0;
+      }
+    }
+  </style>
+
+  <script src="../assets/program-checkout.js"></script>
   <script src="../assets/lead-modal.js"></script>
+  <script src="../assets/self-serve-modal.js"></script>
 </body>
 </html>

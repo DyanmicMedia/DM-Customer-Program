@@ -64,6 +64,8 @@ function closeLeadModal() {
 }
 
 document.addEventListener('keydown', (e) => {
+  const selfServe = document.getElementById('selfServeModal');
+  if (selfServe && !selfServe.classList.contains('hidden')) return;
   const leadModal = document.getElementById('leadModal');
   if (e.key === 'Escape' && leadModal && !leadModal.classList.contains('hidden')) {
     closeLeadModal();

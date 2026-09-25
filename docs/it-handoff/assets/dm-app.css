@@ -1,0 +1,121 @@
+/* Dynamic Media app tokens — copied from DM-App-Design-System. Do not change values. */
+:root {
+  --color-accent: 0 174 239;
+  --color-accent-hover: 0 140 200;
+  --color-accent-muted: rgba(0, 174, 239, 0.10);
+  --color-surface-primary: 246 246 248;
+  --color-surface-secondary: 255 255 255;
+  --color-surface-elevated: 238 238 243;
+  --color-surface-border: 222 222 228;
+  --color-text-primary: 28 28 30;
+  --color-text-secondary: 99 99 102;
+  --color-text-muted: 142 142 147;
+}
+
+body {
+  background: rgb(var(--color-surface-primary));
+  color: rgb(var(--color-text-primary));
+}
+
+.dm-card {
+  border-radius: 0.75rem;
+  border: 1px solid rgb(var(--color-surface-border));
+  background: rgb(var(--color-surface-secondary));
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  padding: 1.25rem;
+}
+
+.dm-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgb(var(--color-text-secondary));
+  margin-bottom: 0.375rem;
+}
+
+.dm-input {
+  width: 100%;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--color-surface-border));
+  background: rgb(var(--color-surface-elevated));
+  padding: 0.75rem 0.875rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: rgb(var(--color-text-primary));
+}
+
+.dm-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(var(--color-accent) / 0.4);
+  border-color: rgb(var(--color-accent) / 0.5);
+}
+
+.dm-input::placeholder {
+  color: rgb(var(--color-text-muted));
+}
+
+.dm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  background: rgb(var(--color-accent));
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 150ms;
+}
+
+.dm-btn:hover {
+  background: rgb(var(--color-accent-hover));
+}
+
+.dm-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dm-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(var(--color-surface-border));
+  background: rgb(var(--color-surface-secondary));
+  color: rgb(var(--color-text-secondary));
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+}
+
+.dm-btn-secondary:hover {
+  background: rgb(var(--color-surface-elevated));
+}
+
+.dm-link {
+  color: rgb(var(--color-accent));
+  font-size: 0.875rem;
+}
+
+.dm-link:hover {
+  color: rgb(var(--color-accent-hover));
+}
+
+.dm-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(245 158 11 / 0.35);
+  background: rgb(245 158 11 / 0.1);
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  color: rgb(var(--color-text-primary));
+}
+
+.dm-progress-on {
+  color: rgb(var(--color-accent));
+}

@@ -1,0 +1,56 @@
+{
+  "programId": "brokenyolk",
+  "programName": "Broken Yolk Cafe",
+  "salesmanEmail": "JSpangler@dm-us.com",
+  "placeholders": true,
+  "placeholderNote": "Fictitious SKU codes and CRM PartIDs for staging the checkout flow only. Replace every skuCode and crmPartId with live catalog values after IT/production review. Do not POST this cart to production ProCheckout.",
+  "crmCustomerId": null,
+  "music": {
+    "skuCode": "9BY1",
+    "crmPartId": 91010,
+    "name": "Broken Yolk Radio (monthly)",
+    "price": 27.95,
+    "recurring": true,
+    "annual": {
+      "skuCode": "9BY1A",
+      "crmPartId": 91011,
+      "name": "Broken Yolk Radio (annual)",
+      "price": 335.4,
+      "recurring": false
+    }
+  },
+  "players": {
+    "app": {
+      "skuCode": "9BY2",
+      "crmPartId": 91025,
+      "name": "Customer Owned Player (App / PC / Sonos)",
+      "price": 0,
+      "shippable": false
+    },
+    "playerone": {
+      "skuCode": "9BY3",
+      "crmPartId": 91144,
+      "name": "PlayerOne",
+      "price": 129,
+      "recurring": false,
+      "shippable": true
+    }
+  },
+  "addons": {
+    "messaging": {
+      "skuCode": "9BY4",
+      "crmPartId": 90166,
+      "name": "Overhead Messaging (monthly)",
+      "price": 5,
+      "recurring": true
+    },
+    "warranty": {
+      "skuCode": "9BY5",
+      "crmPartId": 90169,
+      "name": "5-Year Extended Warranty",
+      "price": 59.99,
+      "recurring": false,
+      "forPlayer": "playerone"
+    }
+  }
+}
