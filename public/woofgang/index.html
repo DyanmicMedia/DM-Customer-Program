@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<!-- Woof Gang Bakery & Grooming demo, adapted from the brokenyolk-v3 layout. Leave public/brokenyolk, public/brokenyolk-v2, and public/brokenyolk-v3 unchanged. -->
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Woof Gang Radio | Official Music &amp; Audio Program</title>
+  <meta name="description" content="Woof Gang Radio is the official, licensed music program for Woof Gang Bakery &amp; Grooming stores, managed by Dynamic Media.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.ico?v=1" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            wg: {
+              pink: '#DA327D',
+              deep: '#B3225F',
+              cocoa: '#6A3114',
+              ink: '#2E1408',
+              petal: '#F7A8CB',
+              blush: '#FDEEF4',
+              cream: '#FFF8F2'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-wg-cream text-slate-800 font-sans antialiased selection:bg-wg-pink selection:text-white">
+
+  <!-- PROGRAM BAR -->
+  <div class="bg-wg-ink text-slate-200 text-xs sm:text-sm py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-wg-pink"></span>
+        <span class="font-semibold">The music standard for every new Woof Gang store opening</span>
+      </div>
+      <a href="mailto:woofgang@dm-us.com" class="hover:text-white transition">
+        Program Support: <strong class="text-white">woofgang@dm-us.com</strong>
+      </a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3.5 sm:gap-5">
+        <img src="../brokenyolk/assets/dm-logo.png" alt="Dynamic Media" class="h-12 sm:h-14 w-auto object-contain">
+      </div>
+      <div class="flex items-center gap-3 sm:gap-5">
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-600">
+          <a href="#sound" class="hover:text-wg-pink transition">The Sound</a>
+          <a href="#activation" class="hover:text-wg-pink transition">Setup</a>
+          <a href="#audio" class="hover:text-wg-pink transition">Speakers</a>
+          <a href="#recommender" class="hover:text-wg-pink transition">Existing Stores</a>
+          <a href="#faq" class="hover:text-wg-pink transition">FAQ</a>
+        </nav>
+        <button type="button" onclick="openWizard()" class="hidden sm:inline-flex items-center justify-center text-sm font-bold text-white bg-wg-pink hover:bg-wg-deep px-5 py-2.5 rounded-md shadow-sm transition focus:outline-none focus:ring-2 focus:ring-wg-pink/40">
+          Set Up My Store
+        </button>
+        <button type="button" onclick="toggleMobileMenu()" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-slate-200 text-wg-ink" aria-label="Open navigation" aria-expanded="false" id="mobileMenuButton">
+          <span class="text-xl leading-none">&#9776;</span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4">
+      <div class="max-w-7xl mx-auto grid gap-1 text-sm font-semibold text-wg-ink">
+        <a href="#sound" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">The Sound</a>
+        <a href="#activation" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">Setup</a>
+        <a href="#audio" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">Speakers</a>
+        <a href="#recommender" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">Existing Stores</a>
+        <a href="#faq" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-md hover:bg-slate-50">FAQ</a>
+        <button type="button" onclick="toggleMobileMenu(); openWizard()" class="mt-2 text-left px-3 py-3 rounded-md bg-wg-pink text-white">Set Up My Store</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative min-h-[620px] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/hero.jpg?v=1');"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(30,12,4,0.92) 0%, rgba(30,12,4,0.78) 30%, rgba(30,12,4,0.42) 55%, rgba(30,12,4,0) 78%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(30,12,4,0.45) 0%, rgba(30,12,4,0) 40%);"></div>
+    <div class="absolute inset-0 lg:hidden" style="background: rgba(30,12,4,0.5);"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
+      <div class="max-w-2xl text-left">
+        <div class="inline-flex items-center gap-2 bg-wg-pink/25 border border-wg-petal/60 text-wg-petal text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-wg-petal"></span>
+          Woof Gang-approved. Family-friendly. Fully licensed.
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.05] mb-5" style="text-shadow: 0 2px 18px rgba(0,0,0,0.45);">
+          Woof Gang Radio, <span class="text-wg-petal">ready to play.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-100 mb-8 leading-relaxed max-w-xl" style="text-shadow: 0 1px 12px rgba(0,0,0,0.55);">
+          Your store’s music account is already built and loaded with approved Woof Gang playlists. Confirm your store online, book a quick setup call, and you’ll open with licensed, on-brand music already playing.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+          <button type="button" onclick="openWizard()" class="w-full sm:w-auto font-bold text-white bg-wg-pink hover:bg-wg-deep px-8 py-3.5 rounded-md shadow-sm transition text-sm focus:outline-none focus:ring-2 focus:ring-wg-pink/40">
+            Set Up My Store
+          </button>
+          <button type="button" onclick="openQuote()" class="text-sm font-bold text-white hover:text-wg-petal transition text-center sm:text-left">
+            Need speakers? Whole-store packages from $1,100, installed &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK VALUE -->
+  <section class="bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 text-center">
+        <div class="px-3 sm:px-6 py-3">
+          <p class="font-bold text-wg-pink tracking-tight">
+            <span class="text-xl sm:text-2xl">$24.95</span><span class="text-sm ml-0.5">/month</span>
+          </p>
+          <p class="text-[10px] sm:text-xs text-slate-500 mt-1">Per location &middot; Billed by Dynamic Media</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-l border-slate-200">
+          <p class="font-bold text-wg-ink text-sm sm:text-base">Built before you open</p>
+          <p class="text-xs text-slate-500 mt-1">On hold, no charges until activation</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-t lg:border-t-0 lg:border-l border-slate-200">
+          <p class="font-bold text-wg-ink text-sm sm:text-base">Approved playlists</p>
+          <p class="text-xs text-slate-500 mt-1">Woof Gang Radio plus a family-friendly library</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-l border-t lg:border-t-0 border-slate-200">
+          <p class="font-bold text-wg-ink text-sm sm:text-base">Licensed &amp; family-friendly</p>
+          <p class="text-xs text-slate-500 mt-1">Legal for business playback</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOUND -->
+  <section id="sound" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">The Woof Gang Sound</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-wg-ink tracking-tight mt-2 mb-5">The sound of a Woof Gang day</h2>
+          <blockquote class="border-l-4 border-wg-pink pl-5 py-1 text-lg font-bold text-wg-ink leading-relaxed mb-5">
+            Upbeat, acoustic, and sunny, like walking into the smell of fresh-baked treats.
+          </blockquote>
+          <p class="text-slate-600 leading-relaxed mb-5">
+            Acoustic-forward indie-pop and modern singer-songwriters keep the retail floor warm and easy. It’s cheerful without being loud, familiar without being overplayed, and it never gets in the way of a conversation with a pet parent.
+          </p>
+          <div class="border-y border-slate-200 divide-y divide-slate-200">
+            <div class="py-3.5 grid grid-cols-[2rem_1fr] gap-3">
+              <span class="text-xs font-extrabold text-wg-pink pt-0.5">01</span>
+              <p class="text-sm text-slate-600 leading-relaxed"><strong class="block text-wg-ink mb-0.5">Your own branded playlist</strong>Woof Gang Radio is built for Woof Gang stores: upbeat, acoustic, and family-friendly. It’s the sample you can play on this page.</p>
+            </div>
+            <div class="py-3.5 grid grid-cols-[2rem_1fr] gap-3">
+              <span class="text-xs font-extrabold text-wg-pink pt-0.5">02</span>
+              <p class="text-sm text-slate-600 leading-relaxed"><strong class="block text-wg-ink mb-0.5">Plus a library of Woof Gang-approved playlists</strong>Want a change of pace? Choose from a library of family-friendly playlists approved for Woof Gang stores. There’s nothing to screen and nothing off-brand.</p>
+            </div>
+            <div class="py-3.5 grid grid-cols-[2rem_1fr] gap-3">
+              <span class="text-xs font-extrabold text-wg-pink pt-0.5">03</span>
+              <p class="text-sm text-slate-600 leading-relaxed"><strong class="block text-wg-ink mb-0.5">Always fresh</strong>The playlists are updated regularly, so you and your customers aren’t hearing the same loop all day.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">Listen to a sample</span>
+              <h3 class="font-black text-wg-ink mt-1">Woof Gang Radio</h3>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-wg-pink bg-wg-blush border border-wg-pink/20 px-2.5 py-1 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-wg-pink animate-pulse" aria-hidden="true"></span>
+              On air
+            </span>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-200">
+            <iframe title="Woof Gang Radio on Spotify" src="https://open.spotify.com/embed/playlist/7ebqtWkaiO5R8z5HwkZbDX?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="block w-full"></iframe>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-3">This Spotify playlist is only a listening sample. In the store, the music plays through the licensed Soundtrack service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVATION -->
+  <section id="activation" class="scroll-mt-20 py-16 sm:py-20 bg-wg-blush border-y border-wg-pink/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">New-store setup</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-wg-ink tracking-tight mt-2 mb-4">Already set up for you. Confirm, book a call, and you’re live.</h2>
+        <p class="text-slate-600 leading-relaxed">Music is part of the standard opening package. Dynamic Media builds your account while your store is under construction. About 45–60 days before opening, Dynamic Media sends you a link to confirm your store. One short call with your rep takes care of the rest.</p>
+      </div>
+      <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <li class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-wg-pink text-white text-sm font-black mb-4">1</span>
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-wg-cocoa mb-1">Store enters the pipeline</p>
+          <h3 class="font-black text-wg-ink text-lg mb-2">We build your account</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">We create your account under the store email, apply Woof Gang branding, load the approved playlists, and put it on hold. You pay nothing while it’s on hold.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-wg-pink text-white text-sm font-black mb-4">2</span>
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-wg-cocoa mb-1">45–60 days out &middot; 2 minutes</p>
+          <h3 class="font-black text-wg-ink text-lg mb-2">Confirm your store online</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Tell us how you’ll play music, confirm your opening date and store contact, then book your setup call or have your rep reach out.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-wg-pink text-white text-sm font-black mb-4">3</span>
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-wg-cocoa mb-1">15-minute call</p>
+          <h3 class="font-black text-wg-ink text-lg mb-2">Your setup call</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Your rep confirms your setup, takes payment, and sets your activation date. Need speakers? We’ll quote them and schedule installation before you open.</p>
+        </li>
+        <li class="rounded-2xl border-2 border-wg-pink/40 bg-white p-6">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-wg-cocoa text-white text-sm font-black mb-4">4</span>
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-wg-cocoa mb-1">Activation date</p>
+          <h3 class="font-black text-wg-ink text-lg mb-2">Go live</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Your music switches on. Pick a Woof Gang playlist, and you’ll have music while you merchandise and on opening day. We’ll check in after you open to make sure everything’s playing.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- AUDIO SYSTEMS -->
+  <section id="audio" class="scroll-mt-20 py-16 sm:py-20 bg-wg-ink text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-wg-petal">Speakers</span>
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 mb-4">Speakers for your whole store, installed before you open</h2>
+        <p class="text-slate-300 leading-relaxed">One vendor for your music, your speakers, and your support. We install the speakers, connect the music, and make sure everything sounds right before opening day.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+        <article class="lg:col-span-3 bg-white rounded-2xl text-slate-800 overflow-hidden border-2 border-wg-pink shadow-sm flex flex-col">
+          <div class="bg-wg-pink text-white px-7 py-7 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <p class="text-[11px] uppercase tracking-widest font-extrabold text-white/80">Recommended for new stores</p>
+              <h3 class="text-3xl font-bold mt-2">Woof Gang Speaker Package</h3>
+              <p class="text-base text-white/85 mt-2">Four commercial speakers covering your whole floor.</p>
+            </div>
+            <div class="sm:text-right shrink-0">
+              <p class="text-xs font-bold uppercase tracking-wider text-white/80">Starting at</p>
+              <p class="text-4xl font-black leading-none mt-1">$1,100</p>
+              <p class="text-xs font-bold text-white/85 mt-1">Installed</p>
+            </div>
+          </div>
+          <div class="p-7 sm:p-8 flex-1 flex flex-col">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-slate-600 mb-8">
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span><span><strong class="block text-wg-ink">Whole-floor coverage</strong>Even sound across the store, not one speaker by the register.</span></li>
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span><span><strong class="block text-wg-ink">Professionally installed</strong>Coordinated with your contractor and finished before you open.</span></li>
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span><span><strong class="block text-wg-ink">Built for retail</strong>Commercial speakers designed to play all day, every day.</span></li>
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span><span><strong class="block text-wg-ink">Low maintenance</strong>Nothing to charge or re-pair, and nothing for anyone to walk off with.</span></li>
+              <li class="flex gap-2 sm:col-span-2"><span class="text-wg-pink font-bold">✓</span><span><strong class="block text-wg-ink">One vendor for everything</strong>Music, speakers, installation, and support, with one number to call.</span></li>
+            </ul>
+            <button type="button" onclick="openQuote()" class="mt-auto self-start font-bold bg-wg-pink text-white hover:bg-wg-deep px-6 py-3.5 rounded-md transition">Get My Speaker Quote</button>
+          </div>
+        </article>
+        <article class="lg:col-span-2 bg-white rounded-2xl text-slate-800 overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <div class="bg-wg-cocoa text-white px-7 py-7">
+            <p class="text-[11px] uppercase tracking-widest font-extrabold text-white/80">Already have speakers?</p>
+            <h3 class="text-3xl font-bold mt-2">Use what you have</h3>
+            <p class="text-base text-white/80 mt-2">We’ll connect Woof Gang Radio to your current setup.</p>
+          </div>
+          <div class="p-7 sm:p-8 flex-1 flex flex-col">
+            <ul class="space-y-3 text-sm text-slate-600 mb-8">
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span> Sonos speakers</li>
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span> A store computer</li>
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span> Bluetooth speakers</li>
+              <li class="flex gap-2"><span class="text-wg-pink font-bold">✓</span> An existing wired system</li>
+            </ul>
+            <button type="button" onclick="openWizard()" class="mt-auto self-start font-bold text-white bg-wg-cocoa hover:bg-wg-ink px-5 py-3 rounded-md transition">Set Up With My Speakers</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYBACK -->
+  <section id="playback" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">Playback</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-wg-ink tracking-tight mt-2 mb-4">Plays on our speakers or yours</h2>
+        <p class="text-slate-600 leading-relaxed">Woof Gang Radio plays through the Woof Gang speaker package or through speakers you already have, including Sonos, a store computer, Bluetooth speakers, or a wired system.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <article class="bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-200 shadow-sm">
+          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
+            <img src="../brokenyolk/assets/sonos_soundtrack.png" alt="Sonos with Soundtrack" class="h-full w-full object-contain">
+          </div>
+          <div class="p-5 flex-1">
+            <h3 class="font-bold text-wg-ink text-lg mb-1.5">Sonos</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Already on Sonos? Activate the service on your speakers in about three minutes. We provide video instructions.</p>
+          </div>
+        </article>
+        <article class="bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-200 shadow-sm">
+          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
+            <img src="../brokenyolk/assets/your-music.png" alt="Soundtrack on a PC or Mac" class="h-full w-full object-contain">
+          </div>
+          <div class="p-5 flex-1">
+            <h3 class="font-bold text-wg-ink text-lg mb-1.5">PC / Mac</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Play from the store computer and keep it connected to your current speakers. Same soundtrack, same sign-in.</p>
+          </div>
+        </article>
+        <article class="bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-200 shadow-sm">
+          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
+            <img src="../brokenyolk/assets/ipad_soundtrack_app.png" alt="Soundtrack app on a tablet and phone" class="h-full w-full object-contain">
+          </div>
+          <div class="p-5 flex-1">
+            <h3 class="font-bold text-wg-ink text-lg mb-1.5">Mobile app</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Play from a tablet or phone paired to a Bluetooth speaker. You don’t need a separate player.</p>
+          </div>
+        </article>
+        <article class="bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-200 shadow-sm">
+          <div class="h-44 p-4 flex items-center justify-center bg-white border-b border-slate-100">
+            <img src="../brokenyolk/assets/playerone_clean.png" alt="PlayerOne commercial player" class="h-full w-full object-contain">
+          </div>
+          <div class="p-5 flex-1">
+            <h3 class="font-bold text-wg-ink text-lg mb-1.5">PlayerOne</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">For wired ceiling speakers with an amplifier. A dedicated player you set up once and leave alone, for a one-time $129.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXISTING STORES -->
+  <section id="recommender" class="scroll-mt-20 py-16 sm:py-20 bg-wg-cream border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="rounded-2xl bg-white border border-slate-200 shadow-sm p-7 sm:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="max-w-2xl">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">Existing Stores</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-wg-ink tracking-tight mt-2 mb-3">Already open? You can join Woof Gang Radio too.</h2>
+          <p class="text-slate-600">Most open stores keep the speakers they already have. Tell us how your store plays music today, and your rep will handle the switch-over.</p>
+        </div>
+        <button type="button" onclick="openWizard(null, 'open')" class="shrink-0 self-start md:self-center font-bold text-white bg-wg-pink hover:bg-wg-deep px-6 py-3.5 rounded-md shadow-sm transition text-sm">Set Up My Store</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER -->
+  <section id="partner" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto">
+        <div class="lg:col-span-5">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">Powered by Dynamic Media</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-wg-ink tracking-tight mt-2 mb-5">One accountable partner from playlist to speakers</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">Dynamic Media runs Woof Gang Radio. We set up the music service, manage the approved playlists, supply and install your speakers, and support every store after it opens.</p>
+          <p class="text-slate-600 leading-relaxed">You can see and control what’s playing in your store from anywhere, including changing playlists, skipping songs, and adjusting the volume.</p>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-9">
+          <div class="border-l-2 border-wg-pink pl-5 py-1">
+            <p class="text-3xl font-black text-wg-pink">22 years</p>
+            <h3 class="font-black text-wg-ink mt-1">Business music, only</h3>
+            <p class="text-sm text-slate-600 mt-2">Experience with multi-unit franchise programs and store rollouts.</p>
+          </div>
+          <div class="border-l-2 border-wg-pink pl-5 py-1">
+            <p class="text-3xl font-black text-wg-pink">8,500</p>
+            <h3 class="font-black text-wg-ink mt-1">Nationwide field service</h3>
+            <p class="text-sm text-slate-600 mt-2">A technician network that can reach any U.S. ZIP code.</p>
+          </div>
+          <div class="border-l-2 border-wg-pink pl-5 py-1">
+            <p class="text-3xl font-black text-wg-pink">125M</p>
+            <h3 class="font-black text-wg-ink mt-1">Licensed songs</h3>
+            <p class="text-sm text-slate-600 mt-2">A huge commercial catalog, licensed for business use.</p>
+          </div>
+          <div class="border-l-2 border-wg-pink pl-5 py-1">
+            <p class="text-3xl font-black text-wg-pink">Factory-direct</p>
+            <h3 class="font-black text-wg-ink mt-1">Commercial audio equipment</h3>
+            <p class="text-sm text-slate-600 mt-2">Speakers, amplifiers, and players at 30–40% below retail.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-20 py-16 sm:py-20 bg-wg-cream border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <aside class="lg:col-span-4 lg:sticky lg:top-28 rounded-2xl bg-wg-ink text-white p-7 sm:p-8">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-wg-petal">Frequently Asked Questions</span>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight mt-2 mb-4">Practical answers</h2>
+          <p class="text-slate-300 leading-relaxed">Answers about cost, setup, licensing, and equipment.</p>
+          <div class="mt-7 pt-6 border-t border-white/10">
+            <p class="text-xs text-slate-400 mb-2">Still unsure?</p>
+            <a href="mailto:woofgang@dm-us.com" class="font-bold text-white hover:text-wg-petal break-all">woofgang@dm-us.com</a>
+          </div>
+        </aside>
+
+        <div class="lg:col-span-8">
+          <div class="mb-8">
+            <h3 class="text-xs uppercase font-extrabold tracking-wider text-wg-pink mb-3">Program &amp; Pricing</h3>
+            <div class="space-y-3">
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>Is Woof Gang Radio the official music program?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Yes. Woof Gang Radio is part of the standard opening package for new Woof Gang Bakery &amp; Grooming stores. Every store gets the same licensed, family-friendly music program.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>What if my store is already open?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">You can join anytime. Tell us how music plays in your store today. Most open stores keep the speakers they already have. We set up your account, and a 15-minute call with your rep covers payment and your switch-over date. After that, Woof Gang Radio replaces whatever you’re playing now. <button type="button" onclick="openWizard(null, 'open')" class="font-bold text-wg-pink hover:underline">Set Up My Store &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>What does it cost?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">The music service is $24.95 per month per location. That covers your branded Woof Gang Radio playlist, the library of Woof Gang-approved playlists, commercial music licensing, and program support. If you need speakers, the Woof Gang Speaker Package starts at $1,100, installed. If you already have speakers, we’ll connect to them.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>How does billing work?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Dynamic Media bills each franchisee directly. Your account is created on hold, and nothing is charged until it’s activated. Your rep takes your payment details on your setup call and confirms your activation date then.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>What is Soundtrack, and why can’t I use my own Spotify?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Personal Spotify, Apple Music, and Pandora accounts aren’t licensed for business use. Playing them in a store puts the store at risk with the music licensing organizations. Soundtrack is a commercial music service built for businesses, and the licensing is included. The Spotify playlist on this page is only a listening sample. <a href="#sound" class="font-bold text-wg-pink hover:underline">Listen to the sample &rarr;</a></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>Can my store choose its own music?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Yes. Along with your branded Woof Gang Radio playlist, you can play anything from a library of family-friendly, Woof Gang-approved playlists. Every one is on-brand, so you get a real choice without having to screen anything.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>I own more than one store. Can I see them all in one place?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Yes. Multi-unit owners get their own view of all their stores. Because the system is cloud-based, you can change playlists, skip songs, or adjust the volume from anywhere, without being in the store.</div>
+              </details>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xs uppercase font-extrabold tracking-wider text-wg-pink mb-3">Equipment &amp; Setup</h3>
+            <div class="space-y-3">
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>Can I use the speakers already in my store?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Usually, yes. Woof Gang Radio works with Sonos, Bluetooth speakers, a store computer, or an existing wired system. <button type="button" onclick="openWizard()" class="font-bold text-wg-pink hover:underline">Set Up My Store &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>How long does setup take?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Confirming your store online takes about two minutes, and the setup call takes about 15. On your activation date, getting the music playing takes about three minutes: sign in to the app or activate the service on your Sonos, then choose a playlist. We send video instructions, and the program team is available if you need help.</div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>Can you supply and install speakers for my store?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Yes. The Woof Gang Speaker Package is four commercial speakers covering your whole floor, professionally installed, starting at $1,100. Request a quote anytime, and your rep will coordinate installation with your contractor before you open. <button type="button" onclick="openQuote()" class="font-bold text-wg-pink hover:underline">Get My Speaker Quote &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>What if I don’t know what equipment we have?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">That’s fine. Send a photo of the speaker, amplifier, or current music player, and our team will identify the setup. <button type="button" onclick="openWizard('Not sure — help me choose')" class="font-bold text-wg-pink hover:underline">Help Me Identify It &rarr;</button></div>
+              </details>
+              <details class="group rounded-xl border border-slate-200 bg-white">
+                <summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-wg-ink">
+                  <span>Who helps if something isn’t working?</span>
+                  <span class="text-wg-pink text-xl font-normal group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 text-sm text-slate-600 leading-relaxed">Dynamic Media supports the music service and your speakers as one program team, and you’ll have a dedicated account executive. Email <a href="mailto:woofgang@dm-us.com" class="font-bold text-wg-pink hover:underline">woofgang@dm-us.com</a>, or see the <a href="https://help.dynamicmediamusic.com/assets/Soundtrack/PlayerOne_SetupDocument.pdf" target="_blank" rel="noopener" class="font-bold text-wg-pink hover:underline">PlayerOne Quick Start Guide &rarr;</a></div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="scroll-mt-20 py-16 sm:py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-wg-pink">Contact Us</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-wg-ink tracking-tight mt-2 mb-4">Questions? Talk to the Woof Gang program team.</h2>
+        <p class="text-slate-600">Ask about the music, speakers, billing, or anything else. Ready to get started? <button type="button" onclick="openWizard()" class="font-bold text-wg-pink hover:underline">Set up your store &rarr;</button></p>
+      </div>
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 sm:p-9 border border-slate-200 shadow-sm">
+          <form id="pageLeadForm" data-support-email="woofgang@dm-us.com" class="space-y-5">
+            <input type="text" name="_hp_company" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="programId" value="woofgang">
+            <input type="hidden" name="programName" value="Woof Gang Bakery &amp; Grooming">
+            <input type="hidden" name="salesmanEmail" value="woofgang@dm-us.com">
+            <input type="hidden" name="hardwarePreference" value="Contact request">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contactName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Your Name <span class="text-wg-pink">*</span></label>
+                <input id="contactName" type="text" name="contactName" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div>
+                <label for="locationName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Store Name / Location # <span class="text-wg-pink">*</span></label>
+                <input id="locationName" type="text" name="locationName" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contactEmail" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Email <span class="text-wg-pink">*</span></label>
+                <input id="contactEmail" type="email" name="contactEmail" required class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div>
+                <label for="contactPhone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Phone</label>
+                <input id="contactPhone" type="tel" name="contactPhone" class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+            </div>
+            <div>
+              <label for="contactTopic" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">What can we help with?</label>
+              <select id="contactTopic" class="w-full h-12 px-4 rounded-lg border border-slate-300 text-sm bg-white transition focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                <option value="General question">General question</option>
+                <option value="Music and playlists">Music and playlists</option>
+                <option value="Speakers and equipment">Speakers and equipment</option>
+                <option value="Billing">Billing</option>
+                <option value="Help with my store’s music">Help with my store’s music</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+            <div>
+              <label for="locationNotes" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Message <span class="text-wg-pink">*</span></label>
+              <textarea id="locationNotes" name="notes" rows="5" required class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm bg-white transition resize-y focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none"></textarea>
+            </div>
+            <div id="pageFormStatus" class="hidden"></div>
+            <div class="pt-2 flex justify-end">
+              <button type="submit" id="pageSubmitBtn" class="w-full sm:w-auto shrink-0 py-3.5 px-7 font-bold text-white bg-wg-pink hover:bg-wg-deep rounded-lg transition text-sm shadow-sm focus:outline-none focus:ring-4 focus:ring-wg-pink/20">
+                Send Message &rarr;
+              </button>
+            </div>
+          </form>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-3 rounded-xl border border-slate-200 bg-wg-cream divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+        <div class="p-4">
+          <span class="block text-[11px] font-extrabold uppercase tracking-wider text-wg-pink mb-1">Program support hours</span>
+          <p class="text-sm font-semibold text-wg-ink">Monday–Friday</p>
+          <p class="text-xs text-slate-500 mt-0.5">9:00 AM–6:00 PM ET</p>
+        </div>
+        <div class="p-4">
+          <span class="block text-[11px] font-extrabold uppercase tracking-wider text-wg-pink mb-1">Response time</span>
+          <p class="text-sm font-semibold text-wg-ink">Within one business day</p>
+          <p class="text-xs text-slate-500 mt-0.5">Often sooner during support hours</p>
+        </div>
+        <div class="p-4">
+          <span class="block text-[11px] font-extrabold uppercase tracking-wider text-wg-pink mb-1">Program email</span>
+          <a href="mailto:woofgang@dm-us.com" class="text-sm font-semibold text-wg-ink hover:text-wg-pink transition break-all">woofgang@dm-us.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-wg-ink text-slate-300 pt-14 pb-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <img src="../brokenyolk/assets/DM-logo-White-Blue@3x.png" alt="Dynamic Media" class="h-10 w-auto object-contain mb-5">
+        <p class="max-w-md text-slate-300 leading-relaxed">Woof Gang Bakery &amp; Grooming’s official music and audio program, run by Dynamic Media. One team for licensed music, audio equipment, installation, and ongoing support.</p>
+        <a href="mailto:woofgang@dm-us.com" class="inline-flex items-center gap-2 mt-6 text-white font-semibold hover:text-wg-petal transition">
+          <span class="w-8 h-8 rounded-md border border-white/15 bg-white/5 flex items-center justify-center" aria-hidden="true">&#9993;</span>
+          woofgang@dm-us.com
+        </a>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-[11px] uppercase font-extrabold tracking-wider text-slate-500 mb-4">Program</h3>
+          <nav class="space-y-3">
+            <a href="#sound" class="block hover:text-white">The Woof Gang sound</a>
+            <a href="#playback" class="block hover:text-white">Playback</a>
+            <a href="#activation" class="block hover:text-white">New-store setup</a>
+            <a href="#audio" class="block hover:text-white">Speaker package</a>
+            <a href="#contact" class="block hover:text-white">Contact us</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[11px] uppercase font-extrabold tracking-wider text-slate-500 mb-4">Support</h3>
+          <nav class="space-y-3">
+            <a href="#faq" class="block hover:text-white">Frequently asked questions</a>
+            <a href="#recommender" class="block hover:text-white">Existing store help</a>
+            <a href="#audio" onclick="event.preventDefault(); openQuote()" class="block hover:text-white">Get a speaker quote</a>
+            <a href="mailto:woofgang@dm-us.com" class="block hover:text-white">Email the program team</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[11px] uppercase font-extrabold tracking-wider text-slate-500 mb-4">Resources</h3>
+          <nav class="space-y-3">
+            <a href="https://open.spotify.com/playlist/7ebqtWkaiO5R8z5HwkZbDX" target="_blank" rel="noopener" class="block hover:text-white">Listen to the sample &rarr;</a>
+            <a href="https://onboarding.mybizsound.com/dynamicmedia" target="_blank" rel="noopener" class="block hover:text-white">Setup wizard &rarr;</a>
+            <a href="https://help.dynamicmediamusic.com/assets/Soundtrack/PlayerOne_SetupDocument.pdf" target="_blank" rel="noopener" class="block hover:text-white">PlayerOne quick start (PDF) &rarr;</a>
+            <a href="https://dynamicmediamusic.com" target="_blank" rel="noopener" class="block hover:text-white">Dynamic Media &rarr;</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>&copy; 2026 Dynamic Media. Woof Gang Bakery &amp; Grooming is a trademark of its owner. This page is a Dynamic Media program demonstration.</p>
+      <a href="mailto:woofgang@dm-us.com" class="hover:text-slate-300">Program support</a>
+    </div>
+  </footer>
+
+  <!-- SPEAKER QUOTE -->
+  <div id="quoteModal" class="hidden fixed inset-0 z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+    <div class="fixed inset-0 bg-wg-ink/70 backdrop-blur-sm" onclick="closeQuote()"></div>
+    <div class="relative min-h-full flex items-start sm:items-center justify-center p-3 sm:p-6">
+      <div class="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div class="bg-wg-ink text-white px-6 sm:px-8 pt-6 pb-6">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-[11px] uppercase tracking-widest font-extrabold text-wg-petal">Woof Gang Speaker Package</p>
+              <h2 id="quoteTitle" class="text-2xl font-black tracking-tight mt-1">Get your speaker quote</h2>
+              <p class="text-sm text-slate-300 mt-2">Four commercial speakers, professionally installed, from <span class="font-black text-white">$1,100</span>.</p>
+            </div>
+            <button type="button" onclick="closeQuote()" class="w-9 h-9 shrink-0 rounded-full bg-white/10 hover:bg-white/20 text-xl leading-none flex items-center justify-center" aria-label="Close">&times;</button>
+          </div>
+        </div>
+
+        <div class="px-6 sm:px-8 py-7">
+          <form id="quoteForm" class="space-y-4" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="qtName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Your Name <span class="text-wg-pink">*</span></label>
+                <input id="qtName" type="text" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm bg-white focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div>
+                <label for="qtStore" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Store Name / Location # <span class="text-wg-pink">*</span></label>
+                <input id="qtStore" type="text" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm bg-white focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div>
+                <label for="qtEmail" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Email <span class="text-wg-pink">*</span></label>
+                <input id="qtEmail" type="email" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm bg-white focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div>
+                <label for="qtPhone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Phone <span class="text-wg-pink">*</span></label>
+                <input id="qtPhone" type="tel" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm bg-white focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div>
+                <label for="qtStoreType" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Store Status</label>
+                <select id="qtStoreType" onchange="toggleQuoteOpening()" class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm bg-white focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                  <option value="New store">Opening a new store</option>
+                  <option value="Open store">Already open</option>
+                </select>
+              </div>
+              <div id="qtOpeningWrap">
+                <label for="qtOpening" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Planned Opening Date</label>
+                <input id="qtOpening" type="date" class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm bg-white focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+            </div>
+            <div>
+              <label for="qtNotes" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Anything we should know? <span class="normal-case font-semibold text-slate-400">(optional)</span></label>
+              <textarea id="qtNotes" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm bg-white resize-y focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none"></textarea>
+            </div>
+            <p id="quoteError" class="hidden text-sm font-semibold text-rose-600"></p>
+            <div class="pt-1 flex justify-end">
+              <button type="submit" class="w-full sm:w-auto font-bold text-white bg-wg-pink hover:bg-wg-deep px-7 py-3.5 rounded-md shadow-sm transition text-sm">Request My Quote &rarr;</button>
+            </div>
+          </form>
+
+          <div id="quoteDone" class="hidden text-center py-4">
+            <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-wg-pink text-white text-2xl font-black">✓</span>
+            <h3 class="text-2xl font-black text-wg-ink mt-4">Quote requested</h3>
+            <p class="text-sm text-slate-600 mt-2">Your rep will send your speaker quote within one business day.</p>
+            <p id="quoteSendNote" class="hidden mt-5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs p-3 text-left"></p>
+            <button type="button" onclick="closeQuote()" class="mt-6 font-bold text-white bg-wg-pink hover:bg-wg-deep px-6 py-3 rounded-md transition text-sm">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP WIZARD -->
+  <div id="wizardModal" class="hidden fixed inset-0 z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="wizardTitle">
+    <div class="fixed inset-0 bg-wg-ink/70 backdrop-blur-sm" onclick="closeWizard()"></div>
+    <div class="relative min-h-full flex items-start sm:items-center justify-center p-3 sm:p-6">
+      <div class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div class="bg-wg-pink text-white px-6 sm:px-8 pt-6 pb-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-[11px] uppercase tracking-widest font-extrabold text-white/80">Woof Gang Radio</p>
+              <h2 id="wizardTitle" class="text-2xl font-black tracking-tight mt-1">Set Up Your Store</h2>
+            </div>
+            <button type="button" onclick="closeWizard()" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 text-xl leading-none flex items-center justify-center" aria-label="Close">&times;</button>
+          </div>
+          <div class="mt-5 grid grid-cols-4 gap-2" aria-hidden="true">
+            <div class="wz-bar h-1.5 rounded-full bg-white"></div>
+            <div class="wz-bar h-1.5 rounded-full bg-white/30"></div>
+            <div class="wz-bar h-1.5 rounded-full bg-white/30"></div>
+            <div class="wz-bar h-1.5 rounded-full bg-white/30"></div>
+          </div>
+          <p id="wizardStepLabel" class="text-xs font-bold text-white/85 mt-2">Step 1 of 4 &middot; Your store</p>
+        </div>
+
+        <div class="px-6 sm:px-8 py-7">
+          <!-- Step 1 -->
+          <div class="wz-step" data-step="1">
+            <h3 class="text-xl font-black text-wg-ink">Is this a new store or an open store?</h3>
+            <p class="text-sm text-slate-500 mt-1 mb-5">We’ll tailor the next steps to where you are.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-5 transition" data-group="storeType" data-value="new">
+                <span class="block font-black text-wg-ink">Opening a new store</span>
+                <span class="block text-sm text-slate-500 mt-1">Your account is already built and waiting.</span>
+              </button>
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-5 transition" data-group="storeType" data-value="open">
+                <span class="block font-black text-wg-ink">My store is already open</span>
+                <span class="block text-sm text-slate-500 mt-1">Switch over from what you play today.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="wz-step hidden" data-step="2">
+            <h3 id="wzPlaybackQuestion" class="text-xl font-black text-wg-ink">How will your store play music?</h3>
+            <p class="text-sm text-slate-500 mt-1 mb-5">Pick the closest answer.</p>
+            <div class="space-y-3">
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="speakers" data-value="Sonos">
+                <span class="block font-bold text-wg-ink">Sonos speakers</span>
+                <span class="block text-sm text-slate-500 mt-1">By phone, tablet, or computer</span>
+              </button>
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="speakers" data-value="Bluetooth speaker">
+                <span class="block font-bold text-wg-ink">A non-Sonos Bluetooth speaker</span>
+                <span class="block text-sm text-slate-500 mt-1">By phone, tablet, or computer</span>
+              </button>
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="speakers" data-value="PlayerOne (wired system)">
+                <span class="block font-bold text-wg-ink">Wired speakers + amplifier</span>
+              </button>
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="speakers" data-value="Not sure — help me choose">
+                <span class="block font-bold text-wg-ink">I’m not sure</span>
+              </button>
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="speakers" data-value="Speaker package">
+                <span class="block font-bold text-wg-ink">No sound system yet</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="wz-step hidden" data-step="3">
+            <h3 class="text-xl font-black text-wg-ink">Tell us about your store</h3>
+            <p class="text-sm text-slate-500 mt-1 mb-5">We’ll use this to set up your account and reach you.</p>
+            <form id="wizardForm" class="space-y-4" novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="wzLocationName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Store Name / Location # <span class="text-wg-pink">*</span></label>
+                  <input id="wzLocationName" type="text" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                </div>
+                <div id="wzOpeningWrap">
+                  <label for="wzOpeningDate" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Planned Opening Date</label>
+                  <input id="wzOpeningDate" type="date" class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                </div>
+              </div>
+              <div>
+                <label for="wzAddress" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Store Address <span class="text-wg-pink">*</span></label>
+                <input id="wzAddress" type="text" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="wzContactName" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Contact Name <span class="text-wg-pink">*</span></label>
+                  <input id="wzContactName" type="text" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                </div>
+                <div>
+                  <label for="wzPhone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Phone <span class="text-wg-pink">*</span></label>
+                  <input id="wzPhone" type="tel" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                </div>
+                <div>
+                  <label for="wzEmail" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Store Email <span class="text-wg-pink">*</span></label>
+                  <input id="wzEmail" type="email" required class="w-full h-11 px-4 rounded-lg border border-slate-300 text-sm focus:ring-4 focus:ring-wg-pink/15 focus:border-wg-pink focus:outline-none">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="wz-step hidden" data-step="4">
+            <h3 class="text-xl font-black text-wg-ink">Your 15-minute setup call</h3>
+            <p id="wzCallBlurb" class="text-sm text-slate-500 mt-1 mb-5">Your rep will go over your setup, take payment, and set your activation date.</p>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="contactMode" data-value="book">
+                <span class="block font-bold text-wg-ink">Book a time</span>
+                <span class="block text-sm text-slate-500 mt-1">Pick a day and time now.</span>
+              </button>
+              <button type="button" class="wz-option text-left rounded-xl border-2 border-slate-200 hover:border-wg-pink p-4 transition" data-group="contactMode" data-value="callback">
+                <span class="block font-bold text-wg-ink">Have my rep contact me</span>
+                <span class="block text-sm text-slate-500 mt-1">We’ll reach out to set it up.</span>
+              </button>
+            </div>
+            <div id="wzBookPanel">
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Choose a day</p>
+              <div id="wzDays" class="grid grid-cols-3 sm:grid-cols-6 gap-2"></div>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mt-5 mb-2">Choose a time <span class="normal-case font-semibold text-slate-400">(Eastern)</span></p>
+              <div id="wzTimes" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <p class="col-span-full text-sm text-slate-400">Pick a day to see open times.</p>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-5">Scheduling preview. At launch, this connects to the program team’s calendar.</p>
+            </div>
+            <div id="wzCallbackPanel" class="hidden">
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Best time to reach you <span class="normal-case font-semibold text-slate-400">(Eastern)</span></p>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" class="wz-option rounded-lg border-2 border-slate-200 hover:border-wg-pink py-2.5 text-sm font-bold text-wg-ink transition" data-group="bestTime" data-value="Morning">Morning</button>
+                <button type="button" class="wz-option rounded-lg border-2 border-slate-200 hover:border-wg-pink py-2.5 text-sm font-bold text-wg-ink transition" data-group="bestTime" data-value="Afternoon">Afternoon</button>
+                <button type="button" class="wz-option rounded-lg border-2 border-slate-200 hover:border-wg-pink py-2.5 text-sm font-bold text-wg-ink transition" data-group="bestTime" data-value="Evening">Evening</button>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mt-5 mb-2">How should we contact you?</p>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" class="wz-option rounded-lg border-2 border-slate-200 hover:border-wg-pink py-2.5 text-sm font-bold text-wg-ink transition" data-group="contactBy" data-value="Call">Call</button>
+                <button type="button" class="wz-option rounded-lg border-2 border-slate-200 hover:border-wg-pink py-2.5 text-sm font-bold text-wg-ink transition" data-group="contactBy" data-value="Text">Text</button>
+                <button type="button" class="wz-option rounded-lg border-2 border-slate-200 hover:border-wg-pink py-2.5 text-sm font-bold text-wg-ink transition" data-group="contactBy" data-value="Email">Email</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Done -->
+          <div class="wz-step hidden" data-step="5">
+            <div class="text-center">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-wg-pink text-white text-2xl font-black">✓</span>
+              <h3 id="wzDoneTitle" class="text-2xl font-black text-wg-ink mt-4">You’re all set</h3>
+              <p id="wzDoneCall" class="text-sm text-slate-600 mt-2"></p>
+            </div>
+            <div class="mt-6 rounded-xl border border-slate-200 divide-y divide-slate-200 text-sm">
+              <div class="flex justify-between gap-4 px-5 py-3"><span class="text-slate-500">Store</span><span id="wzSumStore" class="font-bold text-wg-ink text-right"></span></div>
+              <div class="flex justify-between gap-4 px-5 py-3"><span class="text-slate-500">Plays on</span><span id="wzSumSpeakers" class="font-bold text-wg-ink text-right"></span></div>
+              <div class="flex justify-between gap-4 px-5 py-3"><span class="text-slate-500">Music</span><span class="font-bold text-wg-ink text-right">Woof Gang Radio &middot; $24.95/month</span></div>
+            </div>
+            <p class="text-xs uppercase font-extrabold tracking-wider text-wg-pink mt-6 mb-2">What happens next</p>
+            <ol id="wzNext" class="space-y-2 text-sm text-slate-600 list-decimal pl-5"></ol>
+            <p id="wzSendNote" class="hidden mt-5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs p-3"></p>
+          </div>
+
+          <p id="wizardError" class="hidden mt-4 text-sm font-semibold text-rose-600"></p>
+        </div>
+
+        <div id="wizardFooter" class="px-6 sm:px-8 py-4 bg-wg-cream border-t border-slate-200 flex items-center justify-between gap-3">
+          <button type="button" id="wizardBack" onclick="wizardBack()" class="text-sm font-bold text-slate-500 hover:text-wg-ink invisible">&larr; Back</button>
+          <button type="button" id="wizardNext" onclick="wizardNext()" class="font-bold text-white bg-wg-pink hover:bg-wg-deep px-6 py-3 rounded-md transition text-sm">Continue &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const BOOKING_TIMES = ['9:30 AM', '10:30 AM', '11:30 AM', '1:00 PM', '2:30 PM', '4:00 PM'];
+    const BOOKING_ON = ['bg-wg-pink', 'text-white', 'border-wg-pink'];
+    const BOOKING_OFF = ['bg-white', 'text-wg-ink', 'border-slate-200'];
+
+    function setBookingActive(button, active) {
+      BOOKING_ON.forEach((c) => button.classList.toggle(c, active));
+      BOOKING_OFF.forEach((c) => button.classList.toggle(c, !active));
+    }
+
+    function renderDayPicker(wrap, onPick) {
+      wrap.innerHTML = '';
+      const cursor = new Date();
+      cursor.setHours(0, 0, 0, 0);
+      let added = 0;
+      while (added < 6) {
+        cursor.setDate(cursor.getDate() + 1);
+        if (cursor.getDay() === 0 || cursor.getDay() === 6) continue;
+        const day = new Date(cursor);
+        const index = added;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'rounded-lg border-2 px-2 py-2.5 text-center transition hover:border-wg-pink ' + BOOKING_OFF.join(' ');
+        button.innerHTML =
+          '<span class="block text-[11px] font-bold uppercase tracking-wider opacity-80">' + day.toLocaleDateString('en-US', { weekday: 'short' }) + '</span>' +
+          '<span class="block text-xl font-black leading-tight">' + day.getDate() + '</span>' +
+          '<span class="block text-[11px] font-semibold opacity-80">' + day.toLocaleDateString('en-US', { month: 'short' }) + '</span>';
+        button.addEventListener('click', () => {
+          wrap.querySelectorAll('button').forEach((b) => setBookingActive(b, b === button));
+          onPick(day, index);
+        });
+        wrap.appendChild(button);
+        added++;
+      }
+    }
+
+    function renderTimePicker(wrap, dayIndex, onPick) {
+      wrap.innerHTML = '';
+      BOOKING_TIMES.forEach((time, i) => {
+        const taken = (dayIndex * 2 + i) % 5 === 1;
+        const slot = document.createElement('button');
+        slot.type = 'button';
+        slot.textContent = time;
+        slot.disabled = taken;
+        slot.className = 'rounded-lg border-2 px-3 py-2.5 text-sm font-bold transition ' +
+          (taken ? 'border-slate-100 bg-slate-50 text-slate-300 line-through cursor-not-allowed' : 'hover:border-wg-pink ' + BOOKING_OFF.join(' '));
+        if (!taken) {
+          slot.addEventListener('click', () => {
+            wrap.querySelectorAll('button:not([disabled])').forEach((b) => setBookingActive(b, b === slot));
+            onPick(time);
+          });
+        }
+        wrap.appendChild(slot);
+      });
+    }
+
+    function formatCall(day, time) {
+      return day.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) + ' at ' + time + ' ET';
+    }
+
+
+    // Demo: forms show their confirmations but never send, because the Woof Gang program inbox isn't set up yet.
+    const SEND_LEADS = false;
+
+    const WIZARD_STEPS = ['Your store', 'Playback', 'Store details', 'Setup call'];
+    const WIZARD_SPEAKERS = {
+      'Speaker package': 'Speaker package (quote)',
+      'Sonos': 'Sonos speakers',
+      'Bluetooth speaker': 'Bluetooth speaker',
+      'PlayerOne (wired system)': 'Wired speakers + amplifier',
+      'Not sure — help me choose': 'Not sure yet'
+    };
+    const WIZARD_SELECTED = ['ring-2', 'ring-wg-pink', 'ring-offset-2'];
+    const wizard = { step: 1, storeType: '', speakers: '', day: null, time: '', contactMode: 'book', bestTime: '', contactBy: '' };
+
+    function selectWizardOption(group, value) {
+      wizard[group] = value;
+      document.querySelectorAll('.wz-option[data-group="' + group + '"]').forEach((b) =>
+        WIZARD_SELECTED.forEach((c) => b.classList.toggle(c, b.dataset.value === value)));
+      if (group === 'contactMode') {
+        const callback = value === 'callback';
+        document.getElementById('wzBookPanel').classList.toggle('hidden', callback);
+        document.getElementById('wzCallbackPanel').classList.toggle('hidden', !callback);
+        if (wizard.step === 4) document.getElementById('wizardNext').innerHTML = callback ? 'Request a Callback &rarr;' : 'Book My Call &rarr;';
+      }
+    }
+
+    function openWizard(speakers, storeType) {
+      if (wizard.step === 5 || speakers || storeType) resetWizard();
+      if (speakers) selectWizardOption('speakers', speakers);
+      if (storeType) {
+        selectWizardOption('storeType', storeType);
+        wizard.step = 2;
+      }
+      document.getElementById('wizardModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      renderWizard();
+    }
+
+    function closeWizard() {
+      document.getElementById('wizardModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function resetWizard() {
+      Object.assign(wizard, { step: 1, storeType: '', speakers: '', day: null, time: '', bestTime: '', contactBy: '' });
+      document.getElementById('wizardForm').reset();
+      document.querySelectorAll('.wz-option').forEach((b) => WIZARD_SELECTED.forEach((c) => b.classList.remove(c)));
+      selectWizardOption('contactMode', 'book');
+      document.getElementById('wzDays').innerHTML = '';
+      document.getElementById('wzTimes').innerHTML = '<p class="col-span-full text-sm text-slate-400">Pick a day to see open times.</p>';
+    }
+
+    function showWizardError(message) {
+      const el = document.getElementById('wizardError');
+      el.textContent = message;
+      el.classList.toggle('hidden', !message);
+    }
+
+    function renderWizard() {
+      const step = wizard.step;
+      showWizardError('');
+      document.querySelectorAll('.wz-step').forEach((el) => el.classList.toggle('hidden', Number(el.dataset.step) !== step));
+      document.querySelectorAll('.wz-bar').forEach((bar, i) => {
+        bar.classList.toggle('bg-white', i < step);
+        bar.classList.toggle('bg-white/30', i >= step);
+      });
+      document.getElementById('wizardStepLabel').innerHTML = step <= 4
+        ? 'Step ' + step + ' of 4 &middot; ' + WIZARD_STEPS[step - 1]
+        : 'Complete';
+      document.getElementById('wizardBack').classList.toggle('invisible', step === 1 || step === 5);
+      const next = document.getElementById('wizardNext');
+      next.innerHTML = step === 4 ? (wizard.contactMode === 'callback' ? 'Request a Callback &rarr;' : 'Book My Call &rarr;') : step === 5 ? 'Done' : 'Continue &rarr;';
+
+      if (step === 2) {
+        document.getElementById('wzPlaybackQuestion').textContent = wizard.storeType === 'open'
+          ? 'How does your store play music?'
+          : 'How will your store play music?';
+      }
+      if (step === 3) {
+        document.getElementById('wzOpeningWrap').classList.toggle('hidden', wizard.storeType !== 'new');
+      }
+      if (step === 4) {
+        document.getElementById('wzCallBlurb').textContent = wizard.speakers === 'Speaker package'
+          ? 'Your rep will go over your speaker quote, take payment, and set your activation date.'
+          : 'Your rep will confirm how you’ll play music, take payment, and set your activation date.';
+        const days = document.getElementById('wzDays');
+        if (!days.children.length) {
+          renderDayPicker(days, (day, index) => {
+            wizard.day = day;
+            wizard.time = '';
+            renderTimePicker(document.getElementById('wzTimes'), index, (time) => { wizard.time = time; });
+          });
+        }
+      }
+    }
+
+    function wizardBack() {
+      if (wizard.step > 1 && wizard.step < 5) {
+        wizard.step--;
+        renderWizard();
+      }
+    }
+
+    function wizardNext() {
+      const step = wizard.step;
+      if (step === 1 && !wizard.storeType) return showWizardError('Choose one to continue.');
+      if (step === 2 && !wizard.speakers) return showWizardError('Choose the closest answer to continue.');
+      if (step === 3) {
+        const invalid = [...document.querySelectorAll('#wizardForm input[required]')].find((input) => !input.value.trim() || !input.checkValidity());
+        if (invalid) {
+          invalid.focus();
+          return showWizardError('Please fill in the required fields.');
+        }
+      }
+      if (step === 4) {
+        if (wizard.contactMode === 'book' && (!wizard.day || !wizard.time)) return showWizardError('Pick a day and time for your call.');
+        if (wizard.contactMode === 'callback' && (!wizard.bestTime || !wizard.contactBy)) return showWizardError('Choose the best time and how we should contact you.');
+        submitWizard();
+      }
+      if (step === 5) return closeWizard();
+      wizard.step++;
+      renderWizard();
+    }
+
+    function submitWizard() {
+      const val = (id) => document.getElementById(id).value.trim();
+      const callback = wizard.contactMode === 'callback';
+      const call = callback ? '' : formatCall(wizard.day, wizard.time);
+      const callbackText = wizard.bestTime.toLowerCase() + ' (Eastern), by ' + wizard.contactBy.toLowerCase();
+      const isNew = wizard.storeType === 'new';
+      const opening = isNew ? val('wzOpeningDate') : '';
+      const notes = [
+        'Submitted through the Set Up My Store wizard.',
+        'Store type: ' + (isNew ? 'New store' : 'Existing store'),
+        opening ? 'Opening date: ' + opening : '',
+        callback ? 'Callback requested: ' + callbackText : 'Setup call: ' + call
+      ].filter(Boolean).join('\n');
+
+      document.getElementById('wzDoneTitle').textContent = callback ? 'Request received' : 'You’re all set';
+      document.getElementById('wzDoneCall').textContent = callback
+        ? 'Your rep will reach out within one business day, in the ' + callbackText + ', to schedule your setup call.'
+        : 'Your setup call is booked for ' + call + '.';
+      document.getElementById('wzSumStore').textContent = val('wzLocationName');
+      document.getElementById('wzSumSpeakers').textContent = WIZARD_SPEAKERS[wizard.speakers] || wizard.speakers;
+
+      const nextSteps = [];
+      nextSteps.push(callback
+        ? 'Your rep contacts you to schedule your 15-minute setup call.'
+        : 'A calendar invite goes to ' + val('wzEmail') + '.');
+      nextSteps.push('On the call, your rep takes payment and sets your activation date.');
+      document.getElementById('wzNext').innerHTML = nextSteps.map((t) => '<li>' + t.replace(/</g, '&lt;') + '</li>').join('');
+
+      const note = document.getElementById('wzSendNote');
+      note.classList.add('hidden');
+      if (!SEND_LEADS || ['localhost', '127.0.0.1'].includes(location.hostname)) return;
+
+      fetch('/api/submitLead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          programId: 'woofgang',
+          programName: 'Woof Gang Bakery & Grooming',
+          salesmanEmail: 'woofgang@dm-us.com',
+          locationName: val('wzLocationName'),
+          locationAddress: val('wzAddress'),
+          contactName: val('wzContactName'),
+          contactPhone: val('wzPhone'),
+          contactEmail: val('wzEmail'),
+          hardwarePreference: wizard.speakers,
+          notes
+        })
+      })
+        .then((res) => res.json().then((data) => { if (!res.ok || !data.success) throw new Error(); }))
+        .catch(() => {
+          note.textContent = 'We couldn’t send this automatically. Please email woofgang@dm-us.com so we can schedule your setup call.';
+          note.classList.remove('hidden');
+        });
+    }
+
+    document.querySelectorAll('.wz-option').forEach((button) => {
+      button.addEventListener('click', () => {
+        selectWizardOption(button.dataset.group, button.dataset.value);
+        showWizardError('');
+        if (wizard.step <= 2) setTimeout(() => { if (wizard.step <= 2) wizardNext(); }, 220);
+      });
+    });
+
+    selectWizardOption('contactMode', 'book');
+
+    function openQuote() {
+      if (!document.getElementById('quoteDone').classList.contains('hidden')) {
+        document.getElementById('quoteForm').reset();
+        document.getElementById('quoteForm').classList.remove('hidden');
+        document.getElementById('quoteDone').classList.add('hidden');
+        toggleQuoteOpening();
+      }
+      document.getElementById('quoteError').classList.add('hidden');
+      document.getElementById('quoteModal').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeQuote() {
+      document.getElementById('quoteModal').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function toggleQuoteOpening() {
+      document.getElementById('qtOpeningWrap').classList.toggle('hidden', document.getElementById('qtStoreType').value !== 'New store');
+    }
+
+    document.getElementById('quoteForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = (id) => document.getElementById(id).value.trim();
+      const error = document.getElementById('quoteError');
+      const invalid = [...document.querySelectorAll('#quoteForm [required]')].find((input) => !input.value.trim() || !input.checkValidity());
+      if (invalid) {
+        invalid.focus();
+        error.textContent = 'Please fill in the required fields.';
+        error.classList.remove('hidden');
+        return;
+      }
+      error.classList.add('hidden');
+
+      const isNew = val('qtStoreType') === 'New store';
+      const notes = [
+        'Speaker package quote request.',
+        'Store status: ' + val('qtStoreType'),
+        isNew && val('qtOpening') ? 'Opening date: ' + val('qtOpening') : '',
+        val('qtNotes') ? 'Notes: ' + val('qtNotes') : ''
+      ].filter(Boolean).join('\n');
+
+      document.getElementById('quoteForm').classList.add('hidden');
+      document.getElementById('quoteDone').classList.remove('hidden');
+      const note = document.getElementById('quoteSendNote');
+      note.classList.add('hidden');
+      if (!SEND_LEADS || ['localhost', '127.0.0.1'].includes(location.hostname)) return;
+
+      fetch('/api/submitLead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          programId: 'woofgang',
+          programName: 'Woof Gang Bakery & Grooming',
+          salesmanEmail: 'woofgang@dm-us.com',
+          locationName: val('qtStore'),
+          contactName: val('qtName'),
+          contactPhone: val('qtPhone'),
+          contactEmail: val('qtEmail'),
+          hardwarePreference: 'Speaker package quote',
+          notes
+        })
+      })
+        .then((res) => res.json().then((data) => { if (!res.ok || !data.success) throw new Error(); }))
+        .catch(() => {
+          note.textContent = 'We couldn’t send this automatically. Please email woofgang@dm-us.com for your quote.';
+          note.classList.remove('hidden');
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (!document.getElementById('wizardModal').classList.contains('hidden')) closeWizard();
+      if (!document.getElementById('quoteModal').classList.contains('hidden')) closeQuote();
+    });
+
+    document.getElementById('pageLeadForm').addEventListener('submit', () => {
+      const topic = document.getElementById('contactTopic').value;
+      const notes = document.getElementById('locationNotes');
+      if (!notes.value.startsWith('Topic:')) notes.value = 'Topic: ' + topic + '\n' + notes.value;
+    }, true);
+
+    document.addEventListener('submit', (e) => {
+      if (SEND_LEADS || e.target.id !== 'pageLeadForm') return;
+      e.preventDefault();
+      e.stopPropagation();
+      const form = e.target;
+      const status = document.getElementById('pageFormStatus');
+      status.className = 'block rounded-xl p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium';
+      status.innerHTML = '&check; Thanks! Your message is on its way to the Woof Gang program team. We’ll get back to you within one business day.';
+      form.reset();
+    }, true);
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const button = document.getElementById('mobileMenuButton');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    }
+  </script>
+  <script src="../assets/lead-modal.js"></script>
+</body>
+</html>
