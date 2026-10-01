@@ -616,7 +616,7 @@
           <div class="relative max-w-[560px] mx-auto">
             <div class="po-glow"></div>
             <div id="poStage" class="relative aspect-[4/3] select-none">
-              <img id="poStill" src="assets/playerone-citybbq-v2.webp" alt="PlayerOne streaming player with City BBQ on its front display" class="po-img absolute inset-0 w-full h-full object-contain">
+              <img id="poStill" src="assets/playerone-citybbq-v2.webp" alt="PlayerOne streaming player" class="po-img absolute inset-0 w-full h-full object-contain">
               <img id="poSpin" src="assets/spin/00.webp" alt="PlayerOne rotating to show every side and port" class="po-img absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none scale-[1.18]" draggable="false" loading="lazy">
               <span id="poHint" class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[.22em] font-bold text-cream/45 opacity-0 transition-opacity">&larr; Drag to turn &rarr;</span>
             </div>
@@ -624,7 +624,7 @@
               <button type="button" aria-pressed="true" data-view="still" class="rounded-full border border-cream/20 px-5 py-2 text-xs font-bold uppercase tracking-[.18em] text-cream/80 transition">Display</button>
               <button type="button" aria-pressed="false" data-view="spin" class="rounded-full border border-cream/20 px-5 py-2 text-xs font-bold uppercase tracking-[.18em] text-cream/80 transition">360&deg; view</button>
             </div>
-            <p id="poCaption" class="text-center text-sm text-cream/50 mt-3">The front display can carry your name, the channel, and its status.</p>
+            <p id="poCaption" class="text-center text-sm text-cream/50 mt-3"></p>
           </div>
         </div>
         <div class="lg:col-span-6 order-1">
@@ -1034,7 +1034,7 @@
         function setView(v) {
           var isSpin = v === 'spin';
           document.querySelectorAll('.po-toggle button').forEach(function (x) { x.setAttribute('aria-pressed', x.dataset.view === v ? 'true' : 'false'); });
-          cap.textContent = isSpin ? 'Ethernet, HDMI, optical, and analog out on the back; USB and SD on the side.' : 'The front display can carry your name, the channel, and its status.';
+          cap.textContent = isSpin ? 'Ethernet, HDMI, optical, and analog out on the back; USB and SD on the side.' : '';
           if (!isSpin) {
             spinning = false;
             still.classList.remove('opacity-0'); spin.classList.add('opacity-0', 'pointer-events-none'); hint.classList.add('opacity-0');
