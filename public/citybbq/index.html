@@ -161,13 +161,14 @@
           <span class="hidden sm:block text-[9.5px] leading-none tracking-[.2em] uppercase text-cream/50 font-semibold">A Dynamic Media sound program</span>
         </span>
       </a>
-      <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-cream/75" aria-label="Sections">
+      <nav class="hidden xl:flex items-center gap-6 text-[13px] font-semibold text-cream/75" aria-label="Sections">
+        <a href="#problem" class="navlink hover:text-cream">The problem</a>
         <a href="#brand" class="navlink hover:text-cream">The brand</a>
         <a href="#guests" class="navlink hover:text-cream">The guests</a>
         <a href="#sound" class="navlink hover:text-cream">The sound</a>
         <a href="#day" class="navlink hover:text-cream">The day</a>
-        <a href="#messaging" class="navlink hover:text-cream">Messaging</a>
         <a href="#playerone" class="navlink hover:text-cream">PlayerOne</a>
+        <a href="#messaging" class="navlink hover:text-cream">Messaging</a>
         <a href="#investment" class="navlink hover:text-cream">Investment</a>
       </nav>
       <div class="flex items-center gap-3">
@@ -175,15 +176,15 @@
           <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
           Listen
         </a>
-        <button id="menuBtn" type="button" class="lg:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border border-cream/20 text-cream" aria-label="Open menu" aria-expanded="false">
+        <button id="menuBtn" type="button" class="xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border border-cream/20 text-cream" aria-label="Open menu" aria-expanded="false">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </div>
-    <nav id="mobileMenu" class="hidden lg:hidden bg-char/95 backdrop-blur border-t border-cream/10 px-5 py-5" aria-label="Mobile sections">
+    <nav id="mobileMenu" class="hidden xl:hidden bg-char/95 backdrop-blur border-t border-cream/10 px-5 py-5" aria-label="Mobile sections">
       <div class="grid grid-cols-2 gap-3 text-sm font-semibold text-cream/85">
-        <a href="#brand">The brand</a><a href="#guests">The guests</a><a href="#sound">The sound</a><a href="#day">The day</a>
-        <a href="#listen">Listen</a><a href="#messaging">Messaging</a><a href="#playerone">PlayerOne</a><a href="#investment">Investment</a>
+        <a href="#problem">The problem</a><a href="#brand">The brand</a><a href="#guests">The guests</a><a href="#sound">The sound</a><a href="#day">The day</a>
+        <a href="#listen">Listen</a><a href="#playerone">PlayerOne</a><a href="#messaging">Messaging</a><a href="#investment">Investment</a>
       </div>
     </nav>
   </header>
@@ -212,8 +213,8 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           Listen to City Barbeque Radio
         </a>
-        <a href="#brand" class="inline-flex items-center gap-2 btn border border-cream/30 hover:border-cream/70 hover:bg-cream/5 transition px-7 py-4 text-cream">
-          Read our brand analysis <span aria-hidden="true">&darr;</span>
+        <a href="#summary" class="inline-flex items-center gap-2 btn border border-cream/30 hover:border-cream/70 hover:bg-cream/5 transition px-7 py-4 text-cream">
+          The 60-second version <span aria-hidden="true">&darr;</span>
         </a>
       </div>
       <div class="mt-16 sm:mt-24 flex flex-col sm:flex-row sm:items-end justify-between gap-6 reveal d4">
@@ -259,51 +260,104 @@
       </div>
       <div class="lg:col-span-8">
         <ol class="border-t-2 border-char">
-            <li class="grid grid-cols-[3.25rem_1fr] sm:grid-cols-[4rem_10rem_1fr_auto] gap-x-4 gap-y-1 items-baseline py-5 border-b border-dashed border-char/25 reveal">
-              <span class="poster text-4xl font-black text-ember row-span-2 sm:row-span-1">01</span>
-              <span class="eyebrow text-smoke/60">The problem</span>
-              <p class="col-start-2 sm:col-start-auto text-[17px] leading-relaxed text-smoke/90">Every restaurant plays a stock BBQ channel that nobody at City Barbeque chose. It&rsquo;s the sonic equivalent of reheated brisket.</p>
-              <a href="#brand" class="col-start-2 sm:col-start-auto text-xs font-bold uppercase tracking-[.16em] text-ember hover:text-flame whitespace-nowrap">Our brand read &rarr;</a>
-            </li>
-            <li class="grid grid-cols-[3.25rem_1fr] sm:grid-cols-[4rem_10rem_1fr_auto] gap-x-4 gap-y-1 items-baseline py-5 border-b border-dashed border-char/25 reveal d1">
-              <span class="poster text-4xl font-black text-ember row-span-2 sm:row-span-1">02</span>
-              <span class="eyebrow text-smoke/60">The sound</span>
-              <p class="col-start-2 sm:col-start-auto text-[17px] leading-relaxed text-smoke/90">Four daypart playlists of roots, soul, and Americana, curated like the menu and reviewed lyric by lyric.</p>
-              <a href="#listen" class="col-start-2 sm:col-start-auto text-xs font-bold uppercase tracking-[.16em] text-ember hover:text-flame whitespace-nowrap">Listen &rarr;</a>
-            </li>
-            <li class="grid grid-cols-[3.25rem_1fr] sm:grid-cols-[4rem_10rem_1fr_auto] gap-x-4 gap-y-1 items-baseline py-5 border-b border-dashed border-char/25 reveal d1">
-              <span class="poster text-4xl font-black text-ember row-span-2 sm:row-span-1">03</span>
-              <span class="eyebrow text-smoke/60">The hardware</span>
-              <p class="col-start-2 sm:col-start-auto text-[17px] leading-relaxed text-smoke/90">One PlayerOne per restaurant. Nothing for staff to touch, and the music keeps playing when the network drops.</p>
-              <a href="#playerone" class="col-start-2 sm:col-start-auto text-xs font-bold uppercase tracking-[.16em] text-ember hover:text-flame whitespace-nowrap">PlayerOne &rarr;</a>
-            </li>
-            <li class="grid grid-cols-[3.25rem_1fr] sm:grid-cols-[4rem_10rem_1fr_auto] gap-x-4 gap-y-1 items-baseline py-5 border-b border-dashed border-char/25 reveal d2">
-              <span class="poster text-4xl font-black text-ember row-span-2 sm:row-span-1">04</span>
-              <span class="eyebrow text-smoke/60">The cost</span>
-              <p class="col-start-2 sm:col-start-auto text-[17px] leading-relaxed text-smoke/90"><strong class="text-char">$27.95 per restaurant a month</strong>, about $2,300 for the fleet, plus about $11,300 one-time for players and the playlist build.</p>
-              <a href="#investment" class="col-start-2 sm:col-start-auto text-xs font-bold uppercase tracking-[.16em] text-ember hover:text-flame whitespace-nowrap">Pricing &rarr;</a>
-            </li>
-            <li class="grid grid-cols-[3.25rem_1fr] sm:grid-cols-[4rem_10rem_1fr_auto] gap-x-4 gap-y-1 items-baseline py-5 border-b border-dashed border-char/25 reveal d2">
-              <span class="poster text-4xl font-black text-ember row-span-2 sm:row-span-1">05</span>
-              <span class="eyebrow text-smoke/60">The start</span>
-              <p class="col-start-2 sm:col-start-auto text-[17px] leading-relaxed text-smoke/90">A listening session this month, then a 90-day pilot in three restaurants. In-store messaging is an optional test, later.</p>
-              <a href="#pilot" class="col-start-2 sm:col-start-auto text-xs font-bold uppercase tracking-[.16em] text-ember hover:text-flame whitespace-nowrap">The plan &rarr;</a>
-            </li>
+          <li class="grid sm:grid-cols-[9.5rem_1fr_8.5rem] gap-x-6 gap-y-2 items-baseline py-5 border-b border-dashed border-char/25 reveal">
+            <span class="eyebrow text-ember">The problem</span>
+            <p class="text-[17px] leading-relaxed text-smoke/90">You&rsquo;d never serve reheated brisket, but every room plays a stock BBQ channel nobody at City Barbeque chose, and every new restaurant inherits it.</p>
+            <a href="#problem" class="group inline-flex items-baseline gap-2 text-xs font-bold uppercase tracking-[.16em] text-smoke/60 hover:text-ember sm:justify-self-end whitespace-nowrap"><span class="poster text-2xl font-black text-ember">01</span>The problem <span class="transition-transform group-hover:translate-x-1">&rarr;</span></a>
+          </li>
+          <li class="grid sm:grid-cols-[9.5rem_1fr_8.5rem] gap-x-6 gap-y-2 items-baseline py-5 border-b border-dashed border-char/25 reveal d1">
+            <span class="eyebrow text-ember">The sound</span>
+            <p class="text-[17px] leading-relaxed text-smoke/90">Pan-American roots in four daypart playlists: Texas country next to Memphis soul, next to Chicago blues. Every lyric reviewed.</p>
+            <a href="#sound" class="group inline-flex items-baseline gap-2 text-xs font-bold uppercase tracking-[.16em] text-smoke/60 hover:text-ember sm:justify-self-end whitespace-nowrap"><span class="poster text-2xl font-black text-ember">04</span>The sound <span class="transition-transform group-hover:translate-x-1">&rarr;</span></a>
+          </li>
+          <li class="grid sm:grid-cols-[9.5rem_1fr_8.5rem] gap-x-6 gap-y-2 items-baseline py-5 border-b border-dashed border-char/25 reveal d1">
+            <span class="eyebrow text-ember">The hardware</span>
+            <p class="text-[17px] leading-relaxed text-smoke/90">One PlayerOne per restaurant. Nothing for staff to touch, and the music keeps playing when the network drops.</p>
+            <a href="#playerone" class="group inline-flex items-baseline gap-2 text-xs font-bold uppercase tracking-[.16em] text-smoke/60 hover:text-ember sm:justify-self-end whitespace-nowrap"><span class="poster text-2xl font-black text-ember">07</span>PlayerOne <span class="transition-transform group-hover:translate-x-1">&rarr;</span></a>
+          </li>
+          <li class="grid sm:grid-cols-[9.5rem_1fr_8.5rem] gap-x-6 gap-y-2 items-baseline py-5 border-b border-dashed border-char/25 reveal d2">
+            <span class="eyebrow text-ember">The cost</span>
+            <p class="text-[17px] leading-relaxed text-smoke/90"><strong class="text-char">$27.95 per restaurant a month</strong>, about $2,300 for the fleet, plus about $11,300 one-time for players and the playlist build.</p>
+            <a href="#investment" class="group inline-flex items-baseline gap-2 text-xs font-bold uppercase tracking-[.16em] text-smoke/60 hover:text-ember sm:justify-self-end whitespace-nowrap"><span class="poster text-2xl font-black text-ember">10</span>Pricing <span class="transition-transform group-hover:translate-x-1">&rarr;</span></a>
+          </li>
+          <li class="grid sm:grid-cols-[9.5rem_1fr_8.5rem] gap-x-6 gap-y-2 items-baseline py-5 border-b border-dashed border-char/25 reveal d2">
+            <span class="eyebrow text-ember">The start</span>
+            <p class="text-[17px] leading-relaxed text-smoke/90">A listening session this month, then a 45-day pilot in three restaurants. In-store messaging is an optional test, later.</p>
+            <a href="#pilot" class="group inline-flex items-baseline gap-2 text-xs font-bold uppercase tracking-[.16em] text-smoke/60 hover:text-ember sm:justify-self-end whitespace-nowrap"><span class="poster text-2xl font-black text-ember">10</span>The pilot <span class="transition-transform group-hover:translate-x-1">&rarr;</span></a>
+          </li>
         </ol>
         <p class="mt-6 text-sm text-smoke/60 reveal">The rest of this page is the thinking behind each line, for whenever you have the time.</p>
       </div>
     </div>
   </section>
 
+  <!-- ============ PROBLEM ============ -->
+  <section id="problem" class="bg-char grain scroll-mt-16">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+      <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-7">
+          <p class="eyebrow text-hickory reveal">01 &middot; The problem</p>
+          <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">No shortcuts in the smoker. <em class="text-flame">One in the speakers.</em></h2>
+        </div>
+        <p class="lg:col-span-5 text-lg leading-relaxed text-cream/75 reveal d2">Someone at City Barbeque decided every part of the visit a guest can see, smell, and taste. Nobody decided what they hear. The room plays a stock category channel, the fast-casual equivalent of reheated brisket. It works. It just isn&rsquo;t you.</p>
+      </div>
+
+      <!-- Five senses -->
+      <div class="mt-16 grid grid-cols-2 lg:grid-cols-5 gap-px bg-cream/10 border border-cream/10 reveal">
+        <div class="bg-soot p-6"><p class="eyebrow text-cream/45">See</p><p class="display text-xl mt-3">Stainless smokers out front</p><p class="mt-4 text-[11px] uppercase tracking-[.2em] font-bold text-emerald-400/80">&#10003; Designed</p></div>
+        <div class="bg-soot p-6"><p class="eyebrow text-cream/45">Smell</p><p class="display text-xl mt-3">Hickory in the parking lot</p><p class="mt-4 text-[11px] uppercase tracking-[.2em] font-bold text-emerald-400/80">&#10003; Designed</p></div>
+        <div class="bg-soot p-6"><p class="eyebrow text-cream/45">Taste</p><p class="display text-xl mt-3">Bark, smoke ring, banana pudding</p><p class="mt-4 text-[11px] uppercase tracking-[.2em] font-bold text-emerald-400/80">&#10003; Designed</p></div>
+        <div class="bg-soot p-6"><p class="eyebrow text-cream/45">Touch</p><p class="display text-xl mt-3">Paper-lined trays, handmade tables</p><p class="mt-4 text-[11px] uppercase tracking-[.2em] font-bold text-emerald-400/80">&#10003; Designed</p></div>
+        <div class="col-span-2 lg:col-span-1 bg-ember p-6"><p class="eyebrow text-cream/70">Hear</p><p class="display text-xl mt-3">A stock &ldquo;BBQ restaurant&rdquo; channel</p><p class="mt-4 text-[11px] uppercase tracking-[.2em] font-bold text-cream">&#10005; Inherited</p></div>
+      </div>
+
+      <!-- What's wrong with it -->
+      <div class="mt-20">
+        <p class="eyebrow text-hickory reveal">What that costs you today</p>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="border-t-2 border-flame pt-6 reveal">
+            <h3 class="display text-3xl">Generic by design</h3>
+            <p class="mt-3 text-cream/65 leading-relaxed">It&rsquo;s built for the category, so the same kind of playlist is sold to every BBQ chain that buys one. Your food is better than theirs. Your room sounds the same.</p>
+          </article>
+          <article class="border-t-2 border-flame pt-6 reveal d1">
+            <h3 class="display text-3xl">One playlist, all day</h3>
+            <p class="mt-3 text-cream/65 leading-relaxed">The 12:15 lunch line and the 3:30 lull hear the same thing. So do the weeknight family and the guest who judges your bark.</p>
+          </article>
+          <article class="border-t-2 border-flame pt-6 reveal d2">
+            <h3 class="display text-3xl">Nobody owns it</h3>
+            <p class="mt-3 text-cream/65 leading-relaxed">It came with a vendor contract signed before today&rsquo;s leadership team. Marketing has no hand on it, and changing anything means a support ticket.</p>
+          </article>
+          <article class="border-t-2 border-flame pt-6 reveal d3">
+            <h3 class="display text-3xl">It fails out loud</h3>
+            <p class="mt-3 text-cream/65 leading-relaxed">When a restaurant&rsquo;s network drops, the room switches to holiday music. In July. Guests notice, and staff can&rsquo;t fix it.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Cost of waiting -->
+      <div class="mt-20 grid lg:grid-cols-12 overflow-hidden rounded-sm reveal">
+        <div class="lg:col-span-4 bg-ember p-8 sm:p-10 flex items-center gap-6">
+          <p class="poster font-black text-[7.5rem] leading-[.78]">20</p>
+          <p class="display text-2xl leading-tight">The next<br>twenty<br>openings</p>
+        </div>
+        <div class="lg:col-span-8 bg-cream text-char p-8 sm:p-10 flex flex-col justify-center">
+          <p class="eyebrow text-ember">The cost of waiting</p>
+          <p class="lede text-2xl sm:text-[1.7rem] leading-snug mt-4">City Barbeque opens three to four restaurants a quarter, most in new markets. Every one that opens on the stock channel <em class="text-ember">starts life sounding like someone else.</em></p>
+          <p class="mt-4 text-smoke/75 leading-relaxed">A first visit in a new market is the brand&rsquo;s first impression there. Switch now, and the next twenty openings launch with a sound that&rsquo;s yours from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ BRAND READ ============ -->
-  <section id="brand" class="relative bg-char grain scroll-mt-16">
+  <section id="brand" class="relative kraft text-char scroll-mt-16">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-24 sm:pt-32">
       <div class="grid lg:grid-cols-12 gap-12 items-end">
         <div class="lg:col-span-7">
-          <p class="eyebrow text-hickory reveal">01 &middot; Our read on the brand</p>
-          <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">Craft,<br><em class="text-kraft">made accessible.</em></h2>
+          <p class="eyebrow text-ember reveal">02 &middot; Our read on the brand</p>
+          <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">Craft,<br><em class="text-ember">made accessible.</em></h2>
         </div>
-        <p class="lg:col-span-5 text-lg leading-relaxed text-cream/75 reveal d2">
+        <p class="lg:col-span-5 text-lg leading-relaxed text-smoke/80 reveal d2">
           City Barbeque isn&rsquo;t selling speed, convenience, or price. It&rsquo;s selling the feeling that someone spent eighteen hours on your brisket because you deserve food made the right way, and then handed it to you in under ten minutes.
         </p>
       </div>
@@ -315,7 +369,7 @@
         <figcaption class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-char/90 to-transparent text-xs uppercase tracking-[.2em] font-semibold text-cream/80">Local hickory, loaded by hand. The smokers never turn off.</figcaption>
       </figure>
       <div class="lg:col-span-4 flex flex-col gap-6">
-        <blockquote class="flex-1 bg-soot border border-cream/10 p-8 sm:p-10 flex flex-col justify-between reveal d1">
+        <blockquote class="flex-1 bg-char text-cream p-8 sm:p-10 flex flex-col justify-between reveal d1">
           <span class="font-hand text-8xl text-ember leading-none">&ldquo;</span>
           <p class="lede text-xl sm:text-[1.45rem] leading-snug -mt-4">We deliver the flavors of America. Rather than adhering to a single regional style, we decided to make the best barbecue that we know how to make.</p>
           <footer class="mt-6 text-xs uppercase tracking-[.2em] text-cream/50 font-semibold">City Barbeque &middot; Nation&rsquo;s Restaurant News</footer>
@@ -332,14 +386,14 @@
         <img src="assets/rick-barn.jpg" alt="Founder Rick Malir tending a smoker outside a barn" class="w-full h-full object-cover" loading="lazy">
       </figure>
       <div class="lg:col-span-6">
-        <p class="eyebrow text-hickory reveal">Where it comes from</p>
-        <h3 class="display text-5xl sm:text-6xl mt-5 reveal d1">A Kansas farm kid, a competition team, and a <em>converted donut shop.</em></h3>
+        <p class="eyebrow text-ember reveal">Where it comes from</p>
+        <h3 class="display text-5xl sm:text-6xl mt-5 reveal d1">A Kansas farm kid, a competition team, and a <em class="text-ember">converted donut shop.</em></h3>
         <div class="mt-8 space-y-6 reveal d2">
-          <div class="flex gap-5"><span class="poster text-3xl font-black text-ember w-16 shrink-0">1999</span><p class="text-cream/75 leading-relaxed">Rick Malir leaves a job selling John Deere tractors and joins the Barbeque Boys, an award-winning competition team. Together they open the first City Barbeque in Upper Arlington, Ohio.</p></div>
-          <div class="flex gap-5"><span class="poster text-3xl font-black text-ember w-16 shrink-0">Day 1</span><p class="text-cream/75 leading-relaxed">Construction runs late, so Rick runs catering out of his garage to keep the lights on. The tables he built by hand are still in that first restaurant, with plaques.</p></div>
-          <div class="flex gap-5"><span class="poster text-3xl font-black text-ember w-16 shrink-0">Now</span><p class="text-cream/75 leading-relaxed">About 80 restaurants across 10 states, every one corporate-owned. The company even bought back a franchised location to put it under its own standards.</p></div>
+          <div class="flex gap-5"><span class="poster text-3xl font-black text-ember w-16 shrink-0">1999</span><p class="text-smoke/80 leading-relaxed">Rick Malir leaves a job selling John Deere tractors and joins the Barbeque Boys, an award-winning competition team. Together they open the first City Barbeque in Upper Arlington, Ohio.</p></div>
+          <div class="flex gap-5"><span class="poster text-3xl font-black text-ember w-16 shrink-0">Day 1</span><p class="text-smoke/80 leading-relaxed">Construction runs late, so Rick runs catering out of his garage to keep the lights on. The tables he built by hand are still in that first restaurant, with plaques.</p></div>
+          <div class="flex gap-5"><span class="poster text-3xl font-black text-ember w-16 shrink-0">Now</span><p class="text-smoke/80 leading-relaxed">About 80 restaurants across 10 states, every one corporate-owned. The company even bought back a franchised location to put it under its own standards.</p></div>
         </div>
-        <p class="mt-10 text-lg text-cream/90 leading-relaxed border-l-2 border-ember pl-6 reveal d3">The lineage shows in the building. The smokers sit outside as proof, not tucked away in the back of the house. That&rsquo;s a brand that wants guests to <em>see</em> the craft. We think they should hear it too.</p>
+        <p class="mt-10 text-lg text-char leading-relaxed border-l-2 border-ember pl-6 reveal d3">The lineage shows in the building. The smokers sit outside as proof, not tucked away in the back of the house. That&rsquo;s a brand that wants guests to <em>see</em> the craft. We think they should hear it too.</p>
       </div>
     </div>
 
@@ -350,7 +404,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
       <div class="grid lg:grid-cols-12 gap-10 items-end">
         <div class="lg:col-span-7">
-          <p class="eyebrow text-hickory reveal">02 &middot; Who walks in</p>
+          <p class="eyebrow text-hickory reveal">03 &middot; Who walks in</p>
           <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">Four guests.<br><em class="text-kraft">Four different rooms.</em></h2>
         </div>
         <p class="lg:col-span-5 text-lg leading-relaxed text-cream/70 reveal d2">One stock channel can&rsquo;t serve all of these people. The same restaurant is a different room at 12:15 than at 3:30 or 6:45, and the music should know it.</p>
@@ -413,36 +467,82 @@
   <!-- ============ SOUND ============ -->
   <section id="sound" class="bone text-char scroll-mt-16">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
-      <div class="max-w-4xl">
-        <p class="eyebrow text-ember reveal">03 &middot; What it should sound like</p>
-        <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">The flavors of America, <em class="text-ember">curated like the menu.</em></h2>
-        <p class="mt-8 text-xl leading-relaxed text-smoke/80 max-w-3xl reveal d2">The menu puts Memphis next to Texas next to the Carolinas, so the playlist should too. That means pan-American roots music: blues, soul, country, southern rock, and Americana, chosen with the same care as the hickory.</p>
+      <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-7">
+          <p class="eyebrow text-ember reveal">04 &middot; What it should sound like</p>
+          <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">The flavors of America, <em class="text-ember">curated like the menu.</em></h2>
+        </div>
+        <p class="lg:col-span-5 text-lg leading-relaxed text-smoke/80 reveal d2">City Barbeque smokes the flavors of America, not one region. The playlist should do the same: blues, soul, country, southern rock, and Americana, chosen with the same care as the hickory. A well-traveled BBQ fan&rsquo;s playlist, not a one-note regional stereotype.</p>
       </div>
 
-      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-char/15 border border-char/15">
-        <div class="bg-[#F2EEEA] p-8 reveal"><p class="poster text-6xl font-black text-ember">I.</p><p class="display text-2xl mt-5">Pan-American</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">Memphis soul next to Texas country next to Carolina folk. No stock channel thinks this way.</p></div>
-        <div class="bg-[#F2EEEA] p-8 reveal d1"><p class="poster text-6xl font-black text-ember">II.</p><p class="display text-2xl mt-5">Warm &amp; analog</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">Real instruments and real voices. Nothing overproduced, nothing from the club.</p></div>
-        <div class="bg-[#F2EEEA] p-8 reveal d2"><p class="poster text-6xl font-black text-ember">III.</p><p class="display text-2xl mt-5">Daypart-aware</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">The lunch rush and the 3 PM lull are different rooms, so they get different music.</p></div>
-        <div class="bg-[#F2EEEA] p-8 reveal d3"><p class="poster text-6xl font-black text-ember">IV.</p><p class="display text-2xl mt-5">Family-safe</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">Adult taste with kid-safe lyrics. Every song, and every word, is reviewed.</p></div>
+      <!-- The route -->
+      <div class="mt-20 reveal">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <p class="lede text-2xl sm:text-3xl max-w-3xl leading-snug">Texas country, next to Memphis soul, next to Chicago blues. <em class="text-ember">Same idea as the sauces on every table.</em></p>
+          <p class="text-xs uppercase tracking-[.2em] font-semibold text-smoke/50">Artists in the spirit of each stop</p>
+        </div>
+        <div class="relative mt-10">
+          <div class="hidden lg:block absolute left-2 right-2 top-[7px] border-t-2 border-dashed border-ember/45" aria-hidden="true"></div>
+          <ol class="grid grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
+            <li class="relative"><span class="block w-4 h-4 rounded-full bg-ember ring-[6px] ring-[#F6EEDF]"></span><p class="display text-4xl mt-5">Texas</p><p class="eyebrow text-[10px] text-ember mt-2">Country &amp; red dirt</p><p class="text-sm text-smoke/70 mt-3 leading-relaxed">Willie Nelson<br>Charley Crockett</p></li>
+            <li class="relative"><span class="block w-4 h-4 rounded-full bg-ember ring-[6px] ring-[#F6EEDF]"></span><p class="display text-4xl mt-5">Memphis</p><p class="eyebrow text-[10px] text-ember mt-2">Soul</p><p class="text-sm text-smoke/70 mt-3 leading-relaxed">Al Green<br>Ann Peebles</p></li>
+            <li class="relative"><span class="block w-4 h-4 rounded-full bg-ember ring-[6px] ring-[#F6EEDF]"></span><p class="display text-4xl mt-5">Chicago</p><p class="eyebrow text-[10px] text-ember mt-2">Electric blues</p><p class="text-sm text-smoke/70 mt-3 leading-relaxed">Muddy Waters<br>Buddy Guy</p></li>
+            <li class="relative"><span class="block w-4 h-4 rounded-full bg-ember ring-[6px] ring-[#F6EEDF]"></span><p class="display text-4xl mt-5">Carolinas</p><p class="eyebrow text-[10px] text-ember mt-2">Folk &amp; string band</p><p class="text-sm text-smoke/70 mt-3 leading-relaxed">Doc Watson<br>Rhiannon Giddens</p></li>
+            <li class="relative"><span class="block w-4 h-4 rounded-full bg-ember ring-[6px] ring-[#F6EEDF]"></span><p class="display text-4xl mt-5">NOLA</p><p class="eyebrow text-[10px] text-ember mt-2">Funk &amp; R&amp;B</p><p class="text-sm text-smoke/70 mt-3 leading-relaxed">Allen Toussaint<br>Trombone Shorty</p></li>
+            <li class="relative"><span class="block w-4 h-4 rounded-full bg-ember ring-[6px] ring-[#F6EEDF]"></span><p class="display text-4xl mt-5">Bakersfield</p><p class="eyebrow text-[10px] text-ember mt-2">Honky-tonk country</p><p class="text-sm text-smoke/70 mt-3 leading-relaxed">Buck Owens<br>Dwight Yoakam</p></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Principles -->
+      <div class="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-char/15 border border-char/15">
+        <div class="bg-[#FBF6EA] p-8 reveal"><p class="poster text-5xl font-black text-ember">I.</p><p class="display text-2xl mt-4">Regionally inclusive</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">Never Memphis-only or Texas-only. The brand isn&rsquo;t a purist, so the playlist isn&rsquo;t either.</p></div>
+        <div class="bg-[#FBF6EA] p-8 reveal d1"><p class="poster text-5xl font-black text-ember">II.</p><p class="display text-2xl mt-4">Warm &amp; live</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">Analog warmth, live instruments, and real singers. Nothing glossy, nothing Auto-Tuned.</p></div>
+        <div class="bg-[#FBF6EA] p-8 reveal d2"><p class="poster text-5xl font-black text-ember">III.</p><p class="display text-2xl mt-4">Vocals forward</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">BBQ is social food. Road songs, working songs, love songs, and celebrations, never background texture.</p></div>
+        <div class="bg-[#FBF6EA] p-8 reveal d3"><p class="poster text-5xl font-black text-ember">IV.</p><p class="display text-2xl mt-4">Family-safe, not kiddie</p><p class="text-smoke/70 mt-3 text-[15px] leading-relaxed">Music adults actually want to hear that happens to be safe for kids. Every lyric is reviewed.</p></div>
+      </div>
+
+      <!-- Should / should not -->
+      <div class="mt-16 grid lg:grid-cols-2 gap-6">
+        <div class="bg-char text-cream p-8 sm:p-10 reveal">
+          <p class="eyebrow text-hickory">It should sound</p>
+          <ul class="mt-6 divide-y divide-cream/10">
+            <li class="py-4 flex gap-4"><span class="text-emerald-400 font-bold">&#10003;</span><div><p class="font-semibold">Rooted in American craft traditions</p><p class="text-sm text-cream/55 mt-1">Blues, soul, country, southern rock, roots rock, and gospel-tinged R&amp;B.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-emerald-400 font-bold">&#10003;</span><div><p class="font-semibold">Mid-tempo and conversational</p><p class="text-sm text-cream/55 mt-1">95&ndash;115 BPM for most of the day: enough for a busy room, easy enough to settle in.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-emerald-400 font-bold">&#10003;</span><div><p class="font-semibold">Familiar, not overplayed</p><p class="text-sm text-cream/55 mt-1">Mostly current, with throwbacks for depth. Songs guests like, not songs they&rsquo;re tired of.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-emerald-400 font-bold">&#10003;</span><div><p class="font-semibold">Confident and easygoing</p><p class="text-sm text-cream/55 mt-1">A place to exhale and enjoy, never urgent or anxious.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-emerald-400 font-bold">&#10003;</span><div><p class="font-semibold">Shaped to the daypart</p><p class="text-sm text-cream/55 mt-1">Momentum through the lunch rush, more space in the afternoon, warmth at dinner.</p></div></li>
+          </ul>
+        </div>
+        <div class="bg-[#FBF6EA] border border-char/15 p-8 sm:p-10 reveal d1">
+          <p class="eyebrow text-ember">It should never sound like</p>
+          <ul class="mt-6 divide-y divide-char/10">
+            <li class="py-4 flex gap-4"><span class="text-ember font-bold">&#10005;</span><div><p class="font-semibold">Top-40 pop or dance</p><p class="text-sm text-smoke/60 mt-1">Generic and corporate. It undercuts the craft story.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-ember font-bold">&#10005;</span><div><p class="font-semibold">Theme-park country</p><p class="text-sm text-smoke/60 mt-1">No &ldquo;Cotton Eye Joe.&rdquo; City Barbeque is a real restaurant, not a costume.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-ember font-bold">&#10005;</span><div><p class="font-semibold">Stadium country or bro-country</p><p class="text-sm text-smoke/60 mt-1">Too slick and overproduced to feel craft-rooted.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-ember font-bold">&#10005;</span><div><p class="font-semibold">Spa, ambient, or soft-rock mush</p><p class="text-sm text-smoke/60 mt-1">The sound of every other fast-casual chain.</p></div></li>
+            <li class="py-4 flex gap-4"><span class="text-ember font-bold">&#10005;</span><div><p class="font-semibold">Aggressive rock or metal</p><p class="text-sm text-smoke/60 mt-1">Families with young kids are a core guest. Nothing hostile.</p></div></li>
+          </ul>
+        </div>
       </div>
 
       <!-- Library mix -->
-      <div class="mt-20 reveal">
+      <div class="mt-16 reveal">
         <div class="flex items-end justify-between gap-6 flex-wrap">
           <p class="eyebrow text-ember">The library mix</p>
           <p class="text-sm text-smoke/60">Current without going generic. Deep without feeling like an oldies station.</p>
         </div>
         <div class="mt-5 flex h-20 rounded-sm overflow-hidden text-cream">
-          <div class="bg-ember flex items-center px-5" style="width:70%"><span class="poster text-3xl font-black">70%</span><span class="ml-3 text-xs sm:text-sm font-medium opacity-90 hidden sm:inline">Post-2000 Americana, roots &amp; soul</span></div>
-          <div class="bg-smoke flex items-center px-4" style="width:25%"><span class="poster text-3xl font-black">25%</span><span class="ml-3 text-xs font-medium opacity-80 hidden lg:inline">&rsquo;70s&ndash;&rsquo;90s southern rock, outlaw country, blues</span></div>
+          <div class="bg-ember flex items-center px-5" style="width:70%"><span class="poster text-3xl font-black">70%</span><span class="ml-3 text-xs sm:text-sm font-medium opacity-90 hidden sm:inline">Post-2000: contemporary Americana, indie soul, current blues</span></div>
+          <div class="bg-smoke flex items-center px-4" style="width:25%"><span class="poster text-3xl font-black">25%</span><span class="ml-3 text-xs font-medium opacity-80 hidden lg:inline">&rsquo;70s&ndash;&rsquo;90s soul, southern rock, outlaw country</span></div>
           <div class="bg-hickory flex items-center justify-center" style="width:5%"><span class="poster text-lg font-black">5</span></div>
         </div>
-        <p class="mt-3 text-xs text-smoke/55 sm:hidden">70% post-2000 Americana, roots &amp; soul &middot; 25% &rsquo;70s&ndash;&rsquo;90s southern rock, outlaw country &amp; blues &middot; 5% pre-1970 for depth</p>
-        <p class="mt-3 text-xs text-smoke/55 hidden sm:block text-right">5% pre-1970, for depth</p>
+        <p class="mt-3 text-xs text-smoke/55 sm:hidden">70% post-2000 &middot; 25% &rsquo;70s&ndash;&rsquo;90s &middot; 5% pre-1970 Motown, classic country, and Delta blues</p>
+        <p class="mt-3 text-xs text-smoke/55 hidden sm:block text-right">5% pre-1970: Motown, classic country, Delta blues</p>
       </div>
 
       <!-- Competitive -->
-      <div class="mt-24 grid lg:grid-cols-3 gap-6">
+      <div class="mt-20 grid lg:grid-cols-3 gap-6">
         <div class="border-t-2 border-char pt-6 reveal"><p class="eyebrow text-smoke/60">Chipotle sounds like</p><p class="display text-2xl mt-3">A Brooklyn coffee shop</p><p class="text-smoke/70 mt-3 leading-relaxed">Indie, hip-hop, and Latin. Young, urban, and cool. Not craft.</p></div>
         <div class="border-t-2 border-char pt-6 reveal d1"><p class="eyebrow text-smoke/60">Panera sounds like</p><p class="display text-2xl mt-3">A study session</p><p class="text-smoke/70 mt-3 leading-relaxed">Soft acoustic and light jazz, built for lingering rather than energy.</p></div>
         <div class="border-t-2 border-ember pt-6 reveal d2"><p class="eyebrow text-ember">City Barbeque should sound like</p><p class="display text-2xl mt-3">A backyard cookout with a competition pitmaster</p><p class="text-smoke/70 mt-3 leading-relaxed">Warmer and more rooted than Chipotle, with more life in it than Panera. And nothing like the channel the other BBQ chains play.</p></div>
@@ -455,7 +555,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
       <div class="grid lg:grid-cols-12 gap-10 items-end">
         <div class="lg:col-span-7">
-          <p class="eyebrow text-hickory reveal">04 &middot; A day in the room</p>
+          <p class="eyebrow text-hickory reveal">05 &middot; A day in the room</p>
           <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">As intentional<br><em class="text-kraft">as the smokers.</em></h2>
         </div>
         <p class="lg:col-span-5 text-lg leading-relaxed text-cream/70 reveal d2">Four playlists, one for each part of the day. The schedule switches them automatically in every restaurant, so no manager ever touches a thing. Tap through the day to see what each one does.</p>
@@ -485,119 +585,93 @@
   </section>
 
   <!-- ============ LISTEN ============ -->
-  <section id="listen" class="relative overflow-hidden grain scroll-mt-16">
-    <div class="absolute inset-0 z-0">
-      <img src="assets/fire.jpg" alt="" class="w-full h-full object-cover opacity-40" loading="lazy">
-      <div class="absolute inset-0 bg-gradient-to-b from-char via-char/70 to-char"></div>
-    </div>
+  <section id="listen" class="relative bg-ember overflow-hidden grain scroll-mt-16">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32 grid lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-5">
-        <p class="eyebrow text-hickory reveal">05 &middot; Listen</p>
-        <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">City Barbeque <em class="text-kraft">Radio.</em></h2>
-        <p class="mt-8 text-lg leading-relaxed text-cream/75 reveal d2">This is a first taste of the program: pan-American roots, warm and analog, and family-safe by rule. Put it on in the office and picture it playing in Upper Arlington at 6 PM on a Tuesday.</p>
-        <ul class="mt-10 space-y-4 text-cream/80 reveal d3">
-          <li class="flex gap-4"><span class="text-ember font-bold">&mdash;</span><span><strong class="text-cream">Curated by a person,</strong> built from your brand brief rather than a category tag.</span></li>
-          <li class="flex gap-4"><span class="text-ember font-bold">&mdash;</span><span><strong class="text-cream">Every lyric reviewed.</strong> No explicit content and no divisive themes.</span></li>
-          <li class="flex gap-4"><span class="text-ember font-bold">&mdash;</span><span><strong class="text-cream">Refreshed monthly,</strong> so regulars never hear a channel that has aged in place.</span></li>
-          <li class="flex gap-4"><span class="text-ember font-bold">&mdash;</span><span><strong class="text-cream">Yours to shape.</strong> Marketing gets a seat at the table for every refresh.</span></li>
+        <p class="eyebrow text-cream/70 reveal">06 &middot; Listen</p>
+        <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">City Barbeque <em class="text-char">Radio.</em></h2>
+        <p class="mt-8 text-lg leading-relaxed text-cream/90 reveal d2">This is a first taste of the program: pan-American roots, warm and analog, and family-safe by rule. Put it on in the office and picture it playing in Upper Arlington at 6 PM on a Tuesday.</p>
+        <ul class="mt-10 space-y-4 text-cream/85 reveal d3">
+          <li class="flex gap-4"><span class="text-char font-bold">&mdash;</span><span><strong class="text-cream">Curated by a person,</strong> built from your brand brief rather than a category tag.</span></li>
+          <li class="flex gap-4"><span class="text-char font-bold">&mdash;</span><span><strong class="text-cream">Every lyric reviewed.</strong> No explicit content and no divisive themes.</span></li>
+          <li class="flex gap-4"><span class="text-char font-bold">&mdash;</span><span><strong class="text-cream">Refreshed monthly,</strong> so regulars never hear a channel that has aged in place.</span></li>
+          <li class="flex gap-4"><span class="text-char font-bold">&mdash;</span><span><strong class="text-cream">Yours to shape.</strong> Marketing gets a seat at the table for every refresh.</span></li>
         </ul>
       </div>
       <div class="lg:col-span-7 reveal d2">
-        <div class="rounded-2xl overflow-hidden shadow-[0_40px_120px_-30px_rgba(216,67,43,.45)] ring-1 ring-cream/10">
+        <div class="rounded-2xl overflow-hidden shadow-[0_40px_100px_-30px_rgba(0,0,0,.65)] ring-1 ring-char/20">
           <iframe title="City Barbeque Radio on Spotify" src="https://open.spotify.com/embed/playlist/7nldGO57pXCFcLQ6bKKBUT?utm_source=generator&theme=0" width="100%" height="480" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="block w-full"></iframe>
         </div>
-        <p class="mt-4 text-xs text-cream/45 text-center">A preview on Spotify. In the restaurants, the program runs on Soundtrack, the business-licensed platform that began as Spotify for Business.</p>
+        <p class="mt-4 text-xs text-cream/75 text-center">A preview on Spotify. In the restaurants, the program runs on Soundtrack, the business-licensed platform that began as Spotify for Business.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ MESSAGING ============ -->
-  <section id="messaging" class="kraft text-char scroll-mt-16">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
-      <div class="grid lg:grid-cols-12 gap-12 items-end">
-        <div class="lg:col-span-7">
-          <p class="eyebrow text-ember reveal">06 &middot; Phase two, optional &middot; In-store messaging</p>
-          <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">Get the music right. <em class="text-ember">Then test the voice.</em></h2>
-        </div>
-        <div class="lg:col-span-5 reveal d2">
-          <p class="text-lg leading-relaxed text-smoke/80">The room your guests hear for the entire visit is the one channel City Barbeque doesn&rsquo;t use. Messaging isn&rsquo;t part of the core program. Once the music is live, we&rsquo;d run a short, measured test to see whether a few well-made spots move the numbers you already track.</p>
-          <p class="mt-4 text-smoke/65 leading-relaxed">If it moves the needle, it rolls out. If it doesn&rsquo;t, we turn it off, and the music stays exactly as it is.</p>
-        </div>
-      </div>
-
-      <!-- How the test works -->
-      <div class="mt-16 grid lg:grid-cols-12 gap-6">
-        <div class="lg:col-span-5 bg-char text-cream p-10 sm:p-12 flex flex-col justify-between reveal">
-          <div>
-            <p class="eyebrow text-hickory">How the test works</p>
-            <ol class="mt-8 space-y-7">
-              <li class="flex gap-5"><span class="poster text-4xl font-black text-flame w-10 shrink-0">01</span><div><p class="font-semibold text-lg">Pick a handful of spots</p><p class="text-cream/60 text-[15px] mt-1">Four to six fleet-wide spots, written with your team and voiced by professional talent. The same spots play in every test restaurant.</p></div></li>
-              <li class="flex gap-5"><span class="poster text-4xl font-black text-flame w-10 shrink-0">02</span><div><p class="font-semibold text-lg">Run them in a few restaurants</p><p class="text-cream/60 text-[15px] mt-1">Sixty days in a small test group, with similar restaurants left music-only as the control.</p></div></li>
-              <li class="flex gap-5"><span class="poster text-4xl font-black text-flame w-10 shrink-0">03</span><div><p class="font-semibold text-lg">Read the numbers, then decide</p><p class="text-cream/60 text-[15px] mt-1">Compare the test group to the control on the metrics below. Roll out, refine, or turn it off.</p></div></li>
-            </ol>
-          </div>
-          <p class="mt-10 pt-6 border-t border-cream/10 text-xs text-cream/50 leading-relaxed">Nothing changes for store managers. Spots are produced and scheduled centrally, weighted to slower hours, and never more than one every three or four songs.</p>
-        </div>
-        <div class="lg:col-span-7 flex flex-col gap-6">
-          <div class="flex-1 bg-[#F6EBD3] border border-char/15 p-8 sm:p-10 flex flex-col reveal">
-            <p class="eyebrow text-ember">What we&rsquo;d measure</p>
-            <p class="mt-3 text-smoke/70 leading-relaxed">Spots would cover City Rewards, limited-time items, catering, the craft story, and the fundraising program. Each one is judged against the music-only control.</p>
-            <div class="mt-auto pt-8 grid grid-cols-2 gap-x-6 gap-y-8">
-              <div><p class="poster text-3xl font-black">Rewards</p><p class="text-xs text-smoke/65 mt-1 leading-snug">new City Rewards members per restaurant</p></div>
-              <div><p class="poster text-3xl font-black">LTO mix</p><p class="text-xs text-smoke/65 mt-1 leading-snug">share of tickets with the promoted item</p></div>
-              <div><p class="poster text-3xl font-black">Catering</p><p class="text-xs text-smoke/65 mt-1 leading-snug">inquiries and orders from test restaurants</p></div>
-              <div><p class="poster text-3xl font-black">Feedback</p><p class="text-xs text-smoke/65 mt-1 leading-snug">guest and GM reaction to the spots</p></div>
+  <!-- ============ PLAYERONE ============ -->
+  <section id="playerone" class="relative bg-[#111923] overflow-hidden grain scroll-mt-16">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6 order-2 reveal d1">
+          <div class="relative max-w-[560px] mx-auto">
+            <div class="po-glow"></div>
+            <div id="poStage" class="relative aspect-[4/3] select-none">
+              <img id="poStill" src="assets/playerone-citybbq.webp" alt="PlayerOne streaming player with City BBQ on its front display" class="po-img absolute inset-0 w-full h-full object-contain">
+              <img id="poSpin" src="assets/spin/00.webp" alt="PlayerOne rotating to show every side and port" class="po-img absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none scale-[1.18]" draggable="false" loading="lazy">
+              <span id="poHint" class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[.22em] font-bold text-cream/45 opacity-0 transition-opacity">&larr; Drag to turn &rarr;</span>
             </div>
+            <div class="po-toggle flex justify-center gap-2 mt-4">
+              <button type="button" aria-pressed="true" data-view="still" class="rounded-full border border-cream/20 px-5 py-2 text-xs font-bold uppercase tracking-[.18em] text-cream/80 transition">Display</button>
+              <button type="button" aria-pressed="false" data-view="spin" class="rounded-full border border-cream/20 px-5 py-2 text-xs font-bold uppercase tracking-[.18em] text-cream/80 transition">360&deg; view</button>
+            </div>
+            <p id="poCaption" class="text-center text-sm text-cream/50 mt-3">The front display can carry your name, the channel, and its status.</p>
           </div>
+        </div>
+        <div class="lg:col-span-6 order-1">
+          <p class="eyebrow text-hickory reveal">07 &middot; The hardware standard</p>
+          <h2 class="display text-6xl sm:text-7xl lg:text-8xl mt-6 reveal d1">PlayerOne.</h2>
+          <p class="lede text-2xl sm:text-[1.75rem] text-cream/80 mt-4 reveal d2"><em>One device in every restaurant.</em> Nothing for anyone to touch.</p>
+          <div class="mt-10 border-l-4 border-flame pl-6 reveal d2">
+            <p class="lede text-2xl leading-snug">Today, when a restaurant&rsquo;s network drops, the room switches to <em class="text-flame">Christmas music.</em> In July.</p>
+            <p class="mt-4 text-cream/65 leading-relaxed">PlayerOne stores the whole program on the device. If the internet goes out, the music keeps playing exactly as scheduled. Guests never notice, and our team sees the alert.</p>
           </div>
         </div>
       </div>
 
-      <!-- Spots -->
-      <div class="mt-20">
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p class="eyebrow text-ember reveal">Sample test spots</p>
-            <h3 class="display text-5xl sm:text-6xl mt-4 reveal d1">Read one out loud.</h3>
-          </div>
-          <p class="max-w-md text-smoke/70 reveal d2">These are examples to react to, not final copy. Every spot should sound like a pitmaster talking, never like a commercial break. Each one runs fleet-wide, so there&rsquo;s nothing to build restaurant by restaurant.</p>
-        </div>
-        <div class="mt-12 grid md:grid-cols-2 gap-8">
-          <article class="spot p-8 sm:p-10 reveal">
-            <div class="flex items-center justify-between"><span class="eyebrow text-ember">Brand DNA</span><span class="poster text-2xl font-black text-smoke/60">:28</span></div>
-            <p class="lede text-[1.3rem] leading-snug mt-6">&ldquo;See those stainless steel smokers outside? They&rsquo;re not for show. Every City Barbeque runs three smokers, twenty-four hours a day, three-sixty-five days a year. Local hickory. Eighteen-hour brisket. Scratch-made sides every morning. That&rsquo;s how we do it.&rdquo;</p>
-            <div class="wave mt-8" data-bars="64"></div>
-            <p class="mt-5 text-sm text-smoke/65">Turns the most visible proof of the brand into a story every guest can repeat.</p>
-          </article>
-          <article class="spot p-8 sm:p-10 reveal d1">
-            <div class="flex items-center justify-between"><span class="eyebrow text-ember">Loyalty</span><span class="poster text-2xl font-black text-smoke/60">:20</span></div>
-            <p class="lede text-[1.3rem] leading-snug mt-6">&ldquo;Every Monday, City Rewards members earn double points on every order. Open the app and make Monday your new favorite barbeque day.&rdquo;</p>
-            <div class="wave mt-8" data-bars="48"></div>
-            <p class="mt-5 text-sm text-smoke/65">A loyalty push aimed at guests who are already standing in a buying moment.</p>
-          </article>
-        </div>
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-cream/10 border border-cream/10">
+        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 12h.01M11 12h6"/></svg><div><p class="font-bold text-cream">Solid-state, built for 24/7</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">No moving parts and no consumer hardware. Built to stay on as long as the smokers do.</p></div></div>
+        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d1"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg><div><p class="font-bold text-cream">Plays through outages</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">On-board storage caches the program, so an outage never means silence.</p></div></div>
+        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d2"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 14h16v6H4zM8 14V9h8v5M12 9V4"/></svg><div><p class="font-bold text-cream">Uses the network you have</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">Wired Ethernet or Wi-Fi. No new cabling, no audio VLAN.</p></div></div>
+        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><div><p class="font-bold text-cream">Nothing for staff to touch</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">No in-store settings, so no help-desk tickets.</p></div></div>
+        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d1"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div><p class="font-bold text-cream">Managed from one dashboard</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">Control, monitoring, and updates for every player on one screen.</p></div></div>
+        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d2"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><p class="font-bold text-cream">A five-minute swap</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">Ships pre-configured. The old box comes out, PlayerOne goes in, and your speakers stay put.</p></div></div>
+      </div>
+
+      <div class="mt-6 grid lg:grid-cols-2 gap-6 text-sm">
+        <p class="text-cream/55 leading-relaxed reveal"><span class="eyebrow text-hickory mr-2">In the box</span> 3.5mm AV out &middot; Ethernet &middot; HDMI &middot; Optical out &middot; 12V power &middot; Wi-Fi antenna &middot; Front display</p>
+        <p class="text-cream/55 leading-relaxed reveal d1"><span class="eyebrow text-hickory mr-2">New builds</span> We also design, manufacture, and install the speakers and amps, with 8,500+ certified technicians, so each opening sounds like City Barbeque from day one.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTROL ============ -->
-  <section class="bg-char grain">
+  <section id="control" class="bone text-char scroll-mt-16">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28 grid lg:grid-cols-12 gap-14 items-center">
       <div class="lg:col-span-5">
-        <p class="eyebrow text-hickory reveal">07 &middot; What marketing controls</p>
-        <h2 class="display text-6xl sm:text-7xl mt-6 reveal d1">Every restaurant, <em class="text-kraft">from one laptop.</em></h2>
-        <p class="mt-8 text-lg leading-relaxed text-cream/70 reveal d2">Today, changing anything in the music means a support ticket with a vendor. With this program, your team (or ours, on your behalf) can change one restaurant or all of them in less time than it takes to get that call answered.</p>
+        <p class="eyebrow text-ember reveal">08 &middot; What marketing controls</p>
+        <h2 class="display text-6xl sm:text-7xl mt-6 reveal d1">Every restaurant, <em class="text-ember">from one laptop.</em></h2>
+        <p class="mt-8 text-lg leading-relaxed text-smoke/80 reveal d2">Today, changing anything in the music means a support ticket with a vendor. With this program, your team (or ours, on your behalf) can change one restaurant or all of them in less time than it takes to get that call answered.</p>
         <ul class="mt-10 space-y-6">
-          <li class="flex gap-5 reveal"><span class="poster text-2xl font-black text-ember w-8">A</span><div><p class="font-semibold text-cream">Push a seasonal playlist in one click</p><p class="text-cream/60 text-[15px] mt-1">&ldquo;Backyard Cookout&rdquo; for July, or a holiday set in December. Pick the restaurants and press play.</p></div></li>
-          <li class="flex gap-5 reveal d1"><span class="poster text-2xl font-black text-ember w-8">B</span><div><p class="font-semibold text-cream">Schedule a campaign, if messaging is on</p><p class="text-cream/60 text-[15px] mt-1">Set start and end dates, dayparts, frequency, and which restaurants hear it. It runs itself from there.</p></div></li>
-          <li class="flex gap-5 reveal d2"><span class="poster text-2xl font-black text-ember w-8">C</span><div><p class="font-semibold text-cream">Block a song everywhere, instantly</p><p class="text-cream/60 text-[15px] mt-1">A guest or GM flags a track, and it&rsquo;s gone from the whole fleet in seconds.</p></div></li>
-          <li class="flex gap-5 reveal d3"><span class="poster text-2xl font-black text-ember w-8">D</span><div><p class="font-semibold text-cream">See every room, live</p><p class="text-cream/60 text-[15px] mt-1">What&rsquo;s playing, what just played, and whether each restaurant is online.</p></div></li>
+          <li class="flex gap-5 reveal"><span class="poster text-2xl font-black text-ember w-8">A</span><div><p class="font-semibold text-char">Push a seasonal playlist in one click</p><p class="text-smoke/70 text-[15px] mt-1">&ldquo;Backyard Cookout&rdquo; for July, or a holiday set in December. Pick the restaurants and press play.</p></div></li>
+          <li class="flex gap-5 reveal d1"><span class="poster text-2xl font-black text-ember w-8">B</span><div><p class="font-semibold text-char">Schedule a campaign, if messaging is on</p><p class="text-smoke/70 text-[15px] mt-1">Set start and end dates, dayparts, frequency, and which restaurants hear it. It runs itself from there.</p></div></li>
+          <li class="flex gap-5 reveal d2"><span class="poster text-2xl font-black text-ember w-8">C</span><div><p class="font-semibold text-char">Block a song everywhere, instantly</p><p class="text-smoke/70 text-[15px] mt-1">A guest or GM flags a track, and it&rsquo;s gone from the whole fleet in seconds.</p></div></li>
+          <li class="flex gap-5 reveal d3"><span class="poster text-2xl font-black text-ember w-8">D</span><div><p class="font-semibold text-char">See every room, live</p><p class="text-smoke/70 text-[15px] mt-1">What&rsquo;s playing, what just played, and whether each restaurant is online.</p></div></li>
         </ul>
       </div>
 
       <!-- Dashboard illustration -->
       <div class="lg:col-span-7 reveal d2">
-        <div class="rounded-xl bg-[#0F0D0B] ring-1 ring-cream/10 shadow-[0_50px_120px_-40px_rgba(0,0,0,.9)] overflow-hidden">
+        <div class="rounded-xl bg-[#0F0D0B] text-cream ring-1 ring-char/10 shadow-[0_50px_120px_-40px_rgba(0,0,0,.9)] overflow-hidden">
           <div class="flex items-center gap-2 px-5 py-3.5 border-b border-cream/10">
             <span class="w-3 h-3 rounded-full bg-cream/15"></span><span class="w-3 h-3 rounded-full bg-cream/15"></span><span class="w-3 h-3 rounded-full bg-cream/15"></span>
             <span class="ml-4 text-xs text-cream/45 font-medium">Locations &middot; City Barbeque</span>
@@ -628,49 +702,58 @@
     </div>
   </section>
 
-  <!-- ============ PLAYERONE ============ -->
-  <section id="playerone" class="relative bg-[#111923] overflow-hidden grain scroll-mt-16">
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent"></div>
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-28">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        <div class="lg:col-span-6 order-2 reveal d1">
-          <div class="relative max-w-[560px] mx-auto">
-            <div class="po-glow"></div>
-            <div id="poStage" class="relative aspect-[4/3] select-none">
-              <img id="poStill" src="assets/playerone-citybbq.webp" alt="PlayerOne streaming player with City BBQ on its front display" class="po-img absolute inset-0 w-full h-full object-contain">
-              <img id="poSpin" src="assets/spin/00.webp" alt="PlayerOne rotating to show every side and port" class="po-img absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none scale-[1.18]" draggable="false" loading="lazy">
-              <span id="poHint" class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[.22em] font-bold text-cream/45 opacity-0 transition-opacity">&larr; Drag to turn &rarr;</span>
-            </div>
-            <div class="po-toggle flex justify-center gap-2 mt-4">
-              <button type="button" aria-pressed="true" data-view="still" class="rounded-full border border-cream/20 px-5 py-2 text-xs font-bold uppercase tracking-[.18em] text-cream/80 transition">Display</button>
-              <button type="button" aria-pressed="false" data-view="spin" class="rounded-full border border-cream/20 px-5 py-2 text-xs font-bold uppercase tracking-[.18em] text-cream/80 transition">360&deg; view</button>
-            </div>
-            <p id="poCaption" class="text-center text-sm text-cream/50 mt-3">The front display can carry your name, the channel, and its status.</p>
-          </div>
+  <!-- ============ MESSAGING ============ -->
+  <section id="messaging" class="bg-char grain scroll-mt-16">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+      <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-7">
+          <p class="eyebrow text-hickory reveal">09 &middot; Phase two, optional &middot; In-store messaging</p>
+          <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">Get the music right. <em class="text-flame">Then test the voice.</em></h2>
         </div>
-        <div class="lg:col-span-6 order-1">
-          <p class="eyebrow text-hickory reveal">08 &middot; The hardware standard</p>
-          <h2 class="display text-6xl sm:text-7xl lg:text-8xl mt-6 reveal d1">PlayerOne.</h2>
-          <p class="lede text-2xl sm:text-[1.75rem] text-cream/80 mt-4 reveal d2"><em>One device in every restaurant.</em> Nothing for anyone to touch.</p>
-          <div class="mt-10 border-l-4 border-flame pl-6 reveal d2">
-            <p class="lede text-2xl leading-snug">Today, when a restaurant&rsquo;s network drops, the room switches to <em class="text-flame">Christmas music.</em> In July.</p>
-            <p class="mt-4 text-cream/65 leading-relaxed">PlayerOne stores the whole program on the device. If the internet goes out, the music keeps playing exactly as scheduled. Guests never notice, and our team sees the alert.</p>
-          </div>
+        <div class="lg:col-span-5 reveal d2">
+          <p class="text-lg leading-relaxed text-cream/75">The room your guests hear for the entire visit is the one channel City Barbeque doesn&rsquo;t use. Messaging isn&rsquo;t part of the core program. Once the music is live, we&rsquo;d run a short, measured test to see whether a few well-made spots move the numbers you already track.</p>
+          <p class="mt-4 text-cream/55 leading-relaxed">If it moves the needle, it rolls out. If it doesn&rsquo;t, we turn it off, and the music stays exactly as it is.</p>
         </div>
       </div>
 
-      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-cream/10 border border-cream/10">
-        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 12h.01M11 12h6"/></svg><div><p class="font-bold text-cream">Solid-state, built for 24/7</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">No moving parts and no consumer hardware. Built to stay on as long as the smokers do.</p></div></div>
-        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d1"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg><div><p class="font-bold text-cream">Plays through outages</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">On-board storage caches the program, so an outage never means silence.</p></div></div>
-        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d2"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 14h16v6H4zM8 14V9h8v5M12 9V4"/></svg><div><p class="font-bold text-cream">Uses the network you have</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">Wired Ethernet or Wi-Fi. No new cabling, no audio VLAN.</p></div></div>
-        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><div><p class="font-bold text-cream">Nothing for staff to touch</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">No in-store settings, so no help-desk tickets.</p></div></div>
-        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d1"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div><p class="font-bold text-cream">Managed from one dashboard</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">Control, monitoring, and updates for every player on one screen.</p></div></div>
-        <div class="bg-[#111923] p-6 sm:p-7 flex gap-4 reveal d2"><svg class="text-flame shrink-0 mt-1" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><p class="font-bold text-cream">A five-minute swap</p><p class="text-cream/55 text-sm mt-1 leading-relaxed">Ships pre-configured. The old box comes out, PlayerOne goes in, and your speakers stay put.</p></div></div>
+      <!-- How the test works -->
+      <div class="mt-16 reveal">
+        <ol class="grid md:grid-cols-3 gap-px bg-cream/10 border border-cream/10">
+          <li class="bg-soot p-8 sm:p-10"><p class="poster text-5xl font-black text-flame">01</p><p class="display text-2xl mt-5">Pick a handful of spots</p><p class="text-cream/60 mt-3 leading-relaxed">Four to six fleet-wide spots, written with your team and voiced by professional talent. The same spots play in every test restaurant.</p></li>
+          <li class="bg-soot p-8 sm:p-10"><p class="poster text-5xl font-black text-flame">02</p><p class="display text-2xl mt-5">Run them for 45 days</p><p class="text-cream/60 mt-3 leading-relaxed">A small test group hears the spots. Similar restaurants stay music-only, as the control.</p></li>
+          <li class="bg-soot p-8 sm:p-10"><p class="poster text-5xl font-black text-flame">03</p><p class="display text-2xl mt-5">Read the numbers, then decide</p><p class="text-cream/60 mt-3 leading-relaxed">Compare test against control. Roll it out, refine it, or turn it off.</p></li>
+        </ol>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-cream/10 border-x border-b border-cream/10">
+          <div class="sm:col-span-2 lg:col-span-1 bg-ember p-6 sm:p-7 flex flex-col justify-center"><p class="eyebrow text-cream/75">What we&rsquo;d measure</p><p class="text-sm text-cream/85 mt-2 leading-snug">Test restaurants vs. the music-only control</p></div>
+          <div class="bg-[#221D18] p-6 sm:p-7"><p class="poster text-3xl font-black">Rewards</p><p class="text-xs text-cream/55 mt-1.5 leading-snug">New City Rewards members per restaurant</p></div>
+          <div class="bg-[#221D18] p-6 sm:p-7"><p class="poster text-3xl font-black">LTO mix</p><p class="text-xs text-cream/55 mt-1.5 leading-snug">Share of tickets with the promoted item</p></div>
+          <div class="bg-[#221D18] p-6 sm:p-7"><p class="poster text-3xl font-black">Catering</p><p class="text-xs text-cream/55 mt-1.5 leading-snug">Inquiries and orders from test restaurants</p></div>
+          <div class="bg-[#221D18] p-6 sm:p-7"><p class="poster text-3xl font-black">Feedback</p><p class="text-xs text-cream/55 mt-1.5 leading-snug">Guest and GM reaction to the spots</p></div>
+        </div>
+        <p class="mt-5 text-sm text-cream/45 leading-relaxed">Nothing changes for store managers. Spots are produced and scheduled centrally, weighted to slower hours, and never more than one every three or four songs.</p>
       </div>
 
-      <div class="mt-6 grid lg:grid-cols-2 gap-6 text-sm">
-        <p class="text-cream/55 leading-relaxed reveal"><span class="eyebrow text-hickory mr-2">In the box</span> 3.5mm AV out &middot; Ethernet &middot; HDMI &middot; Optical out &middot; 12V power &middot; Wi-Fi antenna &middot; Front display</p>
-        <p class="text-cream/55 leading-relaxed reveal d1"><span class="eyebrow text-hickory mr-2">New builds</span> We also design, manufacture, and install the speakers and amps, with 8,500+ certified technicians, so each opening sounds like City Barbeque from day one.</p>
+      <!-- Spots -->
+      <div class="mt-20">
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-6">
+            <p class="eyebrow text-hickory reveal">Sample test spots</p>
+            <h3 class="display text-5xl sm:text-6xl mt-4 reveal d1">Read one out loud.</h3>
+          </div>
+          <p class="lg:col-span-6 text-cream/60 leading-relaxed reveal d2">Examples to react to, not final copy. Every spot should sound like a pitmaster talking, never like a commercial break. Each one runs fleet-wide, so there&rsquo;s nothing to build restaurant by restaurant.</p>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <article class="spot p-8 sm:p-10 flex flex-col reveal">
+            <div class="flex items-center justify-between"><span class="eyebrow text-ember">Brand story</span><span class="poster text-2xl font-black text-smoke/60">:28</span></div>
+            <p class="lede text-[1.25rem] leading-snug mt-6">&ldquo;See those stainless steel smokers outside? They&rsquo;re not for show. Every City Barbeque runs three smokers, twenty-four hours a day, three-sixty-five days a year. Local hickory. Eighteen-hour brisket. Scratch-made sides every morning. That&rsquo;s how we do it.&rdquo;</p>
+            <div class="mt-auto pt-8"><div class="wave" data-bars="64"></div><p class="mt-5 text-sm text-smoke/65">Turns the most visible proof of the brand into a story every guest can repeat.</p></div>
+          </article>
+          <article class="spot p-8 sm:p-10 flex flex-col reveal d1">
+            <div class="flex items-center justify-between"><span class="eyebrow text-ember">Loyalty</span><span class="poster text-2xl font-black text-smoke/60">:20</span></div>
+            <p class="lede text-[1.25rem] leading-snug mt-6">&ldquo;Every Monday, City Rewards members earn double points on every order. Open the app and make Monday your new favorite barbeque day.&rdquo;</p>
+            <div class="mt-auto pt-8"><div class="wave" data-bars="48"></div><p class="mt-5 text-sm text-smoke/65">A loyalty push aimed at guests who are already standing in a buying moment.</p></div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -680,7 +763,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
       <div class="grid lg:grid-cols-12 gap-10 items-end">
         <div class="lg:col-span-7">
-          <p class="eyebrow text-ember reveal">09 &middot; The investment</p>
+          <p class="eyebrow text-ember reveal">10 &middot; The investment</p>
           <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">Enterprise pricing, <em class="text-ember">per restaurant.</em></h2>
         </div>
         <p class="lg:col-span-5 text-lg leading-relaxed text-smoke/80 reveal d2">A predictable per-location model at enterprise rates, well below list price, and in line with what a stock channel costs today. Each new restaurant joins the program at the same price.</p>
@@ -767,7 +850,7 @@
           </div>
           <div class="bg-[#FBF6EA] border border-char/15 p-8 sm:p-10 reveal d1">
             <p class="poster text-6xl font-black text-ember">02</p>
-            <p class="eyebrow text-ember mt-6">A 90-day pilot</p>
+            <p class="eyebrow text-ember mt-6">A 45-day pilot</p>
             <p class="display text-2xl mt-2">Three restaurants, measured</p>
             <p class="text-smoke/70 mt-3 leading-relaxed">One high-volume, one new build, and one legacy restaurant. Music only. We track guest and GM feedback and uptime against a control group. Once the music is right, a messaging test can follow in a few restaurants.</p>
           </div>
