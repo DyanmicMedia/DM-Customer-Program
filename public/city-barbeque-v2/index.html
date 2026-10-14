@@ -63,6 +63,9 @@
 
     .eyebrow { font-family: 'Work Sans', sans-serif; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; font-size: .9rem; }
     @media (min-width: 640px) { .eyebrow { font-size: 1.05rem; } }
+    .hero-h1 { font-size: clamp(2.7rem, 11.5vw, 3.4rem); }
+    @media (min-width: 640px) { .hero-h1 { font-size: clamp(3.4rem, 9.5vw, 6rem); } }
+    @media (min-width: 1024px) { .hero-h1 { font-size: clamp(3.6rem, min(7.4vw, 10.5vh), 7rem); } }
     .eyebrow-sm { font-family: 'Work Sans', sans-serif; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; }
     .display { font-family: 'Big Shoulders Display', Impact, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: .01em; line-height: .9; }
     .display em { font-family: 'Yellowtail', cursive; font-style: normal; font-weight: 400; text-transform: none; letter-spacing: 0; font-size: .82em; line-height: 1; display: inline-block; transform: rotate(-3deg) translateY(-.04em); padding: 0 .08em; }
@@ -188,7 +191,7 @@
 
   <main>
   <!-- ============ HERO ============ -->
-  <section id="top" class="relative min-h-[100svh] flex items-end overflow-hidden grain">
+  <section id="top" class="relative lg:min-h-[78svh] flex items-end overflow-hidden grain">
     <div class="absolute inset-0 z-0">
       <img src="../city-barbeque/assets/hero-brisket.jpg" alt="Sliced City Barbeque brisket with its bark and smoke ring, fire glowing behind" class="w-full h-full object-cover object-[70%_50%] scale-105" id="heroImg">
       <div class="absolute inset-0 bg-gradient-to-r from-char via-char/80 to-char/10"></div>
@@ -197,36 +200,38 @@
     </div>
     <div class="smoke-layer" aria-hidden="true"><span></span><span></span><span></span></div>
 
-    <div class="max-w-7xl mx-auto w-full px-5 sm:px-8 pt-36 pb-16 sm:pb-24">
+    <div class="max-w-7xl mx-auto w-full px-5 sm:px-8 pt-28 pb-10 sm:pb-12">
       <p class="eyebrow text-hickory reveal">A sound program for City Barbeque</p>
-      <h1 class="display text-[3.6rem] sm:text-8xl lg:text-[8.4rem] text-cream mt-6 max-w-5xl reveal d1">
+      <h1 class="display hero-h1 text-cream mt-4 reveal d1">
         Smoked for eighteen hours.<br><em class="text-kraft">The music should be too.</em>
       </h1>
-      <p class="mt-8 max-w-2xl text-lg sm:text-xl leading-relaxed text-cream/80 reveal d2">
+      <p class="mt-5 max-w-2xl text-lg sm:text-xl leading-relaxed text-cream/80 reveal d2">
         You designed everything guests see, smell, and taste. Nobody designed what they hear. So we built City Barbeque Radio. Press play.
       </p>
-      <div class="mt-10 flex flex-wrap items-center gap-4 reveal d3">
-        <a href="#listen" class="inline-flex items-center gap-3 btn bg-ember hover:bg-flame transition px-7 py-4 text-cream shadow-[0_20px_50px_-20px_rgba(170,31,46,.9)]">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          Listen to City Barbeque Radio
-        </a>
-        <a href="#next" class="inline-flex items-center gap-2 btn border border-cream/30 hover:border-cream/70 hover:bg-cream/5 transition px-7 py-4 text-cream">
-          Next steps <span aria-hidden="true">&darr;</span>
-        </a>
-      </div>
-      <div class="mt-16 sm:mt-24 flex flex-col sm:flex-row sm:items-end justify-between gap-6 reveal d4">
-        <p class="text-sm text-cream/60 leading-relaxed">
-          <span class="text-cream/90 font-semibold">Prepared for Melanie Barichivich, Sammy Shaffer, and the City Barbeque marketing team</span><br>
-          by Ryan Santangelo, Dynamic Media &middot; Fall 2026
-        </p>
-        <img src="../city-barbeque/assets/dm-logo-white.png" alt="Dynamic Media" class="h-6 w-auto opacity-80">
+      <div class="mt-7 flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal d3">
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#listen" class="inline-flex items-center gap-3 btn bg-ember hover:bg-flame transition px-7 py-4 text-cream shadow-[0_20px_50px_-20px_rgba(170,31,46,.9)]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Listen to City Barbeque Radio
+          </a>
+          <a href="#next" class="inline-flex items-center gap-2 btn border border-cream/30 hover:border-cream/70 hover:bg-cream/5 transition px-7 py-4 text-cream">
+            Next steps <span aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+        <div class="flex items-end gap-5 lg:text-right">
+          <p class="text-sm text-cream/60 leading-relaxed">
+            <span class="text-cream/90 font-semibold">Prepared for Melanie Barichivich, Sammy Shaffer,<br class="hidden lg:inline"> and the City Barbeque marketing team</span><br>
+            by Ryan Santangelo, Dynamic Media &middot; Fall 2026
+          </p>
+          <img src="../city-barbeque/assets/dm-logo-white.png" alt="Dynamic Media" class="hidden sm:block h-6 w-auto opacity-80 mb-1">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ LISTEN ============ -->
   <section id="listen" class="relative bg-ember overflow-hidden grain scroll-mt-16">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-24 sm:pt-16 sm:pb-32 grid lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-5">
         <p class="eyebrow text-cream/75 reveal">01 &middot; We built it for you</p>
         <h2 class="display text-6xl sm:text-8xl mt-6 reveal d1">City Barbeque <em class="text-char">Radio.</em></h2>
