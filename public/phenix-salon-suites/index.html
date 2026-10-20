@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phenix Salon Suites Music Partnership | Dynamic Media</title>
+  <meta name="description" content="How a Soundtrack music partnership between Phenix Salon Suites and Dynamic Media works: the Phenix family rate, corporate revenue share, messaging, and terms.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="../assets/dm-track.js?v=4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            px: {
+              ink: '#231F20',
+              slate: '#5A5C5E',
+              blue: '#00AEEF',
+              bluedk: '#0090C8',
+              sky: '#BFE9FA',
+              wash: '#EEF8FD',
+              cream: '#FAF8F5'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .wave { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 100%; }
+    .wave span { flex: 1; max-width: 5px; border-radius: 5px; background: linear-gradient(180deg, #BFE9FA, #00AEEF); opacity: .45; animation: wave 3.8s ease-in-out infinite; }
+    @keyframes wave { 0%,100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .wave span { animation: none; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body class="bg-px-cream text-slate-800 font-sans antialiased selection:bg-px-blue selection:text-white">
+
+  <!-- PROGRAM BAR -->
+  <div class="bg-px-wash text-px-ink text-xs sm:text-sm py-2.5 px-4 border-b border-px-blue/15">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-px-blue"></span>
+        <span class="font-semibold">Music partnership proposal for Phenix Salon Suites</span>
+      </div>
+      <a href="mailto:rsantangelo@dm-us.com" class="hover:text-px-bluedk transition">Questions: <strong>rsantangelo@dm-us.com</strong></a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <img src="assets/dm-logo.png" alt="Dynamic Media" class="h-12 sm:h-14 w-auto object-contain">
+      <div class="flex items-center gap-3 sm:gap-5">
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-600">
+          <a href="#how" class="hover:text-px-bluedk transition">How it works</a>
+          <a href="#pricing" class="hover:text-px-bluedk transition">Pricing</a>
+          <a href="#messaging" class="hover:text-px-bluedk transition">Messaging</a>
+          <a href="#music" class="hover:text-px-bluedk transition">Music</a>
+          <a href="#equipment" class="hover:text-px-bluedk transition">Equipment</a>
+          <a href="#terms" class="hover:text-px-bluedk transition">Terms</a>
+          <a href="#faq" class="hover:text-px-bluedk transition">FAQ</a>
+        </nav>
+        <a href="#next" class="hidden sm:inline-flex items-center justify-center text-sm font-bold text-white bg-px-blue hover:bg-px-bluedk px-5 py-2.5 rounded-md shadow-sm transition">Next steps</a>
+        <button type="button" id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-slate-200 text-px-ink" aria-label="Open navigation" aria-expanded="false"><span class="text-xl leading-none">&#9776;</span></button>
+      </div>
+    </div>
+    <nav id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4">
+      <div class="max-w-7xl mx-auto grid gap-1 text-sm font-semibold text-px-ink">
+        <a href="#how" class="px-3 py-2 rounded-md hover:bg-slate-50">How it works</a>
+        <a href="#pricing" class="px-3 py-2 rounded-md hover:bg-slate-50">Pricing</a>
+        <a href="#messaging" class="px-3 py-2 rounded-md hover:bg-slate-50">Messaging</a>
+        <a href="#music" class="px-3 py-2 rounded-md hover:bg-slate-50">Music</a>
+        <a href="#equipment" class="px-3 py-2 rounded-md hover:bg-slate-50">Equipment</a>
+        <a href="#terms" class="px-3 py-2 rounded-md hover:bg-slate-50">Terms</a>
+        <a href="#next" class="px-3 py-2 rounded-md hover:bg-slate-50">Next steps</a>
+        <a href="#faq" class="px-3 py-2 rounded-md hover:bg-slate-50">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-white">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 90% 10%, rgba(0,174,239,.16), transparent 55%), radial-gradient(ellipse at 0% 100%, rgba(0,174,239,.08), transparent 60%);"></div>
+    <div class="absolute inset-x-0 bottom-0 h-20 sm:h-28 px-4 sm:px-6" aria-hidden="true"><div class="wave max-w-7xl mx-auto" id="wave"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-32 sm:pt-24 sm:pb-40">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-px-wash border border-px-blue/25 text-px-bluedk text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-px-blue"></span>
+          Prepared for Sherrie Wilson, President &middot; October 2026
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-px-ink tracking-tight leading-[1.05] mb-6">
+          A second music option for <span class="text-px-blue">Phenix franchisees.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-px-slate leading-relaxed max-w-2xl mb-9">
+          Soundtrack (backed by Spotify) as an endorsed music provider next to Custom Channels. Franchisees pay a Phenix family rate of $26.95 a month, billed directly by us. Phenix earns $2 a month on every active location.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+          <a href="#how" class="text-center font-bold text-white bg-px-blue hover:bg-px-bluedk px-8 py-3.5 rounded-md shadow-sm transition text-sm">See how it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK VALUE -->
+  <section class="bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 text-center">
+        <div class="px-3 sm:px-6 py-3">
+          <p class="font-bold text-px-bluedk tracking-tight"><span class="text-xl sm:text-2xl">$26.95</span><span class="text-sm ml-0.5">/month</span></p>
+          <p class="text-[10px] sm:text-xs text-slate-500 mt-1">Phenix family rate &middot; $41.00 direct</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-l border-slate-200">
+          <p class="font-bold text-px-ink tracking-tight"><span class="text-xl sm:text-2xl">$2.00</span><span class="text-sm ml-0.5">/month</span></p>
+          <p class="text-[10px] sm:text-xs text-slate-500 mt-1">To Phenix, per active location</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-t lg:border-t-0 lg:border-l border-slate-200">
+          <p class="font-bold text-px-ink text-sm sm:text-base">Billed direct</p>
+          <p class="text-xs text-slate-500 mt-1">Corporate never handles payments</p>
+        </div>
+        <div class="px-3 sm:px-6 py-3 border-l border-t lg:border-t-0 border-slate-200">
+          <p class="font-bold text-px-ink text-sm sm:text-base">Month to month</p>
+          <p class="text-xs text-slate-500 mt-1">Franchisees opt in or out anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU TOLD US -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <div class="reveal">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Built around our August 19 call</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-5">What you asked for</h2>
+          <p class="text-px-slate leading-relaxed mb-5">You were clear about what a partnership has to look like for Phenix. Franchisees get a real choice at a price they can check. Corporate keeps its brand standards without collecting payments. And the marketing Phenix puts behind a program earns a return.</p>
+          <p class="text-px-slate leading-relaxed">Here&rsquo;s how this proposal handles each one.</p>
+        </div>
+        <div class="border-y border-slate-200 divide-y divide-slate-200 reveal" id="askedList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW THE RELATIONSHIP WORKS -->
+  <section id="how" class="scroll-mt-20 py-16 sm:py-20 bg-px-wash border-y border-px-blue/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10 reveal">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">How it works</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-4">Who does what</h2>
+        <p class="text-px-slate leading-relaxed">The same structure as your Scent Air program: a corporate agreement with Phenix, and a simple month-to-month service for each franchisee.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5" id="roles"></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10 reveal">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Pricing</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-4">What franchisees pay</h2>
+        <p class="text-px-slate leading-relaxed">Per location, billed monthly and directly to each franchisee. Messaging is optional.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <article class="rounded-2xl border-2 border-px-blue bg-white p-6 flex flex-col reveal">
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-px-bluedk">Music service</p>
+          <h3 class="font-black text-px-ink text-lg mt-1">Soundtrack Essential</h3>
+          <p class="mt-4"><span class="text-4xl font-black text-px-ink">$26.95</span></p>
+          <p class="text-xs text-slate-500 font-semibold">per location / month</p>
+          <p class="text-sm text-px-slate leading-relaxed mt-4">The Phenix family rate. The direct price is $41.00. Includes the approved Phenix library, scheduling, licensing, and support.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col reveal">
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-px-slate">Optional</p>
+          <h3 class="font-black text-px-ink text-lg mt-1">In-store messaging</h3>
+          <p class="mt-4"><span class="text-4xl font-black text-px-ink">$6.00</span></p>
+          <p class="text-xs text-slate-500 font-semibold">per location / month</p>
+          <p class="text-sm text-px-slate leading-relaxed mt-4">Unlimited recorded messages between songs, scheduled by Phenix corporate. Reaches your salon professionals as well as their clients.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col reveal">
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-px-slate">Both</p>
+          <h3 class="font-black text-px-ink text-lg mt-1">Fully loaded</h3>
+          <p class="mt-4"><span class="text-4xl font-black text-px-ink">$32.95</span></p>
+          <p class="text-xs text-slate-500 font-semibold">per location / month</p>
+          <p class="text-sm text-px-slate leading-relaxed mt-4">Music and messaging together, still below the $41.00 direct rate for music alone.</p>
+        </article>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-slate-200 overflow-hidden reveal">
+          <div class="bg-px-wash px-6 py-4"><p class="font-black text-px-ink">A franchisee&rsquo;s savings, per location</p></div>
+          <div class="divide-y divide-slate-200 text-sm">
+            <div class="grid grid-cols-3 px-6 py-3 font-semibold text-slate-500 text-xs uppercase tracking-wider"><span></span><span class="text-right">Monthly</span><span class="text-right">Yearly</span></div>
+            <div class="grid grid-cols-3 px-6 py-3.5"><span class="font-bold text-px-ink">Direct rate</span><span class="text-right">$41.00</span><span class="text-right">$492.00</span></div>
+            <div class="grid grid-cols-3 px-6 py-3.5"><span class="font-bold text-px-ink">Phenix family rate</span><span class="text-right">$26.95</span><span class="text-right">$323.40</span></div>
+            <div class="grid grid-cols-3 px-6 py-3.5 bg-px-wash/60"><span class="font-black text-px-bluedk">Savings</span><span class="text-right font-black text-px-bluedk">$14.05</span><span class="text-right font-black text-px-bluedk">$168.60</span></div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 overflow-hidden reveal">
+          <div class="bg-px-ink px-6 py-4"><p class="font-black text-white">What Phenix corporate earns</p></div>
+          <div class="divide-y divide-slate-200 text-sm">
+            <div class="grid grid-cols-[1fr_auto] gap-4 px-6 py-3.5"><span><strong class="block text-px-ink">Music revenue share</strong><span class="text-slate-500">Per active location, for the life of the account. Paid quarterly.</span></span><span class="text-right font-black text-px-ink">$2.00 / mo</span></div>
+            <div class="grid grid-cols-[1fr_auto] gap-4 px-6 py-3.5"><span><strong class="block text-px-ink">Audio equipment</strong><span class="text-slate-500">On any Phenix location that buys equipment through Dynamic Media.</span></span><span class="text-right font-black text-px-ink">10%</span></div>
+          </div>
+          <p class="px-6 py-4 text-xs text-slate-500 border-t border-slate-200">This pays Phenix back for the staff time and marketing behind a launch: Franchise Connection, the e-blast, and CEO calls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGING -->
+  <section id="messaging" class="scroll-mt-20 py-16 sm:py-20 bg-px-wash border-y border-px-blue/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <div class="reveal">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">In-store messaging</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-5">A direct line to your salon professionals</h2>
+          <blockquote class="border-l-4 border-px-blue pl-5 py-1 text-lg font-bold text-px-ink leading-relaxed mb-5">&ldquo;Our clients are the franchisees and salon professionals.&rdquo;</blockquote>
+          <p class="text-px-slate leading-relaxed mb-5">Most businesses use messaging to reach a customer who&rsquo;s in the store for an hour. Your salon pros are in the building all day, in the lobby, break room, and laundry room. That makes messaging a steady channel for the programs you already run for them.</p>
+          <p class="text-px-slate leading-relaxed">Messages are unlimited. We&rsquo;d start with one every 20 minutes so it never sounds like radio, test in corporate stores, and adjust from there.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm reveal">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">What a Phenix campaign could include</span>
+          <ol class="divide-y divide-slate-100 mt-3" id="msgList"></ol>
+          <p class="text-[11px] text-slate-500 mt-4">Your marketing team can produce messages in house, or we script and record them. The first six branded messages are free at kickoff; additional messages are $99 each. Once a message is made, you own it, and it becomes part of your own message library. You approve every message before it plays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GINA'S LIST -->
+  <section id="music" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div class="reveal">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Phenix-branded music</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-5">What Phenix sounds like</h2>
+          <p class="text-px-slate leading-relaxed mb-5">It starts with a brand brief. We put into words what Phenix should sound like, what to leave out, and recommend playlists from Soundtrack&rsquo;s salon collection. You listen, approve, and they go into the Phenix library.</p>
+          <p class="text-px-slate leading-relaxed mb-5">Then we build signature playlists under the Phenix name, starting with Gina&rsquo;s List. Most personal playlists aren&rsquo;t built for a business, so we take Gina&rsquo;s favorites and grow them into a full playlist that keeps her feel and fits a salon.</p>
+          <p class="text-px-slate leading-relaxed mb-6">Artists you work with through Priest James Entertainment can be mixed in too, as long as their music is on Spotify and licensed for business use. Typically 85 to 90% of any playlist is.</p>
+          <div class="rounded-xl border border-px-blue/30 bg-px-wash p-5">
+            <p class="font-black text-px-ink">Gina&rsquo;s List is included free</p>
+            <p class="text-sm text-px-slate mt-1">The first build comes with the signed partnership, live on day one. Later playlists are $1,000 to build and $50 a month to maintain.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm reveal">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">How a Phenix playlist stays fresh</span>
+          <ol class="divide-y divide-slate-100 mt-3" id="freshList"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS WITH WHAT THEY HAVE -->
+  <section id="equipment" class="scroll-mt-20 py-16 sm:py-20 bg-px-wash border-y border-px-blue/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10 reveal">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Equipment</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-4">Works with what each salon already has</h2>
+        <p class="text-px-slate leading-relaxed">No rip and replace. Whatever plays music in the common area today can play Soundtrack. New locations get an audio system designed for them.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5" id="playback"></div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 reveal">
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-px-bluedk">Phone, computer, or Sonos</p>
+          <p class="mt-3"><span class="text-4xl font-black text-px-ink">$0</span></p>
+          <p class="text-sm text-px-slate leading-relaxed mt-3">Download the free app and use the speakers the salon already has.</p>
+        </article>
+        <article class="rounded-2xl border-2 border-px-blue bg-white p-6 reveal">
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-px-bluedk">PlayerOne</p>
+          <p class="mt-3"><span class="text-4xl font-black text-px-ink">$129</span> <span class="text-xs text-slate-500 font-semibold">one-time</span></p>
+          <p class="text-sm text-px-slate leading-relaxed mt-3">For wired audio systems, or to replace a Custom Channels device. The franchisee owns it. If they cancel, there&rsquo;s nothing to return.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 reveal">
+          <p class="text-[11px] uppercase tracking-wider font-extrabold text-px-bluedk">New locations</p>
+          <p class="mt-3"><span class="text-4xl font-black text-px-ink">~40%</span> <span class="text-xs text-slate-500 font-semibold">below retail</span></p>
+          <p class="text-sm text-px-slate leading-relaxed mt-3">We manufacture our own audio systems. Send a floor plan and we design the system at no charge, then install it through our 8,500 technicians.</p>
+        </article>
+      </div>
+      <p class="mt-5 text-sm text-px-slate reveal">Planning audio during construction costs less than adding it later, so we&rsquo;d like to be part of the new-store process from the start.</p>
+    </div>
+  </section>
+
+  <!-- TERMS -->
+  <section id="terms" class="scroll-mt-20 py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-4 reveal">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Terms</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-4">Partnership terms</h2>
+          <p class="text-px-slate leading-relaxed">A two-year agreement with corporate. No commitment for franchisees.</p>
+        </div>
+        <div class="lg:col-span-8 border-y border-slate-200 divide-y divide-slate-200 reveal" id="termsList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVEN -->
+  <section class="py-12 sm:py-14 bg-px-ink text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
+      <p class="text-[11px] uppercase tracking-widest font-extrabold text-px-sky">Already proven inside Phenix</p>
+      <p class="text-xl sm:text-2xl font-bold leading-relaxed mt-3">Williams Centre, Campbell Plaza, and Austin Highway ran Soundtrack in the 2025&ndash;26 pilot with DeLaura Scholfield, including custom holiday schedules.</p>
+      <p class="text-slate-300 mt-3">This proposal formalizes what already works.</p>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section id="next" class="scroll-mt-20 py-16 sm:py-20 bg-px-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10 reveal">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Next steps</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2">Three steps to launch</h2>
+      </div>
+      <ol class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <li class="rounded-2xl border border-slate-200 bg-white p-6 reveal">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-px-blue text-white text-sm font-black mb-4">1</span>
+          <h3 class="font-black text-px-ink text-lg mb-2">Review the agreement</h3>
+          <p class="text-sm text-px-slate leading-relaxed">We send the master services agreement with the pricing and revenue share on this page, for you and your finance team to review.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-6 reveal">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-px-blue text-white text-sm font-black mb-4">2</span>
+          <h3 class="font-black text-px-ink text-lg mb-2">Test in corporate stores</h3>
+          <p class="text-sm text-px-slate leading-relaxed">The brand brief, Phenix library, and first messages go live in corporate stores first, so we can tune them before rollout.</p>
+        </li>
+        <li class="rounded-2xl border-2 border-px-blue/40 bg-white p-6 reveal">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-px-ink text-white text-sm font-black mb-4">3</span>
+          <h3 class="font-black text-px-ink text-lg mb-2">Roll out to franchisees</h3>
+          <p class="text-sm text-px-slate leading-relaxed">Your team announces it in the weekly e-blast, Franchise Connection, and the franchise call, linking to the program website. We take it from there.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-20 py-16 sm:py-20 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <aside class="lg:col-span-4 lg:sticky lg:top-28 rounded-2xl bg-px-wash border border-px-blue/15 p-7 sm:p-8">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-px-bluedk">Frequently asked questions</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight mt-2 mb-4">Quick answers</h2>
+          <p class="text-px-slate leading-relaxed">Billing, music, messaging, and equipment.</p>
+          <div class="mt-7 pt-6 border-t border-px-blue/15">
+            <p class="text-xs text-slate-500 mb-2">Something else?</p>
+            <a href="mailto:rsantangelo@dm-us.com" class="font-bold text-px-ink hover:text-px-bluedk break-all">rsantangelo@dm-us.com</a>
+            <p class="text-xs text-slate-500 mt-4 mb-2">Support for Phenix locations</p>
+            <a href="mailto:phenix@dm-us.com" class="font-bold text-px-ink hover:text-px-bluedk break-all">phenix@dm-us.com</a>
+          </div>
+        </aside>
+        <div class="lg:col-span-8 space-y-3" id="faqList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="py-16 sm:py-20 bg-px-wash border-t border-px-blue/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-black text-px-ink tracking-tight">Ready for the agreement?</h2>
+      <p class="mt-4 text-px-slate leading-relaxed">The agreement is on its way. Questions along the way come straight to Ryan.</p>
+      <a href="mailto:rsantangelo@dm-us.com?subject=Phenix%20Salon%20Suites%20%E2%80%94%20music%20partnership" class="mt-8 inline-flex font-bold text-white bg-px-blue hover:bg-px-bluedk px-8 py-3.5 rounded-md shadow-sm transition text-sm">Email Ryan</a>
+      <div class="mt-12 text-sm text-px-slate">
+        <p class="font-bold text-px-ink">Ryan Santangelo</p>
+        <p>President, Dynamic Media &middot; <a href="mailto:rsantangelo@dm-us.com" class="text-px-ink hover:text-px-bluedk">rsantangelo@dm-us.com</a></p>
+        <p class="mt-3">Phenix location support &middot; <a href="mailto:phenix@dm-us.com" class="text-px-ink hover:text-px-bluedk">phenix@dm-us.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-px-ink text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
+      <div class="flex items-center gap-4">
+        <img src="assets/dm-logo-white.png" alt="Dynamic Media" class="h-5 w-auto opacity-80">
+        <span>38283 Mound Road, Sterling Heights, MI 48310 &middot; <a href="https://www.dynamicmediamusic.com" target="_blank" rel="noopener" class="hover:text-white">dynamicmediamusic.com</a></span>
+      </div>
+      <p class="text-center md:text-right">Prepared for Phenix Salon Suites. &copy; 2026 Dynamic Media.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+      var asked = [
+        ['A second option, not a replacement', 'Custom Channels stays. Franchisees choose, so Phenix stays multi-source.'],
+        ['A price franchisees can check', '$26.95 a month against a $41.00 direct rate. That’s $168.60 a year saved per location.'],
+        ['Billed directly to each franchisee', 'We bill every franchisee ourselves. Corporate is never in the payment chain.'],
+        ['No lock-in for franchisees', 'Month to month. They can opt in or out at any time, with no penalty.'],
+        ['Brand standards from corporate', 'Corporate approves the library. Franchisees pick from that list and nothing else.'],
+        ['A return on Phenix’s marketing', 'Phenix promotes the program to franchisees. In return it earns $2 a month per active location, plus 10% of equipment bought through us.']
+      ];
+      var askedEl = document.getElementById('askedList');
+      asked.forEach(function (a, i) {
+        var d = document.createElement('div');
+        d.className = 'py-4 grid grid-cols-[2.25rem_1fr] gap-3';
+        d.innerHTML = '<span class="text-xs font-extrabold text-px-bluedk pt-0.5">0' + (i + 1) + '</span><p class="text-sm text-px-slate leading-relaxed"><strong class="block text-px-ink text-base mb-0.5">' + esc(a[0]) + '</strong>' + esc(a[1]) + '</p>';
+        askedEl.appendChild(d);
+      });
+
+      var roles = [
+        ['Phenix corporate', 'Endorses and builds awareness', ['Sets up Dynamic Media as an endorsed vendor', 'Tells franchisees about the program in Franchise Connection, e-blasts, and CEO calls', 'Keeps it in front of franchisees after launch', 'Approves the music library and schedules messaging'], 'Earns $2 a month per active location', 'border-slate-200'],
+        ['Dynamic Media', 'Does the work', ['Bills each franchisee directly', 'Onboards and sets up every salon', 'Builds Gina’s List and the Phenix library', 'Scripts and produces in-store messages when you want'], 'Phenix spreads the word, we handle the service', 'border-px-blue border-2'],
+        ['Franchisees', 'Choose and play', ['Pick from the approved Phenix playlists', 'Play on what they already own', 'See all their salons in one login', 'Cancel any month, no penalty'], 'Pay $26.95 instead of $41.00', 'border-slate-200']
+      ];
+      var rolesEl = document.getElementById('roles');
+      roles.forEach(function (r, i) {
+        var el = document.createElement('article');
+        el.className = 'reveal rounded-2xl bg-white p-7 flex flex-col border ' + r[4];
+        el.innerHTML =
+          '<span class="inline-flex items-center justify-center w-9 h-9 rounded-full ' + (i === 1 ? 'bg-px-blue' : 'bg-px-ink') + ' text-white text-sm font-black mb-4">' + (i + 1) + '</span>' +
+          '<p class="text-[11px] uppercase tracking-wider font-extrabold text-px-bluedk">' + esc(r[1]) + '</p>' +
+          '<h3 class="font-black text-px-ink text-xl mt-1 mb-4">' + esc(r[0]) + '</h3>' +
+          '<ul class="space-y-2.5 text-sm text-px-slate flex-1">' + r[2].map(function (x) { return '<li class="flex gap-2"><span class="text-px-blue font-bold">&check;</span><span>' + esc(x) + '</span></li>'; }).join('') + '</ul>' +
+          '<p class="mt-5 pt-4 border-t border-slate-100 text-sm font-bold text-px-ink">' + esc(r[3]) + '</p>';
+        rolesEl.appendChild(el);
+      });
+
+      var fresh = [
+        ['Start with Gina’s favorites', 'A Spotify playlist or a list of songs she loves sets the sound.'],
+        ['Grow it to 400 songs', 'Our curators fill it out with songs that fit, every lyric checked.'],
+        ['Swap 40 songs a month', 'About 10% rotates out each month, and removed songs rest before they return.'],
+        ['Shuffle on every player', 'Locations rarely hear the same order twice, and nobody has to touch it.']
+      ];
+      var msgs = [
+        ['Programs for your pros', 'Education, health care, and insurance programs many pros don’t know they have.'],
+        ['Brand partner offers', 'Product deals through partners like L’Oréal and Redken.'],
+        ['Philanthropy and community', 'Grants for professionals and local events.'],
+        ['Brand DNA', 'Who Phenix is and what it stands for.'],
+        ['Limited-time news', 'New programs and announcements coming down the pipeline.']
+      ];
+      var msgEl = document.getElementById('msgList');
+      msgs.forEach(function (m, i) {
+        var li = document.createElement('li');
+        li.className = 'py-3.5 grid grid-cols-[2rem_1fr] gap-3';
+        li.innerHTML = '<span class="text-xs font-extrabold text-px-bluedk pt-0.5">0' + (i + 1) + '</span><p class="text-sm text-px-slate"><strong class="block text-px-ink">' + esc(m[0]) + '</strong>' + esc(m[1]) + '</p>';
+        msgEl.appendChild(li);
+      });
+
+      var freshEl = document.getElementById('freshList');
+      fresh.forEach(function (f, i) {
+        var li = document.createElement('li');
+        li.className = 'py-3.5 grid grid-cols-[2rem_1fr] gap-3';
+        li.innerHTML = '<span class="text-xs font-extrabold text-px-bluedk pt-0.5">0' + (i + 1) + '</span><p class="text-sm text-px-slate"><strong class="block text-px-ink">' + esc(f[0]) + '</strong>' + esc(f[1]) + '</p>';
+        freshEl.appendChild(li);
+      });
+
+      var playback = [
+        ['Sonos', 'A native Sonos app. Enter a code and play.', 'assets/playback/sonos.png'],
+        ['Phone or iPad', 'Free app, plays to a Bluetooth speaker.', 'assets/playback/mobile.png'],
+        ['Computer', 'Free app for PC or Mac.', 'assets/playback/computer.png'],
+        ['PlayerOne', 'A small player for wired audio systems.', 'assets/playback/playerone.png']
+      ];
+      var pbEl = document.getElementById('playback');
+      playback.forEach(function (p) {
+        var el = document.createElement('article');
+        el.className = 'reveal rounded-2xl border border-slate-200 bg-white overflow-hidden flex flex-col';
+        el.innerHTML = '<div class="h-36 sm:h-44 bg-white flex items-center justify-center p-4"><img src="' + p[2] + '" alt="' + esc(p[0]) + '" class="max-h-full w-auto object-contain" loading="lazy"></div>' +
+          '<div class="p-5 border-t border-slate-100 flex-1"><h3 class="font-black text-px-ink">' + esc(p[0]) + '</h3><p class="text-sm text-px-slate mt-1">' + esc(p[1]) + '</p></div>';
+        pbEl.appendChild(el);
+      });
+
+      var terms = [
+        ['Corporate agreement', 'Two-year master services agreement covering endorsed-provider status, the Phenix family rate, and the revenue share.'],
+        ['Franchisee agreement', 'Month to month. Opt in or out at any time, with no penalty.'],
+        ['Billing', 'Dynamic Media bills each franchisee directly.'],
+        ['Revenue share', 'Paid quarterly to Phenix corporate, based on active locations.'],
+        ['Onboarding and support', 'We onboard every salon and are the first call for support. Phenix locations get our enterprise team and tier 2 support at phenix@dm-us.com.'],
+        ['Equipment', 'Franchisees own any PlayerOne they buy. Nothing to return if they cancel. 10% of equipment purchases goes to Phenix.'],
+        ['Program awareness', 'Phenix corporate promotes the program to franchisees through Franchise Connection, e-blasts, and CEO calls, at launch and ongoing.'],
+        ['Messaging support', 'Six branded kickoff messages scripted and produced at no charge; additional messages are $99 each. Your marketing team can also produce its own. You own every message produced, and each becomes part of your message library.'],
+        ['Program website', 'A co-branded Phenix and Dynamic Media site to link in every e-blast. Franchisees learn about the program, sign up, and connect with our team there.']
+      ];
+      var termsEl = document.getElementById('termsList');
+      terms.forEach(function (t) {
+        var d = document.createElement('div');
+        d.className = 'py-4 grid grid-cols-1 sm:grid-cols-[12rem_1fr] gap-1 sm:gap-6';
+        d.innerHTML = '<p class="font-bold text-px-ink">' + esc(t[0]) + '</p><p class="text-sm text-px-slate leading-relaxed">' + esc(t[1]) + '</p>';
+        termsEl.appendChild(d);
+      });
+
+      var faqs = [
+        ['What happens to Custom Channels?', 'Nothing. It stays in place. Soundtrack is a second endorsed option, and each franchisee chooses.'],
+        ['How does the music stay current?', 'Ready-made playlists update themselves every few days from a catalog of more than 125 million songs. Phenix playlists rotate 40 songs a month. Once a schedule is set, nobody has to reset it.'],
+        ['Can corporate send messages to every salon?', 'Yes. Corporate can schedule messages by date, time, and location: brand partner promotions, new programs, grand openings, or a single region.'],
+        ['Who produces the messages?', 'Either side. Your marketing team can make its own, or we script and record them. The first six branded messages are free; after that, our production is $99 per message. You own every message once it’s made, and it stays in your message library to use again.'],
+        ['How often should messages play?', 'We’d start at one every 20 minutes. Salon pros are in the building all day, so that keeps messages present without sounding like radio. Messages are unlimited, so you can adjust after testing in corporate stores.'],
+        ['What if a franchisee cancels? Do they return equipment?', 'No. A franchisee owns the PlayerOne they bought. If they cancel, they keep it, and can use it again at another location.'],
+        ['What if a new location has no sound system?', 'Send us the floor plan. We design the audio system at no charge, quote it factory direct at about 40% below retail, and can install it anywhere in the US.'],
+        ['Can we add music from our own artists?', 'Yes, as long as the music is on Spotify and licensed for business use. Typically 85 to 90% of songs on a playlist are.'],
+        ['How does Dynamic Media work with Soundtrack?', 'We’re Soundtrack’s global enterprise partner, specializing in multi-site corporate chains and global franchise programs like Phenix.'],
+        ['Can this work outside the US?', 'Dynamic Media works in 75 markets, including the UK and Europe. We can talk through international locations as those markets open.'],
+        ['Can franchisees play anything they want?', 'They pick from the Phenix-approved library. Corporate decides what goes in it, and nothing outside it can play.'],
+        ['Is it licensed for business use?', 'Yes. Commercial music licensing is included in the monthly price.'],
+        ['What about holidays?', 'We build seasonal schedules that blend holiday music into the regular sound, as we did for the pilot salons last Christmas.']
+      ];
+      var faqEl = document.getElementById('faqList');
+      faqs.forEach(function (f) {
+        var d = document.createElement('details');
+        d.className = 'group rounded-xl border border-slate-200 bg-white';
+        d.innerHTML = '<summary class="cursor-pointer list-none px-5 sm:px-6 py-4 flex items-center justify-between gap-4 font-bold text-px-ink"><span>' + esc(f[0]) + '</span><span class="text-px-blue text-xl font-normal group-open:rotate-45 transition-transform">+</span></summary>' +
+          '<div class="px-5 sm:px-6 pb-5 text-sm text-px-slate leading-relaxed">' + esc(f[1]) + '</div>';
+        faqEl.appendChild(d);
+      });
+
+      var $ = function (id) { return document.getElementById(id); };
+
+      var wave = $('wave');
+      var bars = Math.min(90, Math.floor(wave.clientWidth / 11));
+      for (var i = 0; i < bars; i++) {
+        var s = document.createElement('span');
+        s.style.height = (25 + Math.abs(Math.sin(i * .3)) * 75) + '%';
+        s.style.animationDelay = (-i * 0.08) + 's';
+        wave.appendChild(s);
+      }
+
+      var menuBtn = $('menuBtn'), menu = $('mobileMenu');
+      menuBtn.addEventListener('click', function () {
+        var open = menu.classList.toggle('hidden') === false;
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', 'false'); }); });
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
