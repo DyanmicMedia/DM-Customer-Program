@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal | Dynamic Media</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="../assets/dm-track.js?v=4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            px: { ink: '#231F20', slate: '#5A5C5E', blue: '#00AEEF', bluedk: '#0090C8', sky: '#BFE9FA', wash: '#EEF8FD', cream: '#FAF8F5' }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .sec { scroll-margin-top: 5.5rem; }
+    .num { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="bg-px-cream text-slate-800 font-sans antialiased selection:bg-px-blue selection:text-white">
+
+<script>
+/* =============================================================================
+   EDIT THIS BLOCK ONLY. Everything on the page is built from it.
+
+   - {customer} anywhere below is replaced with the customer name.
+   - Wrap words in **double asterisks** to make them bold.
+   - To drop a section, make its list empty: []
+   - Sections are numbered and listed in Contents automatically.
+   ============================================================================= */
+var SHEET = {
+  customer: 'Customer Name',
+  eyebrow: 'Pricing proposal',
+  title: 'The {customer} Music Program',
+  subtitle: 'Soundtrack, the business music service backed by Spotify, for every {customer} location, delivered and supported by Dynamic Media.',
+  preparedFor: '{customer} leadership',
+  date: 'October 2026',
+
+  rep: { name: 'Your Name', title: 'Enterprise Account Executive', email: 'you@dm-us.com', phone: '' },
+  support: { label: 'Location support', name: 'Dynamic Media enterprise team', note: 'Support for every {customer} location', email: 'support@dm-us.com' },
+
+  summary: [
+    '{customer} wants licensed, consistent music in every location without anyone on site having to manage it. This proposal covers the service, the price, and how we get started.'
+  ],
+  keyTerms: [
+    ['Service', 'Soundtrack Essential business music, delivered and supported by Dynamic Media.'],
+    ['Price', '**$29.95** per location per month. The standard price is $41.00.'],
+    ['Term', 'Month to month. Cancel any month with no penalty.'],
+    ['Billing', 'Dynamic Media bills monthly.']
+  ],
+
+  included: [
+    ['A full music catalog', 'More than 125 million songs, organized for business use.'],
+    ['Playlists that keep themselves fresh', 'About 1,500 professionally curated playlists, updated every few days.'],
+    ['Business licensing', 'Licensing for public play is included in the monthly price.'],
+    ['One dashboard', 'See what is playing at every location and whether each player is online.'],
+    ['Schedules', 'Music changes by day and time, and holiday music can be blended in automatically.'],
+    ['Set it and forget it', 'Once a location is set up, nobody has to manage the music.']
+  ],
+
+  pricingTitle: 'Pricing',
+  pricingIntro: 'All prices are per location.',
+  pricing: [
+    ['Soundtrack Essential', 'Music, business licensing, curated playlists, dashboard, and support', '$29.95 / mo'],
+    ['PlayerOne (optional)', 'Dedicated hardware player that stores music locally and plays 30 days offline', '$129 one-time']
+  ],
+  pricingNote: 'The standard price for Soundtrack Essential is $41.00 a month.',
+
+  steps: [
+    ['Agreement', 'We confirm the locations and send a simple agreement.'],
+    ['Setup', 'We set up each location and the music library.'],
+    ['Music on', 'Locations are playing, and we handle support from there.']
+  ],
+
+  faqs: [
+    ['Is the music licensed for business use?', 'Yes. Licensing for public play is included in the monthly price.'],
+    ['What equipment do we need?', 'Whatever plays music today can usually play Soundtrack: a computer, tablet, phone, Sonos, or a PlayerOne connected to the existing sound system.'],
+    ['What if we want to cancel?', 'Service is month to month. Cancel any month with no penalty.']
+  ]
+};
+</script>
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
+      <img src="assets/dm-logo.png" alt="Dynamic Media" class="h-9 w-auto object-contain">
+      <div class="flex items-center gap-4 sm:gap-6 text-sm font-bold text-px-slate">
+        <span class="hidden md:inline" id="hdrLabel"></span>
+        <a href="#contents" class="hover:text-px-bluedk transition">Contents</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page max-w-5xl mx-auto bg-white sm:my-8 sm:border sm:border-slate-200 sm:rounded-lg sm:shadow-[0_20px_50px_-30px_rgba(35,31,32,.25)]">
+    <section class="px-6 sm:px-14 pt-14 sm:pt-20 pb-12 border-b-4 border-px-blue">
+      <p class="text-xs uppercase font-extrabold tracking-[.2em] text-px-bluedk" id="eyebrow"></p>
+      <h1 class="text-4xl sm:text-5xl font-black text-px-ink tracking-tight leading-[1.08] mt-4 max-w-3xl" id="title"></h1>
+      <p class="text-lg text-px-slate leading-relaxed mt-5 max-w-2xl" id="subtitle"></p>
+      <dl class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-200 text-sm">
+        <div><dt class="text-[11px] uppercase tracking-wider font-extrabold text-slate-400">Prepared for</dt><dd class="font-bold text-px-ink mt-1" id="preparedFor"></dd></div>
+        <div><dt class="text-[11px] uppercase tracking-wider font-extrabold text-slate-400">Prepared by</dt><dd class="font-bold text-px-ink mt-1">Dynamic Media</dd><dd class="text-px-slate" id="preparedBy"></dd></div>
+        <div><dt class="text-[11px] uppercase tracking-wider font-extrabold text-slate-400">Date</dt><dd class="font-bold text-px-ink mt-1" id="date"></dd></div>
+      </dl>
+    </section>
+
+    <section id="contents" class="sec px-6 sm:px-14 py-10 bg-px-wash/50 border-b border-slate-200">
+      <p class="text-xs uppercase font-extrabold tracking-[.2em] text-px-bluedk mb-4">Contents</p>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 text-sm font-semibold text-px-ink num" id="toc"></ol>
+    </section>
+
+    <div class="px-6 sm:px-14 divide-y divide-slate-200" id="sections"></div>
+
+    <footer class="px-6 sm:px-14 py-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <img src="assets/dm-logo.png" alt="Dynamic Media" class="h-6 w-auto">
+      <span>38283 Mound Road, Sterling Heights, MI 48310 &middot; dynamicmediamusic.com</span>
+      <span id="footerNote"></span>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var S = SHEET;
+      function fill(s) { return String(s).split('{customer}').join(S.customer); }
+      function esc(s) { var d = document.createElement('div'); d.textContent = fill(s); return d.innerHTML; }
+      function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong class="text-px-ink">$1</strong>'); }
+      function txt(id, s) { document.getElementById(id).textContent = fill(s); }
+
+      document.title = fill(S.eyebrow + ': ' + S.title + ' | Dynamic Media');
+      txt('hdrLabel', S.eyebrow + ' \u00b7 ' + S.customer);
+      txt('eyebrow', S.eyebrow);
+      txt('title', S.title);
+      txt('subtitle', S.subtitle);
+      txt('preparedFor', S.preparedFor);
+      txt('preparedBy', S.rep.name + ', ' + S.rep.title);
+      txt('date', S.date);
+      txt('footerNote', 'Prepared for {customer}. \u00a9 ' + new Date().getFullYear() + ' Dynamic Media.');
+
+      var defs = [];
+
+      if (S.summary.length || S.keyTerms.length) defs.push(['Summary',
+        S.summary.map(function (p) { return '<p class="text-px-slate leading-relaxed mb-4">' + rich(p) + '</p>'; }).join('') +
+        (S.keyTerms.length ? '<table class="w-full text-sm border-y border-slate-200 mt-8"><tbody class="divide-y divide-slate-200">' +
+          S.keyTerms.map(function (r) { return '<tr><th class="text-left font-bold text-px-ink py-3 pr-6 align-top w-1/3">' + esc(r[0]) + '</th><td class="py-3 text-px-slate">' + rich(r[1]) + '</td></tr>'; }).join('') +
+          '</tbody></table>' : '')]);
+
+      if (S.included.length) defs.push(['What is included',
+        '<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">' +
+        S.included.map(function (c) { return '<div><p class="font-bold text-px-ink">' + esc(c[0]) + '</p><p class="text-sm text-px-slate leading-relaxed mt-1">' + rich(c[1]) + '</p></div>'; }).join('') +
+        '</div>']);
+
+      if (S.pricing.length) defs.push([S.pricingTitle,
+        (S.pricingIntro ? '<p class="text-px-slate leading-relaxed mb-8">' + rich(S.pricingIntro) + '</p>' : '') +
+        '<table class="w-full text-sm border-y border-slate-200 num"><thead><tr class="text-[11px] uppercase tracking-wider text-slate-400"><th class="text-left font-extrabold py-3 pr-4">Service</th><th class="text-right font-extrabold py-3 pl-4">Price</th></tr></thead><tbody class="divide-y divide-slate-200 border-t border-slate-200">' +
+        S.pricing.map(function (r) { return '<tr><td class="py-3 pr-4"><strong class="text-px-ink">' + esc(r[0]) + '</strong>' + (r[1] ? '<span class="block text-slate-500">' + rich(r[1]) + '</span>' : '') + '</td><td class="py-3 pl-4 text-right font-bold text-px-ink whitespace-nowrap">' + esc(r[2]) + '</td></tr>'; }).join('') +
+        '</tbody></table>' +
+        (S.pricingNote ? '<p class="text-sm text-px-slate mt-3">' + rich(S.pricingNote) + '</p>' : '')]);
+
+      if (S.steps.length) defs.push(['How we get started',
+        '<ol class="grid grid-cols-1 md:grid-cols-' + Math.min(S.steps.length, 3) + ' gap-4">' +
+        S.steps.map(function (s, i) { return '<li class="rounded-lg ' + (i === S.steps.length - 1 ? 'border-2 border-px-blue' : 'border border-slate-200') + ' p-5"><p class="text-sm font-black text-px-bluedk">Step ' + (i + 1) + '</p><p class="font-bold text-px-ink mt-1">' + esc(s[0]) + '</p><p class="text-sm text-px-slate mt-1">' + rich(s[1]) + '</p></li>'; }).join('') +
+        '</ol>']);
+
+      var rep = S.rep, sup = S.support;
+      defs.push(['Questions and contacts',
+        '<div class="space-y-2">' + S.faqs.map(function (f) {
+          return '<details class="group rounded-lg border border-slate-200"><summary class="cursor-pointer list-none px-5 py-3.5 flex items-center justify-between gap-4 font-bold text-px-ink text-sm"><span>' + esc(f[0]) + '</span><span class="text-px-blue text-lg font-normal group-open:rotate-45 transition-transform">+</span></summary><div class="px-5 pb-4 text-sm text-px-slate leading-relaxed">' + rich(f[1]) + '</div></details>';
+        }).join('') + '</div>' +
+        '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ' + (S.faqs.length ? 'mt-10' : '') + '">' +
+          '<div class="rounded-lg bg-px-ink text-white p-6"><p class="text-[11px] uppercase tracking-wider font-extrabold text-px-sky">Your contact</p><p class="font-bold mt-2">' + esc(rep.name) + '</p><p class="text-sm text-slate-300">' + esc(rep.title) + ', Dynamic Media</p>' +
+            '<a href="mailto:' + esc(rep.email) + '" class="text-sm font-bold text-white hover:text-px-sky mt-2 inline-block">' + esc(rep.email) + '</a>' +
+            (rep.phone ? '<p class="text-sm font-bold mt-1"><a href="tel:' + esc(rep.phone).replace(/[^\d+]/g, '') + '" class="hover:text-px-sky">' + esc(rep.phone) + '</a></p>' : '') + '</div>' +
+          '<div class="rounded-lg bg-px-wash p-6"><p class="text-[11px] uppercase tracking-wider font-extrabold text-px-bluedk">' + esc(sup.label) + '</p><p class="font-bold text-px-ink mt-2">' + esc(sup.name) + '</p><p class="text-sm text-px-slate">' + esc(sup.note) + '</p>' +
+            '<a href="mailto:' + esc(sup.email) + '" class="text-sm font-bold text-px-ink hover:text-px-bluedk mt-2 inline-block">' + esc(sup.email) + '</a></div>' +
+        '</div>']);
+
+      var toc = document.getElementById('toc'), wrap = document.getElementById('sections');
+      defs.forEach(function (d, i) {
+        var n = i + 1, nn = (n < 10 ? '0' : '') + n, name = fill(d[0]);
+        toc.insertAdjacentHTML('beforeend', '<li><a href="#s' + n + '" class="flex gap-3 hover:text-px-bluedk"><span class="text-px-bluedk w-6">' + nn + '</span>' + esc(name) + '</a></li>');
+        wrap.insertAdjacentHTML('beforeend', '<section id="s' + n + '" data-title="' + n + '. ' + esc(name) + '" class="sec py-12">' +
+          '<p class="text-sm font-black text-px-blue num">' + nn + '</p>' +
+          '<h2 class="text-2xl sm:text-3xl font-black text-px-ink tracking-tight mt-1 mb-5">' + esc(name) + '</h2>' + d[1] + '</section>');
+      });
+    })();
+  </script>
+</body>
+</html>
