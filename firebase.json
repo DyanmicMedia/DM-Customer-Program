@@ -8,6 +8,28 @@
     ],
     "headers": [
       {
+        "source": "/admin{,/**}",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/assets/dm-track.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
         "source": "/phenix-salon-suites-v2/**",
         "headers": [
           {
@@ -142,11 +164,22 @@
       {
         "source": "/api/submitLead",
         "function": "submitLead"
+      },
+      {
+        "source": "/api/proposal-event",
+        "function": "proposalEvent"
+      },
+      {
+        "source": "/api/admin/**",
+        "function": "proposalAdmin"
       }
     ]
   },
   "functions": {
     "source": "functions",
     "runtime": "nodejs22"
+  },
+  "firestore": {
+    "rules": "firestore.rules"
   }
 }

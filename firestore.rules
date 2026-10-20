@@ -1,0 +1,44 @@
+rules_version = '2';
+// One rules file covers the whole dm-customer-programs project, so it has to serve both apps:
+//  - DM-Customer-Program (static proposals): its Cloud Functions use the Admin SDK, which skips these
+//    rules. Its collections (proposalVisits, proposalAlerts, ...) match nothing below, so browsers
+//    can't touch them.
+//  - Proposal Studio: the team reads and writes proposals; anyone can open one published proposal by
+//    its address, but no one can list them.
+// Keep this file identical in both repos; whichever repo deploys rules last wins.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function email() {
+      return request.auth != null && request.auth.token.email is string
+        ? request.auth.token.email.lower() : '';
+    }
+    function dmStaff() {
+      return email().matches('.*@dm-us[.]com$');
+    }
+    function teamPath() {
+      return /databases/$(database)/documents/settings/team;
+    }
+    // Until the team list exists, any Dynamic Media account can sign in and create it.
+    function onTeam() {
+      return dmStaff() && (!exists(teamPath()) || email() in get(teamPath()).data.emails);
+    }
+
+    match /settings/team {
+      allow read: if dmStaff();
+      allow write: if onTeam() && email() in request.resource.data.emails;
+    }
+
+    match /proposals/{id} {
+      allow read, write: if onTeam();
+      match /{sub=**} {
+        allow read, write: if onTeam();
+      }
+    }
+
+    match /published/{slug} {
+      allow get: if true;
+      allow list: if false;
+      allow write: if onTeam();
+    }
+  }
+}

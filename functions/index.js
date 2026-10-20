@@ -1,4 +1,8 @@
 const { onRequest } = require("firebase-functions/v2/https");
+const { proposalEvent, proposalAdmin } = require("./proposals");
+
+exports.proposalEvent = proposalEvent;
+exports.proposalAdmin = proposalAdmin;
 
 /**
  * Nodemailer is loaded lazily so Firebase deploy analysis does not time out.

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal admin | Dynamic Media</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+      colors: { dm: { ink: '#0E2236', blue: '#00A9E6', teal: '#2E8C8A', tealdk: '#256F6D', wash: '#EEF6F5' } }
+    } } };
+  </script>
+  <style>
+    .tab[aria-selected="true"] { color: #0E2236; border-color: #2E8C8A; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased">
+
+  <!-- PASSCODE -->
+  <div id="gate" class="hidden min-h-screen flex items-center justify-center p-6">
+    <form id="gateForm" class="w-full max-w-sm bg-white border border-slate-200 rounded-xl p-8 shadow-sm">
+      <img src="../assets/dm-logo.png" alt="Dynamic Media" class="h-8 w-auto">
+      <h1 class="text-xl font-black text-dm-ink mt-6">Proposal admin</h1>
+      <label for="gateKey" class="block text-sm font-semibold text-slate-600 mt-5">Passcode</label>
+      <input id="gateKey" type="password" autocomplete="current-password" class="mt-1.5 w-full border border-slate-300 rounded-md px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-dm-teal" required>
+      <p id="gateError" class="hidden text-sm text-red-600 mt-2">That passcode didn&rsquo;t work.</p>
+      <button class="mt-5 w-full bg-dm-teal hover:bg-dm-tealdk text-white font-bold rounded-md py-2.5">Open</button>
+    </form>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="hidden">
+    <header class="bg-white border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="../assets/dm-logo.png" alt="Dynamic Media" class="h-8 w-auto">
+          <span class="hidden sm:block w-px h-6 bg-slate-200"></span>
+          <p class="hidden sm:block text-sm font-bold text-dm-ink">Proposal admin</p>
+        </div>
+        <button id="signOut" class="text-sm font-semibold text-slate-500 hover:text-dm-ink">Sign out</button>
+      </div>
+      <nav class="max-w-5xl mx-auto px-5 flex gap-6 text-sm font-bold text-slate-500" role="tablist">
+        <a href="#links" class="tab border-b-2 border-transparent pb-3 hover:text-dm-ink" role="tab" data-tab="links">Links</a>
+        <a href="#activity" class="tab border-b-2 border-transparent pb-3 hover:text-dm-ink" role="tab" data-tab="activity">Activity</a>
+        <a href="#browser" class="tab border-b-2 border-transparent pb-3 hover:text-dm-ink" role="tab" data-tab="browser">This browser</a>
+      </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-5 py-8">
+
+      <!-- LINKS -->
+      <section data-panel="links" class="hidden">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8">
+          <h2 class="text-xl font-black text-dm-ink">Make a personal link</h2>
+          <p class="text-sm text-slate-600 mt-1">Each person gets their own link. When they open it, the team gets an email and the visit shows up under Activity.</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-semibold text-slate-600">Proposal</span>
+              <select id="lbProposal" class="mt-1.5 w-full border border-slate-300 rounded-md px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-dm-teal"></select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-slate-600">Person&rsquo;s name</span>
+              <input id="lbName" type="text" placeholder="Mark Hari" autocomplete="off" class="mt-1.5 w-full border border-slate-300 rounded-md px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-dm-teal">
+            </label>
+          </div>
+          <div id="lbOut" class="hidden mt-6 space-y-4"></div>
+        </div>
+        <div class="mt-6 bg-white border border-slate-200 rounded-xl p-6 sm:p-8 text-sm text-slate-600 leading-relaxed">
+          <h3 class="font-black text-dm-ink text-base">How to send it</h3>
+          <ol class="list-decimal ml-5 mt-2 space-y-1">
+            <li>Copy the personal link.</li>
+            <li>In Outlook, select the words you want as the link, press <strong>Ctrl+K</strong>, paste, and click OK.</li>
+            <li>Send. Don&rsquo;t open the link yourself from that browser unless it&rsquo;s excluded (see <a href="#browser" class="text-dm-teal font-semibold">This browser</a>).</li>
+          </ol>
+          <p class="mt-3"><strong class="text-dm-ink">The share link</strong> is for the person to forward. Visits through it are labeled as forwarded by them, so you can tell their own reading apart from the people they sent it to.</p>
+        </div>
+      </section>
+
+      <!-- ACTIVITY -->
+      <section data-panel="activity" class="hidden">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-black text-dm-ink">Activity</h2>
+            <p class="text-sm text-slate-600 mt-1">Visits through personal links. Reading time updates while a visit is open.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <select id="acProposal" class="border border-slate-300 rounded-md px-3 py-2 bg-white text-sm"></select>
+            <select id="acDays" class="border border-slate-300 rounded-md px-3 py-2 bg-white text-sm">
+              <option value="7">Last 7 days</option>
+              <option value="30">Last 30 days</option>
+              <option value="90" selected>Last 90 days</option>
+              <option value="365">Last year</option>
+            </select>
+            <button id="acRefresh" class="text-sm font-bold text-white bg-dm-teal hover:bg-dm-tealdk rounded-md px-4 py-2">Refresh</button>
+          </div>
+        </div>
+        <div id="acPeople" class="mt-6 grid gap-4"></div>
+        <h3 class="text-sm font-black uppercase tracking-widest text-slate-500 mt-10 mb-3">Every visit</h3>
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 text-left text-[11px] uppercase tracking-wider text-slate-500">
+              <tr><th class="px-4 py-3">When</th><th class="px-4 py-3">Who</th><th class="hidden sm:table-cell px-4 py-3">Proposal</th><th class="hidden md:table-cell px-4 py-3">Device</th><th class="px-4 py-3 text-right">Reading</th></tr>
+            </thead>
+            <tbody id="acVisits" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+        <p class="text-sm text-slate-500 mt-4">For session replays and heatmaps, open <a href="https://us.posthog.com/" target="_blank" rel="noopener" class="text-dm-teal font-semibold">PostHog</a>.</p>
+      </section>
+
+      <!-- THIS BROWSER -->
+      <section data-panel="browser" class="hidden">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 max-w-2xl">
+          <h2 class="text-xl font-black text-dm-ink">This browser</h2>
+          <p id="brStatus" class="mt-4 text-lg font-bold"></p>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">An excluded browser is never tracked on any proposal, even if it opens someone&rsquo;s personal link. Do this once in every browser on your computer and phone, and have your team do the same. Private windows forget it when closed.</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <button id="brExclude" class="text-sm font-bold text-white bg-dm-teal hover:bg-dm-tealdk rounded-md px-4 py-2.5">Exclude this browser</button>
+            <button id="brInclude" class="text-sm font-bold text-dm-ink border border-slate-300 hover:bg-slate-50 rounded-md px-4 py-2.5">Track this browser again</button>
+          </div>
+          <p class="text-sm text-slate-600 mt-6 leading-relaxed">Team members don&rsquo;t need the passcode for this. Send them the link below and have them open it once in each browser:</p>
+          <div class="mt-2 flex gap-2"><input id="brLink" readonly class="flex-1 min-w-0 border border-slate-300 rounded-md px-3 py-2 text-sm bg-slate-50"><button data-copy="brLink" class="copy text-sm font-bold text-dm-teal border border-slate-300 rounded-md px-3">Copy</button></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var KEY_STORE = 'dm_admin_key';
+      var key = localStorage.getItem(KEY_STORE) || '';
+      var site = location.origin, proposals = [], visits = [];
+
+      function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+      function $(id) { return document.getElementById(id); }
+      function slugify(name) { return name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50); }
+      function dur(s) { s = Math.round(s || 0); if (s < 60) return s + 's'; var m = Math.floor(s / 60); return m < 60 ? m + 'm ' + (s % 60) + 's' : Math.floor(m / 60) + 'h ' + (m % 60) + 'm'; }
+      function when(ms) { return new Date(ms).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); }
+      function ago(ms) { var m = Math.round((Date.now() - ms) / 60000); if (m < 1) return 'just now'; if (m < 60) return m + ' min ago'; var h = Math.round(m / 60); if (h < 24) return h + ' hr ago'; var d = Math.round(h / 24); return d + (d === 1 ? ' day ago' : ' days ago'); }
+
+      function api(path) {
+        return fetch('/api/admin' + path, { headers: { 'x-admin-key': key } }).then(function (r) {
+          if (r.status === 401) throw new Error('auth');
+          return r.json();
+        });
+      }
+
+      function showGate(error) {
+        $('app').classList.add('hidden'); $('gate').classList.remove('hidden');
+        $('gateError').classList.toggle('hidden', !error); $('gateKey').focus();
+      }
+      function start() {
+        api('/proposals').then(function (data) {
+          proposals = data.proposals || [];
+          $('gate').classList.add('hidden'); $('app').classList.remove('hidden');
+          var opts = proposals.map(function (p) { return '<option value="' + esc(p.slug) + '">' + esc(p.title) + '</option>'; }).join('');
+          $('lbProposal').innerHTML = opts;
+          $('acProposal').innerHTML = '<option value="">All proposals</option>' + opts;
+          route();
+        }).catch(function () { localStorage.removeItem(KEY_STORE); key = ''; showGate(!!$('gateKey').value); });
+      }
+      $('gateForm').addEventListener('submit', function (e) {
+        e.preventDefault(); key = $('gateKey').value.trim(); localStorage.setItem(KEY_STORE, key); start();
+      });
+      $('signOut').addEventListener('click', function () { localStorage.removeItem(KEY_STORE); key = ''; $('gateKey').value = ''; showGate(false); });
+
+      function route() {
+        var tab = (location.hash || '#links').slice(1);
+        if (['links', 'activity', 'browser'].indexOf(tab) < 0) tab = 'links';
+        document.querySelectorAll('.tab').forEach(function (t) { t.setAttribute('aria-selected', t.dataset.tab === tab); });
+        document.querySelectorAll('[data-panel]').forEach(function (p) { p.classList.toggle('hidden', p.dataset.panel !== tab); });
+        if (tab === 'activity') loadActivity();
+        if (tab === 'browser') renderBrowser();
+      }
+      window.addEventListener('hashchange', route);
+
+      // LINKS
+      function linkRow(id, label, hint, url) {
+        return '<div><p class="text-sm font-bold text-dm-ink">' + esc(label) + '</p><p class="text-xs text-slate-500">' + esc(hint) + '</p>' +
+          '<div class="mt-1.5 flex gap-2"><input id="' + id + '" readonly value="' + esc(url) + '" class="flex-1 min-w-0 border border-slate-300 rounded-md px-3 py-2 text-sm bg-slate-50">' +
+          '<button data-copy="' + id + '" class="copy text-sm font-bold text-white bg-dm-teal hover:bg-dm-tealdk rounded-md px-4">Copy</button></div></div>';
+      }
+      function renderLinks() {
+        var slug = slugify($('lbName').value), p = $('lbProposal').value;
+        var out = $('lbOut');
+        if (!slug || !p) { out.classList.add('hidden'); return; }
+        var base = site + '/' + p + '/';
+        out.innerHTML = linkRow('lbPersonal', 'Personal link', 'Send this one. Visits show as ' + $('lbName').value.trim() + '.', base + '?r=' + slug) +
+          linkRow('lbShare', 'Share link (optional)', 'For them to forward. Visits show as forwarded by ' + $('lbName').value.trim() + '.', base + '?via=' + slug);
+        out.classList.remove('hidden');
+      }
+      $('lbName').addEventListener('input', renderLinks);
+      $('lbProposal').addEventListener('change', renderLinks);
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest('.copy'); if (!b) return;
+        var input = $(b.dataset.copy); input.select();
+        (navigator.clipboard ? navigator.clipboard.writeText(input.value) : Promise.reject()).catch(function () { document.execCommand('copy'); });
+        var t = b.textContent; b.textContent = 'Copied'; setTimeout(function () { b.textContent = t; }, 1400);
+      });
+
+      // ACTIVITY
+      function loadActivity() {
+        $('acPeople').innerHTML = '<p class="text-sm text-slate-500">Loading&hellip;</p>';
+        api('/activity?days=' + $('acDays').value).then(function (data) { visits = data.visits || []; renderActivity(); })
+          .catch(function (err) { if (err.message === 'auth') showGate(true); else $('acPeople').innerHTML = '<p class="text-sm text-red-600">Couldn&rsquo;t load activity.</p>'; });
+      }
+      function topSections(sections, n) {
+        return Object.keys(sections).map(function (k) { return [k, sections[k]]; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, n);
+      }
+      function renderActivity() {
+        var p = $('acProposal').value;
+        var list = visits.filter(function (v) { return !p || v.proposal === p; });
+        if (!list.length) {
+          $('acPeople').innerHTML = '<div class="bg-white border border-slate-200 rounded-xl p-6 text-sm text-slate-600">No visits yet. They appear here as soon as someone opens a personal link.</div>';
+          $('acVisits').innerHTML = '';
+          return;
+        }
+        var people = {};
+        list.forEach(function (v) {
+          var id = v.person ? 'p:' + v.person : 'f:' + v.via;
+          var g = people[id] || (people[id] = { name: v.person ? v.personName : 'Forwarded by ' + v.viaName, forwarded: !v.person, visits: 0, seconds: 0, last: 0, first: Infinity, sections: {}, printed: false, emailed: false, proposals: {} });
+          g.visits++; g.seconds += v.seconds; g.last = Math.max(g.last, v.lastAt || v.startedAt); g.first = Math.min(g.first, v.startedAt);
+          g.printed = g.printed || v.printed; g.emailed = g.emailed || v.emailClicked; g.proposals[v.title] = 1;
+          Object.keys(v.sections).forEach(function (k) { g.sections[k] = (g.sections[k] || 0) + v.sections[k]; });
+        });
+        var forwards = {};
+        list.forEach(function (v) { if (v.via) forwards[v.via] = (forwards[v.via] || 0) + 1; });
+        $('acPeople').innerHTML = Object.keys(people).map(function (id) { return [id, people[id]]; })
+          .sort(function (a, b) { return b[1].last - a[1].last; })
+          .map(function (pair) {
+            var id = pair[0], g = pair[1];
+            var fw = id.indexOf('p:') === 0 ? forwards[id.slice(2)] : 0;
+            var tags = [];
+            if (fw) tags.push(fw + (fw === 1 ? ' forwarded visit' : ' forwarded visits'));
+            if (g.printed) tags.push('Printed / saved PDF');
+            if (g.emailed) tags.push('Clicked your email');
+            var top = topSections(g.sections, 4);
+            var max = top.length ? top[0][1] : 1;
+            return '<div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6">' +
+              '<div class="flex flex-wrap items-baseline justify-between gap-2"><p class="text-lg font-black ' + (g.forwarded ? 'text-slate-600' : 'text-dm-ink') + '">' + esc(g.name) + '</p>' +
+              '<p class="text-sm text-slate-500">Last opened ' + esc(ago(g.last)) + '</p></div>' +
+              '<p class="text-sm text-slate-600 mt-1">' + g.visits + (g.visits === 1 ? ' visit' : ' visits') + ' &middot; ' + esc(dur(g.seconds)) + ' reading &middot; ' + esc(Object.keys(g.proposals).join(', ')) + '</p>' +
+              (tags.length ? '<div class="mt-3 flex flex-wrap gap-2">' + tags.map(function (t) { return '<span class="text-xs font-bold text-dm-tealdk bg-dm-wash rounded-full px-2.5 py-1">' + esc(t) + '</span>'; }).join('') + '</div>' : '') +
+              (top.length ? '<div class="mt-4 space-y-1.5">' + top.map(function (s) {
+                return '<div class="grid grid-cols-[1fr_auto] gap-3 text-sm"><div><p class="text-slate-700 truncate">' + esc(s[0]) + '</p><div class="h-1.5 mt-1 bg-slate-100 rounded"><div class="h-1.5 bg-dm-teal rounded" style="width:' + Math.max(4, Math.round(s[1] / max * 100)) + '%"></div></div></div><p class="text-slate-500 tabular-nums pt-0.5">' + esc(dur(s[1])) + '</p></div>';
+              }).join('') + '</div>' : '') +
+              '</div>';
+          }).join('');
+        $('acVisits').innerHTML = list.map(function (v) {
+          var who = v.person ? esc(v.personName) : '<span class="text-slate-500">Forwarded by ' + esc(v.viaName) + '</span>';
+          return '<tr><td class="px-4 py-3 whitespace-nowrap text-slate-600">' + esc(when(v.startedAt)) + '</td><td class="px-4 py-3 font-semibold text-dm-ink">' + who + '</td>' +
+            '<td class="hidden sm:table-cell px-4 py-3 text-slate-600">' + esc(v.title) + '</td><td class="hidden md:table-cell px-4 py-3 text-slate-500">' + esc(v.device) + '</td>' +
+            '<td class="px-4 py-3 text-right tabular-nums text-slate-600">' + esc(dur(v.seconds)) + '</td></tr>';
+        }).join('');
+      }
+      $('acRefresh').addEventListener('click', loadActivity);
+      $('acDays').addEventListener('change', loadActivity);
+      $('acProposal').addEventListener('change', renderActivity);
+
+      // THIS BROWSER
+      function renderBrowser() {
+        var excluded = localStorage.getItem('dm_notrack') === '1';
+        $('brStatus').textContent = excluded ? 'This browser is excluded from tracking.' : 'This browser is being tracked.';
+        $('brStatus').className = 'mt-4 text-lg font-bold ' + (excluded ? 'text-dm-tealdk' : 'text-amber-600');
+        $('brExclude').classList.toggle('hidden', excluded);
+        $('brInclude').classList.toggle('hidden', !excluded);
+        $('brLink').value = site + '/' + ((proposals[0] && proposals[0].slug) || 'englewood') + '/?notrack=1';
+      }
+      $('brExclude').addEventListener('click', function () {
+        localStorage.setItem('dm_notrack', '1');
+        ['dm_tracked', 'dm_person', 'dm_via'].forEach(function (k) { localStorage.removeItem(k); });
+        renderBrowser();
+      });
+      $('brInclude').addEventListener('click', function () { localStorage.removeItem('dm_notrack'); renderBrowser(); });
+
+      if (key) start(); else showGate(false);
+    })();
+  </script>
+</body>
+</html>
