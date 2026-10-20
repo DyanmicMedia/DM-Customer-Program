@@ -43,6 +43,7 @@ Source priority: call transcript (August 19, 2026) > Ryan's notes > partnership 
 - Messaging: $6.00 / location / month (quoted on the call).
 - Message production (Ryan, Oct 20): six branded kickoff messages free; additional DM-scripted and produced messages $99 each. Phenix marketing may produce its own messages instead. Phenix owns every message once produced; it joins Phenix's message library.
 - Fully loaded: $32.95 / month.
+- Oct 20 (Ryan): v2 presents $32.95 as the single program price with messaging included, not optional. Internal only: messaging is account-wide (on or off for the whole account), so it can't be sold per location. Breakdown stays $26.95 music + $6.00 messaging.
 - Revenue share: $2.00 / active location / month, paid quarterly; 10% of equipment bought through DM.
 - Custom playlist: $1,000 build, $50/mo maintenance. Gina's List build included free at signing.
 - Terms: two-year corporate MSA; franchisees month-to-month.
