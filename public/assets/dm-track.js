@@ -43,7 +43,9 @@
 
   var recipient = (params.get('r') || '').trim().toLowerCase();
   var via = (params.get('via') || '').trim().toLowerCase();
-  var proposal = location.pathname.split('/').filter(Boolean)[0] || 'home';
+  // Brand briefs live at /brief/<slug> and report as "brief.<slug>", apart from a proposal with the same address.
+  var parts = location.pathname.split('/').filter(Boolean);
+  var proposal = parts[0] === 'brief' && parts[1] ? 'brief.' + parts[1] : parts[0] || 'home';
 
   posthog.init(KEY, {
     api_host: HOST,
