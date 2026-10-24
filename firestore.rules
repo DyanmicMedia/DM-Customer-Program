@@ -5,7 +5,8 @@ rules_version = '2';
 //    can't touch them.
 //  - Proposal Studio: the team reads and writes proposals; anyone can open one published proposal by
 //    its address, but no one can list them.
-// Keep this file identical in both repos; whichever repo deploys rules last wins.
+// Only proposal-studio deploys these rules. DM-Customer-Program keeps an identical copy for reference
+// and has no "firestore" entry in its firebase.json, so its deploys never touch them.
 service cloud.firestore {
   match /databases/{database}/documents {
     function email() {
